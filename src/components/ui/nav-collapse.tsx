@@ -1,7 +1,7 @@
-import cn from 'classnames';
-import { Disclosure, Transition } from '@headlessui/react';
-import { useTranslation } from 'next-i18next';
-import { FaChevronDown } from 'react-icons/fa';
+import cn from "classnames";
+import { Disclosure, Transition } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
+import { FaChevronDown } from "react-icons/fa";
 
 type CollapseProps = {
   title?: any;
@@ -19,7 +19,7 @@ export const NavCollapse: React.FC<CollapseProps> = ({ title, content }) => {
               <Disclosure.Button className="flex justify-between w-full px-4 py-3 bg-white rounded shadow-category md:py-4">
                 <h2
                   className={cn(
-                    'flex items-center cursor-pointer text-sm lg:text-base text-brand-dark font-medium  '
+                    "flex items-center cursor-pointer text-sm lg:text-base text-brand-dark font-medium  "
                   )}
                 >
                   <span className="opacity-50 text-brand-dark">
@@ -29,7 +29,7 @@ export const NavCollapse: React.FC<CollapseProps> = ({ title, content }) => {
                 </h2>
                 <FaChevronDown
                   className={`${
-                    open ? 'transform rotate-180' : ''
+                    open ? "transform rotate-180" : ""
                   } w-4 h-4 2xl:w-5 2xl:h-5 text-brand-dark opacity-70`}
                 />
               </Disclosure.Button>

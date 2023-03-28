@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTranslation } from 'next-i18next';
+import React from "react";
+import { useTranslation } from "next-i18next";
 interface CheckBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string | any;
 }
@@ -22,4 +22,4 @@ export const CheckBox = React.forwardRef<HTMLInputElement, CheckBoxProps>(
   }
 );
 
-CheckBox.displayName = 'CheckBox';
+CheckBox.displayName = "CheckBox";

@@ -1,15 +1,15 @@
-import Heading from '@components/ui/heading';
-import Image from '@components/ui/image';
-import Link from '@components/ui/link';
-import { LinkProps } from 'next/link';
-import Text from '@components/ui/text';
-import { useTranslation } from 'next-i18next';
-import { collectionPlaceholder } from '@assets/placeholders';
+import Heading from "@components/ui/heading";
+import Image from "@components/ui/image";
+import Link from "@components/ui/link";
+import { LinkProps } from "next/link";
+import Text from "@components/ui/text";
+import { useTranslation } from "next-i18next";
+import { collectionPlaceholder } from "@assets/placeholders";
 
 interface Props {
   imgWidth?: number | string;
   imgHeight?: number | string;
-  href: LinkProps['href'];
+  href: LinkProps["href"];
   collection: {
     image: string;
     title: string;
@@ -24,7 +24,7 @@ const CollectionCard: React.FC<Props> = ({
   href,
 }) => {
   const { image, title, description } = collection;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <Link
       href={href}
@@ -32,7 +32,7 @@ const CollectionCard: React.FC<Props> = ({
     >
       <Image
         src={image ?? collectionPlaceholder}
-        alt={t(title) || t('text-card-thumbnail')}
+        alt={t(title) || t("text-card-thumbnail")}
         width={imgWidth}
         height={imgHeight}
         className="object-cover transition duration-300 ease-in-out transform bg-fill-thumbnail group-hover:opacity-90 group-hover:scale-105"

@@ -1,10 +1,10 @@
-import Layout from '@components/layout/layout';
-import AccountLayout from '@components/my-account/account-layout';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import PaymentBox from '@components/payment/payment-content';
-import { usePaymentQuery } from '@framework/payment/payment';
-import { GetStaticProps } from 'next';
-import Seo from '@components/seo/seo';
+import Layout from "@components/layout/layout";
+import AccountLayout from "@components/my-account/account-layout";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import PaymentBox from "@components/payment/payment-content";
+import { usePaymentQuery } from "@framework/payment/payment";
+import { GetStaticProps } from "next";
+import Seo from "@components/seo/seo";
 
 export default function AccountDetailsPage() {
   const { data, isLoading } = usePaymentQuery();
@@ -28,10 +28,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
   };

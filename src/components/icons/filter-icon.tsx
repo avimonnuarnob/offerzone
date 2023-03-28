@@ -1,7 +1,7 @@
 const FilterIcon = ({
-  color = 'currentColor',
-  width = '18px',
-  height = '14px',
+  color = "currentColor",
+  width = "18px",
+  height = "14px",
 }) => {
   return (
     <svg

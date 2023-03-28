@@ -1,9 +1,9 @@
-import { useTranslation } from 'next-i18next';
-import Link from '@components/ui/link';
-import Image from '@components/ui/image';
-import { ROUTES } from '@utils/routes';
-import Heading from '@components/ui/heading';
-import Text from '@components/ui/text';
+import { useTranslation } from "next-i18next";
+import Link from "@components/ui/link";
+import Image from "@components/ui/image";
+import { ROUTES } from "@utils/routes";
+import Heading from "@components/ui/heading";
+import Text from "@components/ui/text";
 
 type VendorCardProps = {
   shop?: any;
@@ -20,7 +20,7 @@ const VendorCard: React.FC<VendorCardProps> = ({ shop }) => {
     >
       <div className="relative flex items-center justify-center w-16 h-16 overflow-hidden rounded-full shrink-0 bg-fill-thumbnail xl:w-20 xl:h-20">
         <Image
-          alt={t('common:text-logo')}
+          alt={t("common:text-logo")}
           src={logo?.thumbnail ?? placeholderImage}
           layout="fill"
           objectFit="cover"

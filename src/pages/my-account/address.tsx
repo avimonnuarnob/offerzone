@@ -1,10 +1,10 @@
-import Layout from '@components/layout/layout';
-import AccountLayout from '@components/my-account/account-layout';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import AddressGrid from '@components/address/address-grid';
-import { useAddressQuery } from '@framework/address/address';
-import { GetStaticProps } from 'next';
-import Seo from '@components/seo/seo';
+import Layout from "@components/layout/layout";
+import AccountLayout from "@components/my-account/account-layout";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import AddressGrid from "@components/address/address-grid";
+import { useAddressQuery } from "@framework/address/address";
+import { GetStaticProps } from "next";
+import Seo from "@components/seo/seo";
 
 export default function AccountDetailsPage() {
   const { data, isLoading } = useAddressQuery();
@@ -32,12 +32,12 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'terms',
-        'faq',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "terms",
+        "faq",
+        "footer",
       ])),
     },
   };

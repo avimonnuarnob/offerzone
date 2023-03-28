@@ -12,5 +12,5 @@ export function formatAddress(address: any) {
   if (address) {
     formattedAddress = removeEmpty(address);
   }
-  return Object.values(formattedAddress).slice(2, 3).reverse().join(', ');
+  return Object.values(formattedAddress).slice(2, 3).reverse().join(", ");
 }

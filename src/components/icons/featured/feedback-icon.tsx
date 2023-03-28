@@ -1,8 +1,8 @@
 const FeedbackIcon = ({
-  color = 'currentColor',
-  width = '43px',
-  height = '41px',
-  className = '',
+  color = "currentColor",
+  width = "43px",
+  height = "41px",
+  className = "",
 }) => {
   return (
     <svg

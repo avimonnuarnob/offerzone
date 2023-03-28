@@ -1,7 +1,7 @@
-import Image from '@components/ui/image';
-import Link from '@components/ui/link';
-import { ROUTES } from '@utils/routes';
-import { searchProductPlaceholder } from '@assets/placeholders';
+import Image from "@components/ui/image";
+import Link from "@components/ui/link";
+import { ROUTES } from "@utils/routes";
+import { searchProductPlaceholder } from "@assets/placeholders";
 
 type SearchProductProps = {
   item: any;
@@ -19,7 +19,7 @@ const SearchProduct: React.FC<SearchProductProps> = ({ item }) => {
           width={48}
           height={48}
           loading="eager"
-          alt={item.name || 'Product Image'}
+          alt={item.name || "Product Image"}
           className="object-cover bg-fill-thumbnail"
         />
       </div>

@@ -1,37 +1,37 @@
-import type { FC } from 'react';
-import { useTranslation } from 'next-i18next';
-import ReviewCard from '@components/cards/review-card';
-import ReviewForm from '@components/common/form/review-form';
+import type { FC } from "react";
+import { useTranslation } from "next-i18next";
+import ReviewCard from "@components/cards/review-card";
+import ReviewForm from "@components/common/form/review-form";
 
 const data = [
   {
     id: 1,
     rating: 4,
-    title: 'Amazing Service & Packaging',
+    title: "Amazing Service & Packaging",
     description:
-      'Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing with denim and white kicks for a stylish sporty vibe. Will fit a UK 8-10, model shown Go sporty this summer with this vintage navy and white striped v-neck t-shirt.',
-    author: 'Kavin Dustin',
+      "Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing with denim and white kicks for a stylish sporty vibe. Will fit a UK 8-10, model shown Go sporty this summer with this vintage navy and white striped v-neck t-shirt.",
+    author: "Kavin Dustin",
   },
   {
     id: 2,
     rating: 5,
-    title: 'Promising Quality & Fast Delivery',
+    title: "Promising Quality & Fast Delivery",
     description:
-      'Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing with denim and white kicks for a stylish sporty vibe. Will fit a UK 8-10, model shown Go sporty this summer with this vintage navy and white striped v-neck t-shirt.',
-    author: 'Milly Jacsion',
+      "Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing with denim and white kicks for a stylish sporty vibe. Will fit a UK 8-10, model shown Go sporty this summer with this vintage navy and white striped v-neck t-shirt.",
+    author: "Milly Jacsion",
   },
   {
     id: 3,
     rating: 3,
-    title: 'Late Delivery service',
+    title: "Late Delivery service",
     description:
-      'Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing with denim and white kicks for a stylish sporty vibe. Will fit a UK 8-10, model shown Go sporty this summer with this vintage navy and white striped v-neck t-shirt.',
-    author: 'Kavin Dustin',
+      "Go sporty this summer with this vintage navy and white striped v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing with denim and white kicks for a stylish sporty vibe. Will fit a UK 8-10, model shown Go sporty this summer with this vintage navy and white striped v-neck t-shirt.",
+    author: "Kavin Dustin",
   },
 ];
 
 const ProductReviewRating: FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div className="lg:flex">
       <div className="pt-2">

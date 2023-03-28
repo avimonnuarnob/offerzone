@@ -1,7 +1,7 @@
-import { useCookiesProductsQuery } from '@framework/product/get-all-cookies-products';
-import ProductsCarousel from '@components/product/products-carousel';
-import { ROUTES } from '@utils/routes';
-import { LIMITS } from '@framework/utils/limits';
+import { useCookiesProductsQuery } from "@framework/product/get-all-cookies-products";
+import ProductsCarousel from "@components/product/products-carousel";
+import { ROUTES } from "@utils/routes";
+import { LIMITS } from "@framework/utils/limits";
 
 export default function CookiesProductFeed() {
   const { data, isLoading, error } = useCookiesProductsQuery({

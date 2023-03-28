@@ -1,7 +1,7 @@
 const TrashIcon = ({
-  color = 'currentColor',
-  width = '12px',
-  height = '12px',
+  color = "currentColor",
+  width = "12px",
+  height = "12px",
 }) => {
   return (
     <svg

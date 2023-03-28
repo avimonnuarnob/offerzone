@@ -1,14 +1,14 @@
-import { usePopularProductsQuery } from '@framework/product/get-all-popular-products';
-import SectionHeader from '@components/common/section-header';
-import ProductCardMaple from '@components/product/product-cards/product-card-maple';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import { LIMITS } from '@framework/utils/limits';
-import Alert from '@components/ui/alert';
-import ProductFlashSaleGobies from '@components/product/product-cards/product-flash-sale-gobies';
-import cn from 'classnames';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from 'swiper/react';
-import useWindowSize from '@utils/use-window-size';
+import { usePopularProductsQuery } from "@framework/product/get-all-popular-products";
+import SectionHeader from "@components/common/section-header";
+import ProductCardMaple from "@components/product/product-cards/product-card-maple";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import { LIMITS } from "@framework/utils/limits";
+import Alert from "@components/ui/alert";
+import ProductFlashSaleGobies from "@components/product/product-cards/product-flash-sale-gobies";
+import cn from "classnames";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "swiper/react";
+import useWindowSize from "@utils/use-window-size";
 
 interface BestSellerProps {
   className?: string;
@@ -19,7 +19,7 @@ const options = {
   spaceBetween: 15,
   grid: {
     rows: 2,
-    fill: 'row',
+    fill: "row",
   },
   breakpoints: {
     768: {
@@ -63,7 +63,7 @@ const options = {
       spaceBetween: 20,
       grid: {
         rows: 3,
-        fill: 'row',
+        fill: "row",
       },
     },
   },
@@ -79,7 +79,7 @@ export default function BestSellerWithFlashSale({
   });
 
   return (
-    <div className={cn('-mt-2.5 mb-12 lg:mb-14 xl:mb-16 2xl:mb-20', className)}>
+    <div className={cn("-mt-2.5 mb-12 lg:mb-14 xl:mb-16 2xl:mb-20", className)}>
       <SectionHeader
         sectionHeading="text-best-grocery-near-you"
         sectionSubHeading="text-fresh-grocery-items"

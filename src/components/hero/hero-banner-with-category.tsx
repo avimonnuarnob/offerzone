@@ -1,18 +1,18 @@
-import BannerGridTwo from '@components/common/banner-grid-two';
-import { bannerGridMediumTwo as bannersMedium } from '@framework/static/banner';
-import { bannerDiscount } from '@framework/static/banner';
-import BannerAllCarousel from '@components/common/banner-all-carousel';
-import { useCategoriesQuery } from '@framework/category/get-all-categories';
-import CategoryListCard from '@components/cards/category-list-card';
-import { ROUTES } from '@utils/routes';
-import { LIMITS } from '@framework/utils/limits';
+import BannerGridTwo from "@components/common/banner-grid-two";
+import { bannerGridMediumTwo as bannersMedium } from "@framework/static/banner";
+import { bannerDiscount } from "@framework/static/banner";
+import BannerAllCarousel from "@components/common/banner-all-carousel";
+import { useCategoriesQuery } from "@framework/category/get-all-categories";
+import CategoryListCard from "@components/cards/category-list-card";
+import { ROUTES } from "@utils/routes";
+import { LIMITS } from "@framework/utils/limits";
 
 interface Props {
   className?: string;
 }
 
 const HeroBannerWithCategory: React.FC<Props> = ({
-  className = 'mb-12 lg:mb-14 xl:mb-16 2xl:mb-20',
+  className = "mb-12 lg:mb-14 xl:mb-16 2xl:mb-20",
 }) => {
   const { data } = useCategoriesQuery({
     limit: LIMITS.CATEGORIES_LIMITS,

@@ -1,23 +1,23 @@
-import { useRef } from 'react';
-import dynamic from 'next/dynamic';
-import { useTranslation } from 'next-i18next';
-import cn from 'classnames';
-import { ROUTES } from '@utils/routes';
-import { useUI } from '@contexts/ui.context';
-import { siteSettings } from '@settings/site-settings';
-import { useActiveScroll } from '@utils/use-active-scroll';
-import Container from '@components/ui/container';
-import Logo from '@components/ui/logo';
-import HeaderMenu from '@components/layout/header/header-menu';
-import Search from '@components/common/search';
-import LanguageSwitcher from '@components/ui/language-switcher';
-import UserIcon from '@components/icons/user-icon';
-import SearchIcon from '@components/icons/search-icon';
-import { useModalAction } from '@components/common/modal/modal.context';
-import useOnClickOutside from '@utils/use-click-outside';
-import Delivery from '@components/layout/header/delivery';
-const AuthMenu = dynamic(() => import('./auth-menu'), { ssr: false });
-const CartButton = dynamic(() => import('@components/cart/cart-button'), {
+import { useRef } from "react";
+import dynamic from "next/dynamic";
+import { useTranslation } from "next-i18next";
+import cn from "classnames";
+import { ROUTES } from "@utils/routes";
+import { useUI } from "@contexts/ui.context";
+import { siteSettings } from "@settings/site-settings";
+import { useActiveScroll } from "@utils/use-active-scroll";
+import Container from "@components/ui/container";
+import Logo from "@components/ui/logo";
+import HeaderMenu from "@components/layout/header/header-menu";
+import Search from "@components/common/search";
+import LanguageSwitcher from "@components/ui/language-switcher";
+import UserIcon from "@components/icons/user-icon";
+import SearchIcon from "@components/icons/search-icon";
+import { useModalAction } from "@components/common/modal/modal.context";
+import useOnClickOutside from "@utils/use-click-outside";
+import Delivery from "@components/layout/header/delivery";
+const AuthMenu = dynamic(() => import("./auth-menu"), { ssr: false });
+const CartButton = dynamic(() => import("@components/cart/cart-button"), {
   ssr: false,
 });
 
@@ -25,7 +25,7 @@ type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 const { site_header } = siteSettings;
 
 const Header: React.FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const {
     displaySearch,
     displayMobileSearch,
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
   useActiveScroll(siteHeaderRef, 40);
   useOnClickOutside(siteSearchRef, () => closeSearch());
   function handleLogin() {
-    openModal('LOGIN_VIEW');
+    openModal("LOGIN_VIEW");
   }
 
   return (
@@ -47,8 +47,8 @@ const Header: React.FC = () => {
       id="siteHeader"
       ref={siteHeaderRef}
       className={cn(
-        'header-two sticky-header sticky top-0 z-20 lg:relative w-full h-16 lg:h-auto',
-        displayMobileSearch && 'active-mobile-search'
+        "header-two sticky-header sticky top-0 z-20 lg:relative w-full h-16 lg:h-auto",
+        displayMobileSearch && "active-mobile-search"
       )}
     >
       <div className="z-20 w-screen transition-all duration-200 ease-in-out innerSticky lg:w-full body-font bg-fill-secondary">
@@ -78,11 +78,11 @@ const Header: React.FC = () => {
                 isAuthorized={isAuthorized}
                 href={ROUTES.ACCOUNT}
                 btnProps={{
-                  children: t('text-sign-in'),
+                  children: t("text-sign-in"),
                   onClick: handleLogin,
                 }}
               >
-                {t('text-account')}
+                {t("text-account")}
               </AuthMenu>
             </div>
           </div>
@@ -134,11 +134,11 @@ const Header: React.FC = () => {
                     isAuthorized={isAuthorized}
                     href={ROUTES.ACCOUNT}
                     btnProps={{
-                      children: t('text-sign-in'),
+                      children: t("text-sign-in"),
                       onClick: handleLogin,
                     }}
                   >
-                    {t('text-account')}
+                    {t("text-account")}
                   </AuthMenu>
                 </div>
                 {/* End of auth */}

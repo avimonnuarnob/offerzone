@@ -1,6 +1,6 @@
-import Layout from '@components/layout/layout';
-import PaymentBox from '@components/payment/payment-content';
-import { usePaymentQuery } from '@framework/payment/payment';
+import Layout from "@components/layout/layout";
+import PaymentBox from "@components/payment/payment-content";
+import { usePaymentQuery } from "@framework/payment/payment";
 
 export default function Payment() {
   const { data, isLoading } = usePaymentQuery();

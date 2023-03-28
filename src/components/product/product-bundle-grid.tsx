@@ -1,10 +1,10 @@
-import ProductCardAlpine from '@components/product/product-cards/product-card-alpine';
-import { useProductsQuery } from '@framework/product/get-all-products';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import Alert from '@components/ui/alert';
-import cn from 'classnames';
-import slice from 'lodash/slice';
-import { Product } from '@framework/types';
+import ProductCardAlpine from "@components/product/product-cards/product-card-alpine";
+import { useProductsQuery } from "@framework/product/get-all-products";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import Alert from "@components/ui/alert";
+import cn from "classnames";
+import slice from "lodash/slice";
+import { Product } from "@framework/types";
 
 interface ProductFeedProps {
   element?: any;
@@ -13,7 +13,7 @@ interface ProductFeedProps {
 
 export default function ProductBundleGrid({
   element,
-  className = '',
+  className = "",
 }: ProductFeedProps) {
   const limit = 35;
   const { data, isLoading, error } = useProductsQuery({

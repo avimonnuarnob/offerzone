@@ -1,6 +1,6 @@
-import { useTranslation } from 'next-i18next';
-import Heading from '@components/ui/heading';
-import Link from '@components/ui/link';
+import { useTranslation } from "next-i18next";
+import Heading from "@components/ui/heading";
+import Link from "@components/ui/link";
 
 interface Props {
   className?: string;
@@ -17,7 +17,7 @@ interface Props {
 
 const WidgetLink: React.FC<Props> = ({ className, data }) => {
   const { widgetTitle, lists } = data;
-  const { t } = useTranslation('footer');
+  const { t } = useTranslation("footer");
   return (
     <div className={`${className}`}>
       <Heading variant="mediumHeading" className="mb-4 sm:mb-5 lg:mb-6 pb-0.5">
@@ -36,7 +36,7 @@ const WidgetLink: React.FC<Props> = ({ className, data }) => {
             )}
 
             <Link
-              href={list.path ? list.path : '#!'}
+              href={list.path ? list.path : "#!"}
               className="transition-colors duration-200 hover:text-brand-dark"
             >
               {t(`${list.title}`)}

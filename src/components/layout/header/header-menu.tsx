@@ -1,8 +1,8 @@
-import Link from '@components/ui/link';
-import { FaChevronDown } from 'react-icons/fa';
-import ListMenu from '@components/ui/list-menu';
-import { useTranslation } from 'next-i18next';
-import cn from 'classnames';
+import Link from "@components/ui/link";
+import { FaChevronDown } from "react-icons/fa";
+import ListMenu from "@components/ui/list-menu";
+import { useTranslation } from "next-i18next";
+import cn from "classnames";
 
 interface MenuProps {
   data: any;
@@ -10,11 +10,11 @@ interface MenuProps {
 }
 
 const HeaderMenu: React.FC<MenuProps> = ({ data, className }) => {
-  const { t } = useTranslation('menu');
+  const { t } = useTranslation("menu");
   return (
     <nav
       className={cn(
-        'headerMenu flex w-full relative -mx-3 xl:-mx-4',
+        "headerMenu flex w-full relative -mx-3 xl:-mx-4",
         className
       )}
     >

@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import Button from '@components/ui/button';
-import { useForm } from 'react-hook-form';
+import { useState } from "react";
+import Button from "@components/ui/button";
+import { useForm } from "react-hook-form";
 import {
   useUpdateUserMutation,
   UpdateUserType,
-} from '@framework/customer/use-update-customer';
-import { useTranslation } from 'next-i18next';
-import Switch from '@components/ui/switch';
-import Heading from '@components/ui/heading';
-import Text from '@components/ui/text';
+} from "@framework/customer/use-update-customer";
+import { useTranslation } from "next-i18next";
+import Switch from "@components/ui/switch";
+import Heading from "@components/ui/heading";
+import Text from "@components/ui/text";
 
 const defaultValues = {};
 const AccountDetails: React.FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { mutate: updateUser, isLoading } = useUpdateUserMutation();
   const {
     handleSubmit,
@@ -27,7 +27,7 @@ const AccountDetails: React.FC = () => {
     <div className="flex flex-col w-full">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Heading variant="titleLarge">
-          {t('text-account-details-personal')}
+          {t("text-account-details-personal")}
         </Heading>
         <NotificationItem
           title="notification-one-title"
@@ -39,7 +39,7 @@ const AccountDetails: React.FC = () => {
         />
 
         <Heading variant="titleLarge" className="pt-6 xl:pt-12">
-          {t('text-account-details-account')}
+          {t("text-account-details-account")}
         </Heading>
 
         <div className="relative">
@@ -60,7 +60,7 @@ const AccountDetails: React.FC = () => {
             className="w-full h-12 mt-3 sm:w-auto"
             variant="formButton"
           >
-            {t('button-save-changes')}
+            {t("button-save-changes")}
           </Button>
         </div>
       </form>
@@ -79,7 +79,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
   description,
 }) => {
   const [checked, setChecked] = useState(true);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div className="relative flex pt-6 lg:pt-10">
       <div className="ltr:pr-2.5 rtl:pl-2.5">

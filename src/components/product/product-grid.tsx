@@ -1,21 +1,21 @@
-import type { FC } from 'react';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import Alert from '@components/ui/alert';
-import Button from '@components/ui/button';
-import ProductCardAlpine from '@components/product/product-cards/product-card-alpine';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import cn from 'classnames';
-import { useProductsQuery } from '@framework/product/get-all-products';
-import { LIMITS } from '@framework/utils/limits';
-import { Product } from '@framework/types';
+import type { FC } from "react";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import Alert from "@components/ui/alert";
+import Button from "@components/ui/button";
+import ProductCardAlpine from "@components/product/product-cards/product-card-alpine";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import cn from "classnames";
+import { useProductsQuery } from "@framework/product/get-all-products";
+import { LIMITS } from "@framework/utils/limits";
+import { Product } from "@framework/types";
 
 interface ProductGridProps {
   className?: string;
 }
 
-export const ProductGrid: FC<ProductGridProps> = ({ className = '' }) => {
-  const { t } = useTranslation('common');
+export const ProductGrid: FC<ProductGridProps> = ({ className = "" }) => {
+  const { t } = useTranslation("common");
   const { query } = useRouter();
   const {
     isFetching: isLoading,
@@ -30,7 +30,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = '' }) => {
     <>
       <div
         className={cn(
-          'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-3 md:gap-4 2xl:gap-5',
+          "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-3 md:gap-4 2xl:gap-5",
           className
         )}
       >
@@ -64,7 +64,7 @@ export const ProductGrid: FC<ProductGridProps> = ({ className = '' }) => {
             disabled={loadingMore}
             onClick={() => fetchNextPage()}
           >
-            {t('button-load-more')}
+            {t("button-load-more")}
           </Button>
         </div>
       )}

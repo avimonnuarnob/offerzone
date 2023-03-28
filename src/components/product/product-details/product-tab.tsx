@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { Tab } from '@headlessui/react';
-import Heading from '@components/ui/heading';
-import ProductReviewRating from './product-review-rating';
+import { useState } from "react";
+import { Tab } from "@headlessui/react";
+import Heading from "@components/ui/heading";
+import ProductReviewRating from "./product-review-rating";
 
 function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function ProductDetailsTab() {
   const [tabHeading] = useState({
-    Product_Details: '',
-    Review_Rating: '',
+    Product_Details: "",
+    Review_Rating: "",
   });
 
   return (
@@ -22,14 +22,14 @@ export default function ProductDetailsTab() {
               key={item}
               className={({ selected }) =>
                 classNames(
-                  'relative inline-block transition-all text-15px lg:text-17px leading-5 text-brand-dark focus:outline-none pb-3 lg:pb-5 hover:text-brand ltr:mr-8 rtl:ml-8',
+                  "relative inline-block transition-all text-15px lg:text-17px leading-5 text-brand-dark focus:outline-none pb-3 lg:pb-5 hover:text-brand ltr:mr-8 rtl:ml-8",
                   selected
-                    ? 'font-semibold after:absolute after:w-full after:h-0.5 after:bottom-0 after:translate-y-[1px] after:ltr:left-0 after:rtl:right-0 after:bg-brand'
-                    : ''
+                    ? "font-semibold after:absolute after:w-full after:h-0.5 after:bottom-0 after:translate-y-[1px] after:ltr:left-0 after:rtl:right-0 after:bg-brand"
+                    : ""
                 )
               }
             >
-              {item.split('_').join(' ')}
+              {item.split("_").join(" ")}
             </Tab>
           ))}
         </Tab.List>

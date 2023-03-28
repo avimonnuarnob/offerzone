@@ -1,18 +1,18 @@
-import Container from '@components/ui/container';
-import Layout from '@components/layout/layout';
-import { ShopFilters } from '@components/search/filters';
-import { ProductGrid } from '@components/product/product-grid';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import DownloadApps from '@components/common/download-apps';
-import { GetStaticProps } from 'next';
-import PageHeroSection from '@components/ui/page-hero-section';
-import { useTranslation } from 'next-i18next';
-import SearchTopBar from '@components/search/search-top-bar';
-import { Element } from 'react-scroll';
-import Seo from '@components/seo/seo';
+import Container from "@components/ui/container";
+import Layout from "@components/layout/layout";
+import { ShopFilters } from "@components/search/filters";
+import { ProductGrid } from "@components/product/product-grid";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import DownloadApps from "@components/common/download-apps";
+import { GetStaticProps } from "next";
+import PageHeroSection from "@components/ui/page-hero-section";
+import { useTranslation } from "next-i18next";
+import SearchTopBar from "@components/search/search-top-bar";
+import { Element } from "react-scroll";
+import Seo from "@components/seo/seo";
 
 export default function Products() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <>
       <Seo
@@ -20,7 +20,7 @@ export default function Products() {
         description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
         path="products"
       />
-      <PageHeroSection heroTitle={t('text-all-grocery-items')} />
+      <PageHeroSection heroTitle={t("text-all-grocery-items")} />
       <Container>
         {/* @ts-ignore */}
         <Element name="grid" className="flex pb-16 pt-7 lg:pt-11 lg:pb-20">
@@ -44,10 +44,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
   };

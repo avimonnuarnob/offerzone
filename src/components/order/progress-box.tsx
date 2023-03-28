@@ -1,5 +1,5 @@
-import { BiCheck } from 'react-icons/bi';
-import Scrollbar from '@components/ui/scrollbar';
+import { BiCheck } from "react-icons/bi";
+import Scrollbar from "@components/ui/scrollbar";
 
 type ProgressProps = {
   data: any;
@@ -12,7 +12,7 @@ const ProgressBox: React.FC<ProgressProps> = ({ status, data }) => {
       className="w-full h-full"
       options={{
         scrollbars: {
-          autoHide: 'never',
+          autoHide: "never",
         },
       }}
     >
@@ -28,11 +28,11 @@ const ProgressBox: React.FC<ProgressProps> = ({ status, data }) => {
                   <div
                     className={`absolute ${
                       index === 0
-                        ? 'w-1/2 ltr:right-0 rtl:left-0'
-                        : 'w-full ltr:left-0 rtl:right-0'
+                        ? "w-1/2 ltr:right-0 rtl:left-0"
+                        : "w-full ltr:left-0 rtl:right-0"
                     } ${
                       data?.data?.length - 1 === index &&
-                      'w-1/2 ltr:left-0 rtl:right-0'
+                      "w-1/2 ltr:left-0 rtl:right-0"
                     } top-1/2 transform-[1/2] h-[5px] bg-brand`}
                   ></div>
                 </div>
@@ -49,11 +49,11 @@ const ProgressBox: React.FC<ProgressProps> = ({ status, data }) => {
                   <div
                     className={`absolute ${
                       index === 0
-                        ? 'w-1/2 ltr:right-0 rtl:left-0'
-                        : 'w-full ltr:left-0 rtl:right-0'
+                        ? "w-1/2 ltr:right-0 rtl:left-0"
+                        : "w-full ltr:left-0 rtl:right-0"
                     } ${
                       data?.data?.length - 1 === index &&
-                      'w-1/2 ltr:left-0 rtl:right-0'
+                      "w-1/2 ltr:left-0 rtl:right-0"
                     } top-1/2 transform-[1/2] h-[5px] bg-[#E2E7EC]`}
                   ></div>
                 </div>

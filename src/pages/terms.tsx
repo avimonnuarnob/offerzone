@@ -1,16 +1,16 @@
-import Layout from '@components/layout/layout';
-import Container from '@components/ui/container';
-import PageHeroSection from '@components/ui/page-hero-section';
-import { termsAndServices } from '@settings/terms-settings';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import { GetStaticProps } from 'next';
-import DownloadApps from '@components/common/download-apps';
-import Heading from '@components/ui/heading';
-import Seo from '@components/seo/seo';
+import Layout from "@components/layout/layout";
+import Container from "@components/ui/container";
+import PageHeroSection from "@components/ui/page-hero-section";
+import { termsAndServices } from "@settings/terms-settings";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { GetStaticProps } from "next";
+import DownloadApps from "@components/common/download-apps";
+import Heading from "@components/ui/heading";
+import Seo from "@components/seo/seo";
 
 export default function TermsPage() {
-  const { t } = useTranslation('terms');
+  const { t } = useTranslation("terms");
   return (
     <>
       <Seo
@@ -53,11 +53,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'terms',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "terms",
+        "footer",
       ])),
     },
   };

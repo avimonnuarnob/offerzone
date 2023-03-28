@@ -1,5 +1,5 @@
-import { useContactQuery } from '@framework/contact/contact';
-import ContactBox from '@components/contact/contact-content';
+import { useContactQuery } from "@framework/contact/contact";
+import ContactBox from "@components/contact/contact-content";
 
 const ContactPage: React.FC = () => {
   const { data, isLoading } = useContactQuery();

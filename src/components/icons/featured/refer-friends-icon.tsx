@@ -1,8 +1,8 @@
 const ReferFriendsIcon = ({
-  color = 'currentColor',
-  width = '38px',
-  height = '38px',
-  className = '',
+  color = "currentColor",
+  width = "38px",
+  height = "38px",
+  className = "",
 }) => {
   return (
     <svg

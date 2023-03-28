@@ -1,7 +1,7 @@
-import BannerCard from '@components/cards/banner-card';
-import useWindowSize from '@utils/use-window-size';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from '@components/ui/carousel/slider';
+import BannerCard from "@components/cards/banner-card";
+import useWindowSize from "@utils/use-window-size";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "@components/ui/carousel/slider";
 
 interface BannerProps {
   data: any;
@@ -10,11 +10,11 @@ interface BannerProps {
 }
 
 const breakpoints = {
-  '560': {
+  "560": {
     slidesPerView: 2,
     spaceBetween: 12,
   },
-  '0': {
+  "0": {
     slidesPerView: 1,
   },
 };
@@ -22,7 +22,7 @@ const breakpoints = {
 const BannerGrid: React.FC<BannerProps> = ({
   data,
   grid = 3,
-  className = 'mb-3 xl:mb-6',
+  className = "mb-3 xl:mb-6",
 }) => {
   const { width } = useWindowSize();
   return (

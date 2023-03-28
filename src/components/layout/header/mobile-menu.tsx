@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import Link from '@components/ui/link';
-import { siteSettings } from '@settings/site-settings';
-import Scrollbar from '@components/ui/scrollbar';
-import { IoIosArrowDown } from 'react-icons/io';
-import Logo from '@components/ui/logo';
-import { useUI } from '@contexts/ui.context';
-import { useTranslation } from 'next-i18next';
-import cn from 'classnames';
+import { useState } from "react";
+import Link from "@components/ui/link";
+import { siteSettings } from "@settings/site-settings";
+import Scrollbar from "@components/ui/scrollbar";
+import { IoIosArrowDown } from "react-icons/io";
+import Logo from "@components/ui/logo";
+import { useUI } from "@contexts/ui.context";
+import { useTranslation } from "next-i18next";
+import cn from "classnames";
 
 import {
   IoLogoInstagram,
@@ -14,36 +14,36 @@ import {
   IoLogoFacebook,
   IoLogoYoutube,
   IoClose,
-} from 'react-icons/io5';
+} from "react-icons/io5";
 
 const social = [
   {
     id: 0,
-    link: 'https://www.facebook.com/redqinc/',
+    link: "https://www.facebook.com/redqinc/",
     icon: <IoLogoFacebook />,
-    className: 'facebook',
-    title: 'text-facebook',
+    className: "facebook",
+    title: "text-facebook",
   },
   {
     id: 1,
-    link: 'https://twitter.com/redqinc',
+    link: "https://twitter.com/redqinc",
     icon: <IoLogoTwitter />,
-    className: 'twitter',
-    title: 'text-twitter',
+    className: "twitter",
+    title: "text-twitter",
   },
   {
     id: 2,
-    link: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+    link: "https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw",
     icon: <IoLogoYoutube />,
-    className: 'youtube',
-    title: 'text-youtube',
+    className: "youtube",
+    title: "text-youtube",
   },
   {
     id: 3,
-    link: 'https://www.instagram.com/redqinc/',
+    link: "https://www.instagram.com/redqinc/",
     icon: <IoLogoInstagram />,
-    className: 'instagram',
-    title: 'text-instagram',
+    className: "instagram",
+    title: "text-instagram",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function MobileMenu() {
   const [activeMenus, setActiveMenus] = useState<any>([]);
   const { site_header } = siteSettings;
   const { closeSidebar } = useUI();
-  const { t } = useTranslation('menu');
+  const { t } = useTranslation("menu");
   const handleArrowClick = (menuName: string) => {
     const newActiveMenus = [...activeMenus];
     if (newActiveMenus.includes(menuName)) {
@@ -71,7 +71,7 @@ export default function MobileMenu() {
     hasSubMenu,
     menuName,
     menuIndex,
-    className = '',
+    className = "",
   }: any) =>
     data.label && (
       <li className={`transition-colors duration-200 ${className}`}>
@@ -91,7 +91,7 @@ export default function MobileMenu() {
             >
               <IoIosArrowDown
                 className={`transition duration-200 ease-in-out transform ${
-                  activeMenus.includes(menuName) ? '-rotate-180' : 'rotate-0'
+                  activeMenus.includes(menuName) ? "-rotate-180" : "rotate-0"
                 }`}
               />
             </div>
@@ -116,7 +116,7 @@ export default function MobileMenu() {
     dept = dept + 1;
 
     return (
-      <ul className={cn('mobile-sub-menu', dept > 2 && 'ltr:-ml-4 rtl:-mr-4')}>
+      <ul className={cn("mobile-sub-menu", dept > 2 && "ltr:-ml-4 rtl:-mr-4")}>
         {data?.map((menu: any, index: number) => {
           const menuName = `sidebar-submenu-${dept}-${menuIndex}-${index}`;
 
@@ -129,8 +129,8 @@ export default function MobileMenu() {
               key={menuName}
               menuIndex={index}
               className={cn(
-                dept > 1 && 'ltr:pl-4 rtl:pr-4',
-                dept > 2 && 'ltr:pl-8 rtl:pr-8'
+                dept > 1 && "ltr:pl-4 rtl:pr-4",
+                dept > 2 && "ltr:pl-8 rtl:pr-8"
               )}
             />
           );

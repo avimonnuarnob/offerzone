@@ -1,15 +1,15 @@
-import SectionHeader from '@components/common/section-header';
-import ProductCardAlpine from '@components/product/product-cards/product-card-alpine';
-import ProductCardOak from '@components/product/product-cards/product-card-oak';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import { Product } from '@framework/types';
-import Alert from '@components/ui/alert';
-import cn from 'classnames';
+import SectionHeader from "@components/common/section-header";
+import ProductCardAlpine from "@components/product/product-cards/product-card-alpine";
+import ProductCardOak from "@components/product/product-cards/product-card-oak";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import { Product } from "@framework/types";
+import Alert from "@components/ui/alert";
+import cn from "classnames";
 
 interface ProductsProps {
   sectionHeading: string;
   sectionSubHeading?: string;
-  headingPosition?: 'left' | 'center';
+  headingPosition?: "left" | "center";
   className?: string;
   products?: Product[];
   loading: boolean;
@@ -22,14 +22,14 @@ interface ProductsProps {
 const ProductsGridBlock: React.FC<ProductsProps> = ({
   sectionHeading,
   sectionSubHeading,
-  headingPosition = 'center',
-  className = 'mb-12 lg:mb-14 xl:mb-16',
+  headingPosition = "center",
+  className = "mb-12 lg:mb-14 xl:mb-16",
   products,
   loading,
   error,
   limit,
   uniqueKey,
-  variant = 'alpine',
+  variant = "alpine",
 }) => {
   return (
     <div className={`${className}`}>
@@ -40,14 +40,14 @@ const ProductsGridBlock: React.FC<ProductsProps> = ({
       />
       <div
         className={cn(
-          'grid',
+          "grid",
           {
-            'grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 3xl:grid-cols-7 md:gap-4 2xl:gap-5':
-              variant === 'alpine',
+            "grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 3xl:grid-cols-7 md:gap-4 2xl:gap-5":
+              variant === "alpine",
           },
           {
-            'grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 md:gap-4 2xl:gap-5':
-              variant === 'oak',
+            "grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 md:gap-4 2xl:gap-5":
+              variant === "oak",
           }
         )}
       >
@@ -62,7 +62,7 @@ const ProductsGridBlock: React.FC<ProductsProps> = ({
           ))
         ) : (
           products?.map((product: any) =>
-            variant === 'oak' ? (
+            variant === "oak" ? (
               <ProductCardOak
                 key={`${uniqueKey}-${product.id}`}
                 product={product}

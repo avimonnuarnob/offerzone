@@ -1,9 +1,9 @@
-import cn from 'classnames';
+import cn from "classnames";
 const ArrowIcon = ({
-  className = '',
-  color = 'currentColor',
-  width = '50',
-  height = '50',
+  className = "",
+  color = "currentColor",
+  width = "50",
+  height = "50",
 }) => {
   return (
     <svg

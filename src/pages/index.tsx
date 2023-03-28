@@ -1,26 +1,26 @@
-import Layout from '@components/layout/layout-two';
-import Container from '@components/ui/container';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import DownloadApps from '@components/common/download-apps';
-import BundleGrid from '@components/bundle/bundle-grid';
-import CollectionGrid from '@components/common/collection-grid';
-import HeroBannerCard from '@components/hero/hero-banner-card';
-import BestSellerGroceryProductFeed from '@components/product/feeds/best-seller-grocery-product-feed';
-import PopularProductFeed from '@components/product/feeds/popular-product-feed';
-import CategoryGridBlock from '@components/common/category-grid-block';
-import { homeSixHeroBanner as heroBanner } from '@framework/static/banner';
-import { homeSixBanner as banner } from '@framework/static/banner';
-import BannerCard from '@components/cards/banner-card';
-import { bundleDataTwo as bundle } from '@framework/static/bundle';
-import { GetStaticProps } from 'next';
-import Seo from '@components/seo/seo';
-import { QueryClient } from 'react-query';
-import { dehydrate } from 'react-query/hydration';
-import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
-import { fetchCategories } from '@framework/category/get-all-categories';
-import { fetchBestSellerGroceryProducts } from '@framework/product/get-all-best-seller-grocery-products';
-import { fetchPopularProducts } from '@framework/product/get-all-popular-products';
-import { LIMITS } from '@framework/utils/limits';
+import Layout from "@components/layout/layout-two";
+import Container from "@components/ui/container";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import DownloadApps from "@components/common/download-apps";
+import BundleGrid from "@components/bundle/bundle-grid";
+import CollectionGrid from "@components/common/collection-grid";
+import HeroBannerCard from "@components/hero/hero-banner-card";
+import BestSellerGroceryProductFeed from "@components/product/feeds/best-seller-grocery-product-feed";
+import PopularProductFeed from "@components/product/feeds/popular-product-feed";
+import CategoryGridBlock from "@components/common/category-grid-block";
+import { homeSixHeroBanner as heroBanner } from "@framework/static/banner";
+import { homeSixBanner as banner } from "@framework/static/banner";
+import BannerCard from "@components/cards/banner-card";
+import { bundleDataTwo as bundle } from "@framework/static/bundle";
+import { GetStaticProps } from "next";
+import Seo from "@components/seo/seo";
+import { DehydratedState, QueryClient } from "react-query";
+import { dehydrate } from "react-query/hydration";
+import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
+import { fetchCategories } from "@framework/category/get-all-categories";
+import { fetchBestSellerGroceryProducts } from "@framework/product/get-all-best-seller-grocery-products";
+import { fetchPopularProducts } from "@framework/product/get-all-popular-products";
+import { LIMITS } from "@framework/utils/limits";
 
 export default function Home() {
   return (
@@ -80,12 +80,14 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+      dehydratedState: JSON.parse(
+        JSON.stringify(dehydrate(queryClient))
+      ) as DehydratedState,
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
     revalidate: 60,

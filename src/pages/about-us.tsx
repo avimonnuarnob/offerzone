@@ -1,23 +1,23 @@
-import Layout from '@components/layout/layout';
-import Container from '@components/ui/container';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import { GetStaticProps } from 'next';
-import DownloadApps from '@components/common/download-apps';
-import { aboutSetting } from '@settings/about-setting';
-import Image from '@components/ui/image';
-import Seo from '@components/seo/seo';
+import Layout from "@components/layout/layout";
+import Container from "@components/ui/container";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { GetStaticProps } from "next";
+import DownloadApps from "@components/common/download-apps";
+import { aboutSetting } from "@settings/about-setting";
+import Image from "@components/ui/image";
+import Seo from "@components/seo/seo";
 
-const backgroundThumbnail = '/assets/images/about-us.png';
-const aboutUs1 = '/assets/images/about-us/1.png';
-const aboutUs2 = '/assets/images/about-us/2.png';
-const aboutUs3 = '/assets/images/about-us/3.png';
-const aboutUs4 = '/assets/images/about-us/4.png';
-const aboutUs5 = '/assets/images/about-us/5.png';
-const aboutUs6 = '/assets/images/about-us/6.png';
+const backgroundThumbnail = "/assets/images/about-us.png";
+const aboutUs1 = "/assets/images/about-us/1.png";
+const aboutUs2 = "/assets/images/about-us/2.png";
+const aboutUs3 = "/assets/images/about-us/3.png";
+const aboutUs4 = "/assets/images/about-us/4.png";
+const aboutUs5 = "/assets/images/about-us/5.png";
+const aboutUs6 = "/assets/images/about-us/6.png";
 
 export default function TermsPage() {
-  const { t } = useTranslation('about');
+  const { t } = useTranslation("about");
   return (
     <>
       <Seo
@@ -48,14 +48,14 @@ export default function TermsPage() {
             <div className="grid grid-cols-2 gap-4 my-8 lg:my-14">
               <Image
                 src={aboutUs1}
-                alt={t('text-map')}
+                alt={t("text-map")}
                 className="ltr:mr-5 rtl:ml-5"
                 width={576}
                 height={390}
               />
               <Image
                 src={aboutUs2}
-                alt={t('text-map')}
+                alt={t("text-map")}
                 className=""
                 width={576}
                 height={390}
@@ -70,21 +70,21 @@ export default function TermsPage() {
             <div className="flex flex-col grid-cols-3 gap-4 my-8 lg:my-14 sm:grid">
               <Image
                 src={aboutUs3}
-                alt={t('text-map')}
+                alt={t("text-map")}
                 className="ltr:mr-4 rtl:ml-4"
                 width={379}
                 height={262}
               />
               <Image
                 src={aboutUs4}
-                alt={t('text-map')}
+                alt={t("text-map")}
                 className="ltr:mr-4 rtl:ml-4"
                 width={379}
                 height={262}
               />
               <Image
                 src={aboutUs5}
-                alt={t('text-map')}
+                alt={t("text-map")}
                 className=""
                 width={379}
                 height={262}
@@ -99,7 +99,7 @@ export default function TermsPage() {
             <div className="flex mt-8 mb-6 lg:mt-14 lg:mb-10">
               <Image
                 src={aboutUs6}
-                alt={t('text-map')}
+                alt={t("text-map")}
                 className="ltr:mr-4 rtl:ml-4"
                 height={400}
                 width={1200}
@@ -139,11 +139,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'about',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "about",
+        "footer",
       ])),
     },
   };

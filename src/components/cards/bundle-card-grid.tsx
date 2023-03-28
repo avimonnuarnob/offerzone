@@ -1,8 +1,8 @@
-import Image from '@components/ui/image';
-import Link from '@components/ui/link';
-import { LinkProps } from 'next/link';
-import { useTranslation } from 'next-i18next';
-import cn from 'classnames';
+import Image from "@components/ui/image";
+import Link from "@components/ui/link";
+import { LinkProps } from "next/link";
+import { useTranslation } from "next-i18next";
+import cn from "classnames";
 
 interface Props {
   imgWidth?: number | string;
@@ -10,7 +10,7 @@ interface Props {
   className?: string;
   thumbnailClassName?: string;
   effectActive?: boolean;
-  href: LinkProps['href'];
+  href: LinkProps["href"];
   bundle: {
     image: string;
     title: string;
@@ -23,19 +23,19 @@ const BundleCardGrid: React.FC<Props> = ({
   bundle,
   imgWidth = 593,
   imgHeight = 490,
-  className = '',
+  className = "",
   effectActive = true,
   href,
 }) => {
   const { image, title } = bundle;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
-    <Link href={href} className={cn('group flex', className)}>
+    <Link href={href} className={cn("group flex", className)}>
       <div className="relative flex items-center w-full overflow-hidden">
         <div className="relative flex max-w-full shrink-0">
           <Image
-            src={image ?? '/assets/placeholder/collection.svg'}
-            alt={t(title) || t('text-card-thumbnail')}
+            src={image ?? "/assets/placeholder/collection.svg"}
+            alt={t(title) || t("text-card-thumbnail")}
             width={imgWidth}
             height={imgHeight}
             className="object-cover bg-sink-thumbnail"

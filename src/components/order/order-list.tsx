@@ -1,5 +1,5 @@
-import { useOrdersQuery } from '@framework/order/get-all-orders';
-import OrderTable from '@components/order/order-table';
+import { useOrdersQuery } from "@framework/order/get-all-orders";
+import OrderTable from "@components/order/order-table";
 
 export default function OrderLists() {
   const { data, isLoading } = useOrdersQuery({});

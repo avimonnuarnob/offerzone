@@ -1,8 +1,8 @@
 const ChatIcon = ({
-  color = 'currentColor',
-  width = '40px',
-  height = '40px',
-  className = '',
+  color = "currentColor",
+  width = "40px",
+  height = "40px",
+  className = "",
 }) => {
   return (
     <svg

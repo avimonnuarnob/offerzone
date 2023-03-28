@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
-import { IoClose } from 'react-icons/io5';
-import isEmpty from 'lodash/isEmpty';
+import { useRouter } from "next/router";
+import { IoClose } from "react-icons/io5";
+import isEmpty from "lodash/isEmpty";
 
 interface Props {
   itemKey: string;
@@ -13,14 +13,14 @@ export const FilteredItem = ({ itemKey, itemValue }: Props) => {
 
   function handleClose() {
     const currentItem = (query[itemKey]! as string)
-      .split(',')
+      .split(",")
       .filter((i) => i !== itemValue);
     delete query[itemKey];
     router.push({
       pathname,
       query: {
         ...query,
-        ...(!isEmpty(currentItem) ? { [itemKey]: currentItem.join(',') } : {}),
+        ...(!isEmpty(currentItem) ? { [itemKey]: currentItem.join(",") } : {}),
       },
     });
   }

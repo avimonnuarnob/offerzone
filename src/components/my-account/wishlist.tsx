@@ -1,6 +1,6 @@
-import Layout from '@components/layout/layout';
+import Layout from "@components/layout/layout";
 
-import ProductWishlistGrid from '@components/product/wishlist-product';
+import ProductWishlistGrid from "@components/product/wishlist-product";
 
 export default function Wishlist() {
   return (

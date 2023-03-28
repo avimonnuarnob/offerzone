@@ -75,7 +75,7 @@
   @apply relative py-2.5 text-opacity-90;
 }
 .mobile-menu li > ul > li > div > a:before {
-  content: '';
+  content: "";
   height: 1px;
   @apply flex absolute top-1/2 ltr:left-1 rtl:right-1 md:ltr:left-3 md:rtl:right-3 w-[7px] bg-brand-dark;
 }
@@ -87,7 +87,7 @@
 
 .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 16px;
   width: 16px;
   left: 4px;
@@ -138,7 +138,7 @@ input:checked + .slider:before {
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 1)
     );
-    content: '';
+    content: "";
     z-index: 5;
   }
 }
@@ -374,7 +374,7 @@ input:checked + .slider:before {
 
 /* Address box */
 
-.address__box input[type='radio']:checked ~ label {
+.address__box input[type="radio"]:checked ~ label {
   border-color: #02b290;
 }
 
@@ -400,7 +400,7 @@ input:checked + .slider:before {
   opacity: 1;
 }
 .borderColor::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 2px;
   width: 3px;

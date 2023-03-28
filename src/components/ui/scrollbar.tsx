@@ -1,6 +1,6 @@
-import cn from 'classnames';
-import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
-import 'overlayscrollbars/css/OverlayScrollbars.min.css';
+import cn from "classnames";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
+import "overlayscrollbars/css/OverlayScrollbars.min.css";
 
 type ScrollbarProps = {
   options?: any;
@@ -19,9 +19,9 @@ const Scrollbar: React.FC<ScrollbarProps> = ({
   return (
     <OverlayScrollbarsComponent
       options={{
-        className: cn('os-theme-thin', className),
+        className: cn("os-theme-thin", className),
         scrollbars: {
-          autoHide: 'scroll',
+          autoHide: "scroll",
         },
         ...options,
       }}

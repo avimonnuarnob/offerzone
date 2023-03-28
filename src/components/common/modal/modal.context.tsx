@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
 type MODAL_VIEWS =
-  | 'SIGN_UP_VIEW'
-  | 'LOGIN_VIEW'
-  | 'FORGET_PASSWORD'
-  | 'PAYMENT'
-  | 'ADDRESS_VIEW_AND_EDIT'
-  | 'PHONE_NUMBER'
-  | 'DELIVERY_VIEW'
-  | 'PRODUCT_VIEW'
-  | 'CATEGORY_VIEW';
+  | "SIGN_UP_VIEW"
+  | "LOGIN_VIEW"
+  | "FORGET_PASSWORD"
+  | "PAYMENT"
+  | "ADDRESS_VIEW_AND_EDIT"
+  | "PHONE_NUMBER"
+  | "DELIVERY_VIEW"
+  | "PRODUCT_VIEW"
+  | "CATEGORY_VIEW";
 
 interface State {
   view?: MODAL_VIEWS;
@@ -17,8 +17,8 @@ interface State {
   isOpen: boolean;
 }
 type Action =
-  | { type: 'open'; view?: MODAL_VIEWS; payload?: any }
-  | { type: 'close' };
+  | { type: "open"; view?: MODAL_VIEWS; payload?: any }
+  | { type: "close" };
 
 const initialState: State = {
   view: undefined,
@@ -28,14 +28,14 @@ const initialState: State = {
 
 function modalReducer(state: State, action: Action): State {
   switch (action.type) {
-    case 'open':
+    case "open":
       return {
         ...state,
         view: action.view,
         data: action.payload,
         isOpen: true,
       };
-    case 'close':
+    case "close":
       return {
         ...state,
         view: undefined,
@@ -43,16 +43,16 @@ function modalReducer(state: State, action: Action): State {
         isOpen: false,
       };
     default:
-      throw new Error('Unknown Modal Action!');
+      throw new Error("Unknown Modal Action!");
   }
 }
 
 const ModalStateContext = React.createContext<State>(initialState);
-ModalStateContext.displayName = 'ModalStateContext';
+ModalStateContext.displayName = "ModalStateContext";
 const ModalActionContext = React.createContext<
   React.Dispatch<Action> | undefined
 >(undefined);
-ModalActionContext.displayName = 'ModalActionContext';
+ModalActionContext.displayName = "ModalActionContext";
 
 export function ModalProvider({ children }: React.PropsWithChildren<unknown>) {
   const [state, dispatch] = React.useReducer(modalReducer, initialState);
@@ -80,10 +80,10 @@ export function useModalAction() {
   }
   return {
     openModal: (view?: MODAL_VIEWS, payload?: unknown) => {
-      dispatch({ type: 'open', view, payload });
+      dispatch({ type: "open", view, payload });
     },
     closeModal: () => {
-      dispatch({ type: 'close' });
+      dispatch({ type: "close" });
     },
   };
 }

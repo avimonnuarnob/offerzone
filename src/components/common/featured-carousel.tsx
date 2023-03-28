@@ -1,11 +1,11 @@
-import ChatIcon from '@components/icons/featured/chat-icon';
-import FeedbackIcon from '@components/icons/featured/feedback-icon';
-import CalendarIcon from '@components/icons/featured/calendar-icon';
-import CouponIcon from '@components/icons/featured/coupon-icon';
-import FeaturedCard from '@components/cards/featured-card-two';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from '@components/ui/carousel/slider';
-import PromotionIcon from '@components/icons/featured/promotion-icon';
+import ChatIcon from "@components/icons/featured/chat-icon";
+import FeedbackIcon from "@components/icons/featured/feedback-icon";
+import CalendarIcon from "@components/icons/featured/calendar-icon";
+import CouponIcon from "@components/icons/featured/coupon-icon";
+import FeaturedCard from "@components/cards/featured-card-two";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "@components/ui/carousel/slider";
+import PromotionIcon from "@components/icons/featured/promotion-icon";
 
 const data = [
   {
@@ -16,8 +16,8 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-five',
-    description: 'feature-title-five-description',
+    title: "feature-title-five",
+    description: "feature-title-five-description",
   },
   {
     id: 2,
@@ -27,8 +27,8 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-six',
-    description: 'feature-title-six-description',
+    title: "feature-title-six",
+    description: "feature-title-six-description",
   },
   {
     id: 3,
@@ -40,8 +40,8 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-seven',
-    description: 'feature-title-seven-description',
+    title: "feature-title-seven",
+    description: "feature-title-seven-description",
   },
   {
     id: 4,
@@ -51,8 +51,8 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-eight',
-    description: 'feature-title-eight-description',
+    title: "feature-title-eight",
+    description: "feature-title-eight-description",
   },
   {
     id: 5,
@@ -64,8 +64,8 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-nine',
-    description: 'feature-title-nine-description',
+    title: "feature-title-nine",
+    description: "feature-title-nine-description",
   },
 ];
 
@@ -74,29 +74,29 @@ interface Props {
 }
 
 const breakpoints = {
-  '1400': {
+  "1400": {
     slidesPerView: 4,
     spaceBetween: 24,
   },
-  '1024': {
+  "1024": {
     slidesPerView: 3,
     spaceBetween: 16,
   },
-  '768': {
+  "768": {
     slidesPerView: 2,
     spaceBetween: 16,
   },
-  '640 ': {
+  "640 ": {
     slidesPerView: 2,
     spaceBetween: 12,
   },
-  '0': {
+  "0": {
     slidesPerView: 1,
   },
 };
 
 const FeatureCarousel: React.FC<Props> = ({
-  className = 'mb-12 md:mb-14 xl:mb-[74px]',
+  className = "mb-12 md:mb-14 xl:mb-[74px]",
 }) => {
   return (
     <div className={`heightFull ${className}`}>

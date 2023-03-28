@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   GoogleMap,
   useJsApiLoader,
   Marker,
   InfoWindow,
-} from '@react-google-maps/api';
+} from "@react-google-maps/api";
 
 interface UserMapData {
   lat: number;
@@ -32,8 +32,8 @@ const Map: React.FC<Props> = ({
   mapCurrentPosition,
 }) => {
   const containerStyle = {
-    width: '100%',
-    height: height || '420px',
+    width: "100%",
+    height: height || "420px",
   };
 
   const center = {
@@ -42,7 +42,7 @@ const Map: React.FC<Props> = ({
   };
 
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
+    id: "google-map-script",
     googleMapsApiKey: `${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`,
   });
 
@@ -51,7 +51,7 @@ const Map: React.FC<Props> = ({
   const [infoWindowToggle, setInfoWindowToggle] = useState<boolean>(false);
 
   const onMarkerDragEnd = (e: any) => {
-    if (e.domEvent.type === 'click') {
+    if (e.domEvent.type === "click") {
       setInfoWindowToggle(true);
     }
     const geocoder = new (window as any).google.maps.Geocoder();
@@ -70,10 +70,10 @@ const Map: React.FC<Props> = ({
           setMapPosition(latLng);
           setInfoWindowToggle(true);
         } else {
-          window.alert('No results found');
+          window.alert("No results found");
         }
       })
-      .catch((e: any) => window.alert('Geocoder failed due to: ' + e));
+      .catch((e: any) => window.alert("Geocoder failed due to: " + e));
   };
   return isLoaded ? (
     <>
@@ -86,7 +86,7 @@ const Map: React.FC<Props> = ({
           position={mapPosition || center}
           draggable={true}
           visible={true}
-          icon={'/assets/images/pin.png'}
+          icon={"/assets/images/pin.png"}
           onDragEnd={(e) => onMarkerDragEnd(e)}
           onClick={(e) => onMarkerDragEnd(e)}
         >

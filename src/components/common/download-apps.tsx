@@ -1,25 +1,25 @@
-import Image from '@components/ui/image';
-import cn from 'classnames';
-import Link from '@components/ui/link';
-import { useTranslation } from 'next-i18next';
+import Image from "@components/ui/image";
+import cn from "classnames";
+import Link from "@components/ui/link";
+import { useTranslation } from "next-i18next";
 const data = {
-  title: 'app-heading',
-  description: 'app-description',
-  appImage: '/assets/images/app-thumbnail.png',
+  title: "app-heading",
+  description: "app-description",
+  appImage: "/assets/images/app-thumbnail.png",
   appButtons: [
     {
       id: 1,
-      slug: '/#',
-      altText: 'button-app-store',
-      appButton: '/assets/images/app-store.png',
+      slug: "/#",
+      altText: "button-app-store",
+      appButton: "/assets/images/app-store.png",
       buttonWidth: 170,
       buttonHeight: 56,
     },
     {
       id: 2,
-      slug: '/#',
-      altText: 'button-play-store',
-      appButton: '/assets/images/play-store.png',
+      slug: "/#",
+      altText: "button-play-store",
+      appButton: "/assets/images/play-store.png",
       buttonWidth: 170,
       buttonHeight: 56,
     },
@@ -30,11 +30,11 @@ interface Props {
   className?: string;
 }
 
-const DownloadApps: React.FC<Props> = ({ className = 'pt-1.5 md:pt-0' }) => {
+const DownloadApps: React.FC<Props> = ({ className = "pt-1.5 md:pt-0" }) => {
   const { appButtons, title, description, appImage } = data;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
-    <div className={cn('bg-fill-two overflow-hidden', className)}>
+    <div className={cn("bg-fill-two overflow-hidden", className)}>
       <div className="max-w-[1920px] mx-auto px-4 sm:px-5 md:px-6 lg:px-16 xl:px-28 2xl:px-32 3xl:px-40 md:flex justify-between items-center">
         <div className="shrink-0 mx-auto md:ltr:ml-0 md:rtl:mr-0 lg:flex lg:items-center pb-5 pt-1.5 md:pt-4 max-w-[350px] md:max-w-[340px] lg:max-w-[485px] xl:max-w-[540px] 2xl:max-w-[680px] 3xl:ltr:pl-10 3xl:rtl:pr-10">
           <div className="py-8 text-center xl:py-10 2xl:py-14 md:ltr:text-left md:rtl:text-right">
@@ -66,7 +66,7 @@ const DownloadApps: React.FC<Props> = ({ className = 'pt-1.5 md:pt-0' }) => {
         <div className="hidden md:flex items-end ltr:pl-4 rtl:pr-4 2xl:ltr:pl-0 2xl:rtl:pr-0 md:max-w-[480px] lg:max-w-[540px] xl:max-w-auto ltr:-mr-16 rtl:-ml-16 lg:ltr:-mr-8 lg:rtl:-ml-8 3xl:ltr:mr-24 3xl:rtl:ml-24">
           <Image
             src={appImage}
-            alt={t('text-app-thumbnail')}
+            alt={t("text-app-thumbnail")}
             width={597}
             height={500}
           />

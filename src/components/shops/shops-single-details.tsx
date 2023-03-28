@@ -1,28 +1,28 @@
-import { useShopQuery } from '@framework/shop/get-shop';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { useUI } from '@contexts/ui.context';
-import { getDirection } from '@utils/get-direction';
-import { Element } from 'react-scroll';
-import Container from '@components/ui/container';
-import { Drawer } from '@components/common/drawer/drawer';
-import ShopSidebar from '@components/shops/shop-sidebar';
-import ShopSidebarDrawer from '@components/shops/shop-sidebar-drawer';
-import AllProductFeed from '@components/product/feeds/all-products-feed';
-import { useTranslation } from 'next-i18next';
-import useWindowSize from '@utils/use-window-size';
+import { useShopQuery } from "@framework/shop/get-shop";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { useUI } from "@contexts/ui.context";
+import { getDirection } from "@utils/get-direction";
+import { Element } from "react-scroll";
+import Container from "@components/ui/container";
+import { Drawer } from "@components/common/drawer/drawer";
+import ShopSidebar from "@components/shops/shop-sidebar";
+import ShopSidebarDrawer from "@components/shops/shop-sidebar-drawer";
+import AllProductFeed from "@components/product/feeds/all-products-feed";
+import { useTranslation } from "next-i18next";
+import useWindowSize from "@utils/use-window-size";
 
 export default function ShopsSingleDetails() {
   const {
     query: { slug },
   } = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { data, isLoading } = useShopQuery(slug as string);
   const { openShop, displayShop, closeShop } = useUI();
   const { width } = useWindowSize();
   const { locale } = useRouter();
   const dir = getDirection(locale);
-  const contentWrapperCSS = dir === 'ltr' ? { left: 0 } : { right: 0 };
+  const contentWrapperCSS = dir === "ltr" ? { left: 0 } : { right: 0 };
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -56,7 +56,7 @@ export default function ShopsSingleDetails() {
             className="block text-sm font-medium transition-all text-brand hover:text-brand-muted"
             onClick={openShop}
           >
-            {t('text-more-info')}
+            {t("text-more-info")}
           </button>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function ShopsSingleDetails() {
       </Container>
       {/*TODO: multiple drawer uses throughout the app is a bad practice */}
       <Drawer
-        placement={dir === 'rtl' ? 'right' : 'left'}
+        placement={dir === "rtl" ? "right" : "left"}
         open={displayShop}
         onClose={closeShop}
         // @ts-ignore

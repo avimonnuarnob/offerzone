@@ -1,7 +1,7 @@
-import { usePopcornJerkyProductsQuery } from '@framework/product/get-all-popcorn-jerky-products';
-import ProductsCarousel from '@components/product/products-carousel';
-import { ROUTES } from '@utils/routes';
-import { LIMITS } from '@framework/utils/limits';
+import { usePopcornJerkyProductsQuery } from "@framework/product/get-all-popcorn-jerky-products";
+import ProductsCarousel from "@components/product/products-carousel";
+import { ROUTES } from "@utils/routes";
+import { LIMITS } from "@framework/utils/limits";
 
 export default function PopcornJerkyProductFeed() {
   const { data, isLoading, error } = usePopcornJerkyProductsQuery({

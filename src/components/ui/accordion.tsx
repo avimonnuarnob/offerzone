@@ -1,18 +1,18 @@
-import cn from 'classnames';
-import { Disclosure, Transition } from '@headlessui/react';
-import { useTranslation } from 'next-i18next';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import cn from "classnames";
+import { Disclosure, Transition } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 type CollapseProps = {
   item: any;
   translatorNS: string;
-  variant?: 'gray' | 'transparent';
+  variant?: "gray" | "transparent";
 };
 
 export const Accordion: React.FC<CollapseProps> = ({
   item,
   translatorNS,
-  variant = 'gray',
+  variant = "gray",
 }) => {
   const { t } = useTranslation(translatorNS);
   const { id, title, content } = item;
@@ -25,10 +25,10 @@ export const Accordion: React.FC<CollapseProps> = ({
               <Disclosure.Button className="flex justify-between w-full px-5 py-4 text-base font-medium 2xl:px-6 2xl:py-6 ltr:text-left rtl:text-right text-brand-dark focus:outline-none">
                 <span
                   className={cn(
-                    'text-sm font-medium leading-relaxed text-heading ltr:pr-2 rtl:pl-2',
+                    "text-sm font-medium leading-relaxed text-heading ltr:pr-2 rtl:pl-2",
                     {
-                      'md:text-base': variant === 'gray',
-                      'md:text-base lg:text-lg': variant === 'transparent',
+                      "md:text-base": variant === "gray",
+                      "md:text-base lg:text-lg": variant === "transparent",
                     }
                   )}
                 >
@@ -36,7 +36,7 @@ export const Accordion: React.FC<CollapseProps> = ({
                 </span>
                 <MdKeyboardArrowRight
                   className={`text-xl lg:text-2xl text-brand-dark text-opacity-60 group-hover:text-opacity-100 -mr-2 lg:-mr-1.5 shrink-0 ${
-                    open ? 'transform rotate-90' : ''
+                    open ? "transform rotate-90" : ""
                   }`}
                 />
               </Disclosure.Button>

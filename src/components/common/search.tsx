@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import cn from 'classnames';
-import { useSearchQuery } from '@framework/product/use-search';
-import SearchBox from '@components/common/search-box';
-import SearchProduct from '@components/common/search-product';
-import SearchResultLoader from '@components/ui/loaders/search-result-loader';
-import useFreezeBodyScroll from '@utils/use-freeze-body-scroll';
-import Scrollbar from '@components/ui/scrollbar';
-import { useUI } from '@contexts/ui.context';
+import React, { useState } from "react";
+import cn from "classnames";
+import { useSearchQuery } from "@framework/product/use-search";
+import SearchBox from "@components/common/search-box";
+import SearchProduct from "@components/common/search-product";
+import SearchResultLoader from "@components/ui/loaders/search-result-loader";
+import useFreezeBodyScroll from "@utils/use-freeze-body-scroll";
+import Scrollbar from "@components/ui/scrollbar";
+import { useUI } from "@contexts/ui.context";
 
 type Props = {
   className?: string;
   searchId?: string;
-  variant?: 'border' | 'fill';
+  variant?: "border" | "fill";
 };
 
 const Search = React.forwardRef<HTMLDivElement, Props>(
   (
     {
-      className = 'md:w-[730px] 2xl:w-[800px]',
-      searchId = 'search',
-      variant = 'border',
+      className = "md:w-[730px] 2xl:w-[800px]",
+      searchId = "search",
+      variant = "border",
     },
     ref
   ) => {
@@ -29,7 +29,7 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
       displaySearch,
       closeSearch,
     } = useUI();
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState("");
     const [inputFocus, setInputFocus] = useState<boolean>(false);
     const { data, isLoading } = useSearchQuery({
       text: searchText,
@@ -44,7 +44,7 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
       setSearchText(e.currentTarget.value);
     }
     function clear() {
-      setSearchText('');
+      setSearchText("");
       setInputFocus(false);
       closeMobileSearch();
       closeSearch();
@@ -57,17 +57,17 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
       <div
         ref={ref}
         className={cn(
-          'w-full transition-all duration-200 ease-in-out',
+          "w-full transition-all duration-200 ease-in-out",
           className
         )}
       >
         <div
           className={cn(
-            'overlay cursor-pointer invisible w-full h-full opacity-0 flex top-0 ltr:left-0 rtl:right-0 transition-all duration-300 fixed',
+            "overlay cursor-pointer invisible w-full h-full opacity-0 flex top-0 ltr:left-0 rtl:right-0 transition-all duration-300 fixed",
             {
               open: displayMobileSearch,
-              'input-focus-overlay-open': inputFocus === true,
-              'open-search-overlay': displaySearch,
+              "input-focus-overlay-open": inputFocus === true,
+              "open-search-overlay": displaySearch,
             }
           )}
           onClick={() => clear()}
@@ -125,5 +125,5 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
   }
 );
 
-Search.displayName = 'Search';
+Search.displayName = "Search";
 export default Search;

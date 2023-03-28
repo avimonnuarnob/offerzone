@@ -1,15 +1,15 @@
-import Input from '@components/ui/form/input';
-import PasswordInput from '@components/ui/form/password-input';
-import Button from '@components/ui/button';
-import Heading from '@components/ui/heading';
-import { useForm, Controller } from 'react-hook-form';
+import Input from "@components/ui/form/input";
+import PasswordInput from "@components/ui/form/password-input";
+import Button from "@components/ui/button";
+import Heading from "@components/ui/heading";
+import { useForm, Controller } from "react-hook-form";
 import {
   useUpdateUserMutation,
   UpdateUserType,
-} from '@framework/customer/use-update-customer';
-import { useTranslation } from 'next-i18next';
-import Switch from '@components/ui/switch';
-import Text from '@components/ui/text';
+} from "@framework/customer/use-update-customer";
+import { useTranslation } from "next-i18next";
+import Switch from "@components/ui/switch";
+import Text from "@components/ui/text";
 
 const defaultValues = {};
 
@@ -30,7 +30,7 @@ const AccountDetails: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       <Heading variant="titleLarge" className="mb-5 md:mb-6 lg:mb-7 lg:-mt-1">
-        {t('common:text-account-details-personal')}
+        {t("common:text-account-details-personal")}
       </Heading>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -41,18 +41,18 @@ const AccountDetails: React.FC = () => {
           <div className="flex flex-col space-y-4 sm:space-y-5">
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
               <Input
-                label={t('forms:label-first-name')}
-                {...register('firstName', {
-                  required: 'forms:first-name-required',
+                label={t("forms:label-first-name")}
+                {...register("firstName", {
+                  required: "forms:first-name-required",
                 })}
                 variant="solid"
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
                 error={errors.firstName?.message}
               />
               <Input
-                label={t('forms:label-last-name')}
-                {...register('lastName', {
-                  required: 'forms:last-name-required',
+                label={t("forms:label-last-name")}
+                {...register("lastName", {
+                  required: "forms:last-name-required",
                 })}
                 variant="solid"
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
@@ -62,9 +62,9 @@ const AccountDetails: React.FC = () => {
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
               <Input
                 type="tel"
-                label={t('forms:label-phone')}
-                {...register('phoneNumber', {
-                  required: 'forms:phone-required',
+                label={t("forms:label-phone")}
+                {...register("phoneNumber", {
+                  required: "forms:phone-required",
                 })}
                 variant="solid"
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
@@ -77,20 +77,20 @@ const AccountDetails: React.FC = () => {
           variant="titleLarge"
           className="pt-6 mb-5 xl:mb-8 md:pt-7 lg:pt-8"
         >
-          {t('common:text-account-details-account')}
+          {t("common:text-account-details-account")}
         </Heading>
         <div className="border-b border-border-base pb-7 md:pb-9 lg:pb-10">
           <div className="flex flex-col space-y-4 sm:space-y-5">
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
               <Input
                 type="email"
-                label={t('forms:label-email-star')}
-                {...register('email', {
-                  required: 'forms:email-required',
+                label={t("forms:label-email-star")}
+                {...register("email", {
+                  required: "forms:email-required",
                   pattern: {
                     value:
                       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                    message: 'forms:email-error',
+                    message: "forms:email-error",
                   },
                 })}
                 variant="solid"
@@ -101,17 +101,17 @@ const AccountDetails: React.FC = () => {
             <div className="flex flex-col sm:flex-row -mx-1.5 md:-mx-2.5 space-y-4 sm:space-y-0">
               <PasswordInput
                 type="tel"
-                label={t('forms:label-password')}
-                {...register('password', {
-                  required: 'forms:password-required',
+                label={t("forms:label-password")}
+                {...register("password", {
+                  required: "forms:password-required",
                 })}
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
                 error={errors.password?.message}
               />
               <PasswordInput
-                label={t('forms:label-confirm-password')}
-                {...register('confirmPassword', {
-                  required: 'forms:password-required',
+                label={t("forms:label-confirm-password")}
+                {...register("confirmPassword", {
+                  required: "forms:password-required",
                 })}
                 error={errors.confirmPassword?.message}
                 className="w-full sm:w-1/2 px-1.5 md:px-2.5"
@@ -122,10 +122,10 @@ const AccountDetails: React.FC = () => {
         <div className="relative flex pt-6 md:pt-8 lg:pt-10">
           <div className="ltr:pr-2.5 rtl:pl-2.5">
             <Heading className="mb-1 font-medium">
-              {t('common:text-share-profile-data')}
+              {t("common:text-share-profile-data")}
             </Heading>
             <Text variant="small">
-              {t('common:text-share-profile-data-description')}
+              {t("common:text-share-profile-data-description")}
             </Text>
           </div>
           <div className="ltr:ml-auto rtl:mr-auto">
@@ -142,10 +142,10 @@ const AccountDetails: React.FC = () => {
         <div className="relative flex mt-5 mb-1 md:mt-6 lg:mt-7 sm:mb-4 lg:mb-6">
           <div className="ltr:pr-2.5 rtl:pl-2.5">
             <Heading className="mb-1 font-medium">
-              {t('common:text-ads-performance')}
+              {t("common:text-ads-performance")}
             </Heading>
             <Text variant="small">
-              {t('common:text-ads-performance-description')}
+              {t("common:text-ads-performance-description")}
             </Text>
           </div>
           <div className="ltr:ml-auto rtl:mr-auto">
@@ -167,7 +167,7 @@ const AccountDetails: React.FC = () => {
             variant="formButton"
             className="w-full sm:w-auto"
           >
-            {t('common:button-save-changes')}
+            {t("common:button-save-changes")}
           </Button>
         </div>
       </form>

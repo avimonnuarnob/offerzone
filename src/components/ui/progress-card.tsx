@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 interface Props {
   soldProduct?: number;
@@ -9,10 +9,10 @@ interface Props {
 const ProgressCard: React.FC<Props> = ({
   soldProduct = 0,
   totalProduct = 0,
-  className = '',
+  className = "",
 }) => {
   const progressBar = (100 / totalProduct) * soldProduct;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div className={`w-full ${className}`}>
       <div className="relative w-full h-2.5 lg:h-3 bg-fill-three rounded-full overflow-hidden">
@@ -23,15 +23,15 @@ const ProgressCard: React.FC<Props> = ({
       </div>
       <div className="flex justify-between items-center mt-2.5 md:mt-3 xl:mt-2.5 2xl:mt-3.5">
         <div className="text-brand-dark text-opacity-60 text-13px sm:text-sm lg:text-15px leading-6 md:leading-7">
-          {t('text-sold')} :&nbsp;
+          {t("text-sold")} :&nbsp;
           <span className="text-brand-dark font-medium">
-            {soldProduct} {t('text-items')}
+            {soldProduct} {t("text-items")}
           </span>
         </div>
         <div className="text-brand-dark text-opacity-60 text-13px sm:text-sm lg:text-15px leading-6 md:leading-7">
-          {t('text-available')} :&nbsp;
+          {t("text-available")} :&nbsp;
           <span className="text-brand-dark font-medium">
-            {totalProduct - soldProduct} {t('text-items')}
+            {totalProduct - soldProduct} {t("text-items")}
           </span>
         </div>
       </div>

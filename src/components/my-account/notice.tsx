@@ -1,20 +1,20 @@
-import Layout from '@components/layout/layout';
-import { legalSetting } from '@settings/legal-setting';
-import Heading from '@components/ui/heading';
-import { Element } from 'react-scroll';
-import { useTranslation } from 'next-i18next';
+import Layout from "@components/layout/layout";
+import { legalSetting } from "@settings/legal-setting";
+import Heading from "@components/ui/heading";
+import { Element } from "react-scroll";
+import { useTranslation } from "next-i18next";
 
 function makeTitleToDOMId(title: string) {
-  return title.toLowerCase().split(' ').join('_');
+  return title.toLowerCase().split(" ").join("_");
 }
 
 export default function LegalPage() {
-  const { t } = useTranslation('legal');
+  const { t } = useTranslation("legal");
   return (
     <>
       <div className="lg:max-h-[575px] lg:overflow-scroll scrollbar">
         <Heading variant="titleLarge">
-          {t('common:text-account-details-notice')}
+          {t("common:text-account-details-notice")}
         </Heading>
         <div className="pt-6">
           <div className="w-full">

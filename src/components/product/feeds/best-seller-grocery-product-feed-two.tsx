@@ -1,18 +1,18 @@
-import { usePopularProductsQuery } from '@framework/product/get-all-popular-products';
-import SectionHeader from '@components/common/section-header';
-import ProductCardMaple from '@components/product/product-cards/product-card-maple';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import { LIMITS } from '@framework/utils/limits';
-import Alert from '@components/ui/alert';
-import ProductFlashSaleGobies from '@components/product/product-cards/product-flash-sale-gobies';
-import cn from 'classnames';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from 'swiper/react';
-import useWindowSize from '@utils/use-window-size';
-import { useBestSellerGroceryProductsQuery } from '@framework/product/get-all-best-seller-grocery-products';
-import Link from '@components/ui/link';
-import { ROUTES } from '@utils/routes';
-import { useTranslation } from 'next-i18next';
+import { usePopularProductsQuery } from "@framework/product/get-all-popular-products";
+import SectionHeader from "@components/common/section-header";
+import ProductCardMaple from "@components/product/product-cards/product-card-maple";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import { LIMITS } from "@framework/utils/limits";
+import Alert from "@components/ui/alert";
+import ProductFlashSaleGobies from "@components/product/product-cards/product-flash-sale-gobies";
+import cn from "classnames";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "swiper/react";
+import useWindowSize from "@utils/use-window-size";
+import { useBestSellerGroceryProductsQuery } from "@framework/product/get-all-best-seller-grocery-products";
+import Link from "@components/ui/link";
+import { ROUTES } from "@utils/routes";
+import { useTranslation } from "next-i18next";
 
 interface BestSellerProps {
   className?: string;
@@ -23,7 +23,7 @@ const options = {
   spaceBetween: 15,
   grid: {
     rows: 2,
-    fill: 'row',
+    fill: "row",
   },
   breakpoints: {
     768: {
@@ -67,7 +67,7 @@ const options = {
       spaceBetween: 20,
       grid: {
         rows: 3,
-        fill: 'row',
+        fill: "row",
       },
     },
   },
@@ -76,14 +76,14 @@ const options = {
 const BestSellerGroceryProductFeedTwo: React.FC<BestSellerProps> = ({
   className,
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const limit = LIMITS.POPULAR_PRODUCTS_TWO_LIMITS;
   const { data, isLoading, error } = useBestSellerGroceryProductsQuery({
     limit: limit,
   });
 
   return (
-    <div className={cn('-mt-2.5 mb-10', className)}>
+    <div className={cn("-mt-2.5 mb-10", className)}>
       <SectionHeader
         sectionHeading="text-best-grocery-near-you"
         headingPosition="center"
@@ -113,7 +113,7 @@ const BestSellerGroceryProductFeedTwo: React.FC<BestSellerProps> = ({
           href={ROUTES?.SEARCH}
           className="text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-body font-semibold text-center justify-center rounded placeholder-white focus-visible:outline-none focus:outline-none h-12 bg-brand text-brand-light tracking-[0.2px] px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-opacity-90"
         >
-          {t('text-view-all')}
+          {t("text-view-all")}
         </Link>
       </div>
     </div>

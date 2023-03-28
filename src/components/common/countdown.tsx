@@ -1,5 +1,5 @@
-import React from 'react';
-import Countdown, { zeroPad } from 'react-countdown';
+import React from "react";
+import Countdown, { zeroPad } from "react-countdown";
 
 type ReactCountdownProps = {
   date: string | number | Date | undefined;

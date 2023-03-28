@@ -1,15 +1,15 @@
-import { Fragment, useState, useEffect } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { HiOutlineSelector, HiCheck } from 'react-icons/hi';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+import { Fragment, useState, useEffect } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { HiOutlineSelector, HiCheck } from "react-icons/hi";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 type Option = {
   name: string;
   value: string;
 };
 
 export default function ListBox({ options }: { options: Option[] }) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const { pathname, query } = router;
   const currentSelectedItem = query?.sort_by
@@ -65,7 +65,7 @@ export default function ListBox({ options }: { options: Option[] }) {
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
-                    `${active ? 'text-amber-900 bg-gray-100' : 'text-gray-900'}
+                    `${active ? "text-amber-900 bg-gray-100" : "text-gray-900"}
                           cursor-default select-none relative py-2 ltr:pl-10 rtl:pr-10 ltr:pr-4 rtl:pl-4`
                   }
                   value={option}
@@ -74,14 +74,14 @@ export default function ListBox({ options }: { options: Option[] }) {
                     <>
                       <span
                         className={`${
-                          selected ? 'font-medium' : 'font-normal'
+                          selected ? "font-medium" : "font-normal"
                         } block truncate`}
                       >
                         {t(option.name)}
                       </span>
                       {selected ? (
                         <span
-                          className={`${active ? 'text-amber-600' : ''}
+                          className={`${active ? "text-amber-600" : ""}
                                 check-icon absolute inset-y-0 ltr:left-0 rtl:right-0 flex items-center ltr:pl-3 rtl:pr-3`}
                         >
                           <HiCheck className="w-5 h-5" aria-hidden="true" />

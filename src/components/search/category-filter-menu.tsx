@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import cn from 'classnames';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { useUI } from '@contexts/ui.context';
-import { useEffect, useMemo, useState } from 'react';
-import Image from '@components/ui/image';
-import { useTranslation } from 'next-i18next';
-import { FaCheck } from 'react-icons/fa';
+import { useRouter } from "next/router";
+import cn from "classnames";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useUI } from "@contexts/ui.context";
+import { useEffect, useMemo, useState } from "react";
+import Image from "@components/ui/image";
+import { useTranslation } from "next-i18next";
+import { FaCheck } from "react-icons/fa";
 
 function checkIsActive(arr: any, item: string) {
   if (arr.includes(item)) {
@@ -14,15 +14,15 @@ function checkIsActive(arr: any, item: string) {
   return false;
 }
 function CategoryFilterMenuItem({
-  className = 'hover:bg-fill-base border-t border-border-base first:border-t-0 px-3.5 2xl:px-4 py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3',
+  className = "hover:bg-fill-base border-t border-border-base first:border-t-0 px-3.5 2xl:px-4 py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3",
   item,
   depth = 0,
 }: any) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const { pathname, query } = router;
   const selectedCategories = useMemo(
-    () => (query?.category ? (query.category as string).split(',') : []),
+    () => (query?.category ? (query.category as string).split(",") : []),
     [query?.category]
   );
   const isActive =
@@ -59,7 +59,7 @@ function CategoryFilterMenuItem({
           query: {
             ...restQuery,
             ...(currentFormState.length
-              ? { category: currentFormState.join(',') }
+              ? { category: currentFormState.join(",") }
               : {}),
           },
         },
@@ -85,23 +85,23 @@ function CategoryFilterMenuItem({
       <li
         onClick={onClick}
         className={cn(
-          'flex justify-between items-center transition text-sm md:text-15px',
-          { 'bg-fill-base': isOpen },
+          "flex justify-between items-center transition text-sm md:text-15px",
+          { "bg-fill-base": isOpen },
           className
         )}
       >
         <button
           className={cn(
-            'flex items-center w-full ltr:text-left rtl:text-right cursor-pointer group',
-            { 'py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3': depth > 0 }
+            "flex items-center w-full ltr:text-left rtl:text-right cursor-pointer group",
+            { "py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3": depth > 0 }
           )}
           // onClick={handleChange}
         >
           {icon && (
             <div className="inline-flex shrink-0 2xl:w-12 2xl:h-12 3xl:w-auto 3xl:h-auto ltr:mr-2.5 rtl:ml-2.5 md:ltr:mr-4 md:rtl:ml-4 2xl:ltr:mr-3 2xl:rtl:ml-3 3xl:ltr:mr-4 3xl:rtl:ml-4">
               <Image
-                src={icon ?? '/assets/placeholder/category-small.svg'}
-                alt={name || t('text-category-thumbnail')}
+                src={icon ?? "/assets/placeholder/category-small.svg"}
+                alt={name || t("text-category-thumbnail")}
                 width={40}
                 height={40}
               />
@@ -112,7 +112,7 @@ function CategoryFilterMenuItem({
             <span
               className={`w-[22px] h-[22px] text-13px flex items-center justify-center border-2 border-border-four rounded-full ltr:ml-auto rtl:mr-auto transition duration-500 ease-in-out group-hover:border-yellow-100 text-brand-light ${
                 selectedCategories.includes(slug) &&
-                'border-yellow-100 bg-yellow-100'
+                "border-yellow-100 bg-yellow-100"
               }`}
             >
               {selectedCategories.includes(slug) && <FaCheck />}

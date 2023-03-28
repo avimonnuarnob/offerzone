@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { TiPencil } from 'react-icons/ti';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { RadioGroup } from '@headlessui/react';
-import { useModalAction } from '@components/common/modal/modal.context';
-import { useTranslation } from 'next-i18next';
+import { useState } from "react";
+import { TiPencil } from "react-icons/ti";
+import { AiOutlinePlus } from "react-icons/ai";
+import { RadioGroup } from "@headlessui/react";
+import { useModalAction } from "@components/common/modal/modal.context";
+import { useTranslation } from "next-i18next";
 
 const ContactBox: React.FC<{ items?: any }> = ({ items: { data } }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const [contactData, setContactData] = useState(data);
   const { openModal } = useModalAction();
 
   function handlePopupView(item: any) {
-    openModal('PHONE_NUMBER', item);
+    openModal("PHONE_NUMBER", item);
   }
 
   const removeItem = (id: any, title: string) => {
@@ -32,15 +32,15 @@ const ContactBox: React.FC<{ items?: any }> = ({ items: { data } }) => {
           className="grid grid-cols-1 gap-5 md:grid-cols-2 auto-rows-auto"
         >
           <RadioGroup.Label className="sr-only">
-            {t('text-default')}
+            {t("text-default")}
           </RadioGroup.Label>
           {contactData?.map((item: any, index: any) => (
             <RadioGroup.Option
               key={index}
               value={item}
               className={({ active, checked }) =>
-                `${active ? 'border-brand' : 'border-border-base'}
-                  ${checked ? 'border-brand' : 'border-border-base'}
+                `${active ? "border-brand" : "border-border-base"}
+                  ${checked ? "border-brand" : "border-border-base"}
                   border-2 relative focus:outline-none rounded p-5 block cursor-pointer min-h-[112px] h-full group address__box`
               }
             >
@@ -71,7 +71,7 @@ const ContactBox: React.FC<{ items?: any }> = ({ items: { data } }) => {
             onClick={handlePopupView}
           >
             <AiOutlinePlus size={18} className="ltr:mr-2 rtl:ml-2" />
-            {t('text-add-phone-number')}
+            {t("text-add-phone-number")}
           </button>
         </RadioGroup>
       </div>

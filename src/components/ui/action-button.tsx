@@ -1,13 +1,13 @@
-import { BsThreeDots } from 'react-icons/bs';
-import { Popover, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
-import { useUI } from '@contexts/ui.context';
+import { BsThreeDots } from "react-icons/bs";
+import { Popover, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+import { useUI } from "@contexts/ui.context";
 
 const ActionsButton: React.FC<{ item?: any }> = ({ item }) => {
   const { openDrawer, setDrawerView } = useUI();
 
   function handleCartOpen(item: any) {
-    setDrawerView('ORDER_DETAILS');
+    setDrawerView("ORDER_DETAILS");
     return openDrawer(item);
   }
 
@@ -18,11 +18,11 @@ const ActionsButton: React.FC<{ item?: any }> = ({ item }) => {
           <>
             <Popover.Button
               className={`
-                ${!open && 'text-opacity-90'}
+                ${!open && "text-opacity-90"}
                 text-white group  px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <BsThreeDots
-                style={{ color: 'rgba(140, 150, 159, 1)' }}
+                style={{ color: "rgba(140, 150, 159, 1)" }}
                 size={20}
               />
             </Popover.Button>

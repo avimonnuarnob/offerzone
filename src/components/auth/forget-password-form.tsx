@@ -1,17 +1,17 @@
-import Button from '@components/ui/button';
-import Input from '@components/ui/form/input';
-import Logo from '@components/ui/logo';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'next-i18next';
-import { useModalAction } from '@components/common/modal/modal.context';
-import CloseButton from '@components/ui/close-button';
+import Button from "@components/ui/button";
+import Input from "@components/ui/form/input";
+import Logo from "@components/ui/logo";
+import { useForm } from "react-hook-form";
+import { useTranslation } from "next-i18next";
+import { useModalAction } from "@components/common/modal/modal.context";
+import CloseButton from "@components/ui/close-button";
 
 type FormValues = {
   email: string;
 };
 
 const defaultValues = {
-  email: '',
+  email: "",
 };
 
 const ForgetPasswordForm = () => {
@@ -26,11 +26,11 @@ const ForgetPasswordForm = () => {
   });
 
   function handleSignIn() {
-    return openModal('LOGIN_VIEW');
+    return openModal("LOGIN_VIEW");
   }
 
   const onSubmit = (values: FormValues) => {
-    console.log(values, 'token');
+    console.log(values, "token");
   };
 
   return (
@@ -41,7 +41,7 @@ const ForgetPasswordForm = () => {
           <Logo />
         </div>
         <p className="mt-3 mb-8 text-sm md:text-base text-body sm:mt-4 sm:mb-10">
-          {t('common:forgot-password-helper')}
+          {t("common:forgot-password-helper")}
         </p>
       </div>
       <form
@@ -50,16 +50,16 @@ const ForgetPasswordForm = () => {
         noValidate
       >
         <Input
-          label={t('forms:label-email')}
+          label={t("forms:label-email")}
           type="email"
           variant="solid"
           className="mb-4"
-          {...register('email', {
-            required: `${t('forms:email-required')}`,
+          {...register("email", {
+            required: `${t("forms:email-required")}`,
             pattern: {
               value:
                 /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: t('forms:email-error'),
+              message: t("forms:email-error"),
             },
           })}
           error={errors.email?.message}
@@ -70,23 +70,23 @@ const ForgetPasswordForm = () => {
           variant="formButton"
           className="w-full mt-0 h-11 md:h-12"
         >
-          {t('common:text-reset-password')}
+          {t("common:text-reset-password")}
         </Button>
       </form>
       <div className="relative flex flex-col items-center justify-center mt-8 mb-6 text-sm text-heading sm:mt-10 sm:mb-7">
         <hr className="w-full border-gray-300" />
         <span className="absolute -top-2.5 px-2 bg-brand-light">
-          {t('common:text-or')}
+          {t("common:text-or")}
         </span>
       </div>
       <div className="text-sm text-center sm:text-15px text-brand-muted">
-        {t('common:text-back-to')}{' '}
+        {t("common:text-back-to")}{" "}
         <button
           type="button"
           className="font-medium underline text-brand-dark hover:no-underline focus:outline-none"
           onClick={handleSignIn}
         >
-          {t('common:text-login')}
+          {t("common:text-login")}
         </button>
       </div>
     </div>

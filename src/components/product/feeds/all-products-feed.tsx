@@ -1,23 +1,23 @@
-import { Fragment } from 'react';
-import ProductCardAlpine from '@components/product/product-cards/product-card-alpine';
-import type { FC } from 'react';
-import { useProductsQuery } from '@framework/product/get-all-products';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import SectionHeader from '@components/common/section-header';
-import { useModalAction } from '@components/common/modal/modal.context';
-import slice from 'lodash/slice';
-import Alert from '@components/ui/alert';
-import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { LIMITS } from '@framework/utils/limits';
-import { Product } from '@framework/types';
+import { Fragment } from "react";
+import ProductCardAlpine from "@components/product/product-cards/product-card-alpine";
+import type { FC } from "react";
+import { useProductsQuery } from "@framework/product/get-all-products";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import SectionHeader from "@components/common/section-header";
+import { useModalAction } from "@components/common/modal/modal.context";
+import slice from "lodash/slice";
+import Alert from "@components/ui/alert";
+import cn from "classnames";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { LIMITS } from "@framework/utils/limits";
+import { Product } from "@framework/types";
 interface ProductFeedProps {
   element?: any;
   className?: string;
 }
-const AllProductFeed: FC<ProductFeedProps> = ({ element, className = '' }) => {
-  const { t } = useTranslation('common');
+const AllProductFeed: FC<ProductFeedProps> = ({ element, className = "" }) => {
+  const { t } = useTranslation("common");
 
   const { query } = useRouter();
   const {
@@ -32,7 +32,7 @@ const AllProductFeed: FC<ProductFeedProps> = ({ element, className = '' }) => {
   const { openModal } = useModalAction();
 
   function handleCategoryPopup() {
-    openModal('CATEGORY_VIEW');
+    openModal("CATEGORY_VIEW");
   }
 
   return (
@@ -44,7 +44,7 @@ const AllProductFeed: FC<ProductFeedProps> = ({ element, className = '' }) => {
           role="button"
           onClick={handleCategoryPopup}
         >
-          {t('text-categories')}
+          {t("text-categories")}
         </div>
       </div>
       {error ? (

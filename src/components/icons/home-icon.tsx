@@ -1,7 +1,7 @@
 const HomeIcon = ({
-  color = 'currentColor',
-  width = '18px',
-  height = '20px',
+  color = "currentColor",
+  width = "18px",
+  height = "20px",
 }) => {
   return (
     <svg

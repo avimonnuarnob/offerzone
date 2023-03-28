@@ -1,8 +1,8 @@
 const MinusIcon = ({
-  color = 'currentColor',
-  width = '12',
-  height = '2',
-  opacity = '0.8',
+  color = "currentColor",
+  width = "12",
+  height = "2",
+  opacity = "0.8",
 }) => {
   return (
     <svg

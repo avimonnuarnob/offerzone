@@ -1,13 +1,13 @@
-import { useRouter } from 'next/router';
-import cn from 'classnames';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { useUI } from '@contexts/ui.context';
-import { useEffect, useState } from 'react';
-import Image from '@components/ui/image';
-import { useTranslation } from 'next-i18next';
+import { useRouter } from "next/router";
+import cn from "classnames";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useUI } from "@contexts/ui.context";
+import { useEffect, useState } from "react";
+import Image from "@components/ui/image";
+import { useTranslation } from "next-i18next";
 
 function SidebarMenuItem({ className, item, depth = 0 }: any) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const active = router?.query?.category;
   const isActive =
@@ -60,19 +60,19 @@ function SidebarMenuItem({ className, item, depth = 0 }: any) {
         className={`flex justify-between items-center transition ${
           className
             ? className
-            : 'text-sm md:text-15px hover:bg-fill-base border-t border-border-base first:border-t-0 px-3.5 2xl:px-4 py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3'
-        } ${isOpen ? 'bg-fill-base' : 'text-brand-dark text-opacity-70'}`}
+            : "text-sm md:text-15px hover:bg-fill-base border-t border-border-base first:border-t-0 px-3.5 2xl:px-4 py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3"
+        } ${isOpen ? "bg-fill-base" : "text-brand-dark text-opacity-70"}`}
       >
         <button
           className={cn(
-            'flex items-center w-full ltr:text-left rtl:text-right outline-none focus:outline-none group focus:ring-0 focus:text-brand-dark'
+            "flex items-center w-full ltr:text-left rtl:text-right outline-none focus:outline-none group focus:ring-0 focus:text-brand-dark"
           )}
         >
           {icon && (
             <div className="inline-flex shrink-0 2xl:w-12 2xl:h-12 3xl:w-auto 3xl:h-auto">
               <Image
-                src={icon ?? '/assets/placeholder/category-small.svg'}
-                alt={name || t('text-category-thumbnail')}
+                src={icon ?? "/assets/placeholder/category-small.svg"}
+                alt={name || t("text-category-thumbnail")}
                 width={40}
                 height={40}
               />
@@ -98,7 +98,7 @@ function SidebarMenuItem({ className, item, depth = 0 }: any) {
                   item={currentItem}
                   depth={childDepth}
                   className={cn(
-                    'text-sm ltr:pl-14 rtl:pr-14 py-2.5 ltr:pr-4 rtl:pl-4'
+                    "text-sm ltr:pl-14 rtl:pr-14 py-2.5 ltr:pr-4 rtl:pl-4"
                   )}
                 />
               );

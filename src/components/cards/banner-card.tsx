@@ -1,11 +1,11 @@
-import Link from '@components/ui/link';
-import Image from 'next/image';
-import useWindowSize from '@utils/use-window-size';
-import cn from 'classnames';
+import Link from "@components/ui/link";
+import Image from "next/image";
+import useWindowSize from "@utils/use-window-size";
+import cn from "classnames";
 
 interface BannerProps {
   banner: any;
-  variant?: 'rounded' | 'default';
+  variant?: "rounded" | "default";
   effectActive?: boolean;
   className?: string;
   classNameInner?: string;
@@ -18,7 +18,7 @@ function getImage(deviceWidth: number, imgObj: any) {
 const BannerCard: React.FC<BannerProps> = ({
   banner,
   className,
-  variant = 'default',
+  variant = "default",
   effectActive = true,
   classNameInner,
 }) => {
@@ -26,11 +26,11 @@ const BannerCard: React.FC<BannerProps> = ({
   const { slug, title, image } = banner;
   const selectedImage = getImage(width!, image);
   return (
-    <div className={cn('mx-auto', className)}>
+    <div className={cn("mx-auto", className)}>
       <Link
         href={slug}
         className={cn(
-          'h-full group flex justify-center relative overflow-hidden',
+          "h-full group flex justify-center relative overflow-hidden",
           classNameInner
         )}
       >
@@ -40,8 +40,8 @@ const BannerCard: React.FC<BannerProps> = ({
           height={selectedImage.height}
           alt={title}
           quality={100}
-          className={cn('bg-fill-thumbnail object-cover w-full', {
-            'rounded-md': variant === 'rounded',
+          className={cn("bg-fill-thumbnail object-cover w-full", {
+            "rounded-md": variant === "rounded",
           })}
         />
         {effectActive && (

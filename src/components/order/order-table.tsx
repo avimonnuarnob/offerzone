@@ -1,15 +1,15 @@
-import { Table } from '@components/ui/table';
-import Input from '@components/ui/form/input';
-import { useState } from 'react';
-import Pagination from '@components/ui/pagination';
-import ActionsButton from '@components/ui/action-button';
-import { TotalPrice } from '@components/order/price';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import timezone from 'dayjs/plugin/timezone';
-import { GrNext, GrPrevious } from 'react-icons/gr';
-import { BsSearch } from 'react-icons/bs';
+import { Table } from "@components/ui/table";
+import Input from "@components/ui/form/input";
+import { useState } from "react";
+import Pagination from "@components/ui/pagination";
+import ActionsButton from "@components/ui/action-button";
+import { TotalPrice } from "@components/order/price";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import { GrNext, GrPrevious } from "react-icons/gr";
+import { BsSearch } from "react-icons/bs";
 
 export const CreatedAt: React.FC<{ createdAt?: any }> = ({ createdAt }) => {
   dayjs.extend(relativeTime);
@@ -24,7 +24,7 @@ export const CreatedAt: React.FC<{ createdAt?: any }> = ({ createdAt }) => {
 
 export const Status: React.FC<{ item?: any }> = ({ item }) => {
   return (
-    <span className={item?.status?.name?.replace(/\s/g, '_').toLowerCase()}>
+    <span className={item?.status?.name?.replace(/\s/g, "_").toLowerCase()}>
       <span
         className="bullet"
         style={{ backgroundColor: item?.status?.color }}
@@ -36,57 +36,57 @@ export const Status: React.FC<{ item?: any }> = ({ item }) => {
 
 const columns = [
   {
-    title: 'Order Number',
-    dataIndex: 'tracking_number',
-    key: 'tracking_number',
-    className: 'id-cell',
+    title: "Order Number",
+    dataIndex: "tracking_number",
+    key: "tracking_number",
+    className: "id-cell",
     width: 140,
   },
   {
-    title: 'Order Date',
-    dataIndex: 'created_at',
-    key: 'created_at',
+    title: "Order Date",
+    dataIndex: "created_at",
+    key: "created_at",
     width: 140,
     render: function createdAt(items: any) {
       return <CreatedAt createdAt={items} />;
     },
   },
   {
-    title: 'Status',
-    key: 'status',
+    title: "Status",
+    key: "status",
     width: 145,
     render: function status(item: any) {
       return <Status item={item} />;
     },
   },
   {
-    title: 'Delivery Time',
-    dataIndex: 'delivery_time',
-    key: 'delivery_time',
+    title: "Delivery Time",
+    dataIndex: "delivery_time",
+    key: "delivery_time",
     width: 140,
   },
   {
-    title: 'Total Price',
-    key: 'total',
+    title: "Total Price",
+    key: "total",
     width: 130,
     render: function totalPrice(items: any) {
       return <TotalPrice items={items} />;
     },
   },
   {
-    dataIndex: '',
-    key: 'operations',
+    dataIndex: "",
+    key: "operations",
     width: 80,
     render: function actionsButton(item: any) {
       return <ActionsButton item={item} />;
     },
-    className: 'operations-cell',
+    className: "operations-cell",
   },
 ];
 
 const OrderTable: React.FC<{ orders?: any }> = ({ orders }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const countPerPage = 5;
   const [filterData, setDataValue] = useState(orders.slice(0, countPerPage));
 
@@ -152,8 +152,8 @@ const OrderTable: React.FC<{ orders?: any }> = ({ orders }) => {
             onChange={updatePage}
             pageSize={countPerPage}
             total={orders?.length}
-            prevIcon={<GrPrevious size={12} style={{ color: '#090B17' }} />}
-            nextIcon={<GrNext size={12} style={{ color: '#090B17' }} />}
+            prevIcon={<GrPrevious size={12} style={{ color: "#090B17" }} />}
+            nextIcon={<GrNext size={12} style={{ color: "#090B17" }} />}
             className="order-table-pagination"
           />
         </div>

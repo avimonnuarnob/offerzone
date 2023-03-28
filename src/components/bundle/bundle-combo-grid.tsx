@@ -1,10 +1,10 @@
-import BundleCard from '@components/cards/bundle-card';
-import SectionHeader from '@components/common/section-header';
-import cn from 'classnames';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from 'swiper/react';
-import useWindowSize from '@utils/use-window-size';
-import { ROUTES } from '@utils/routes';
+import BundleCard from "@components/cards/bundle-card";
+import SectionHeader from "@components/common/section-header";
+import cn from "classnames";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "swiper/react";
+import useWindowSize from "@utils/use-window-size";
+import { ROUTES } from "@utils/routes";
 
 interface Props {
   className?: string;
@@ -12,24 +12,24 @@ interface Props {
 }
 
 const breakpoints = {
-  '1024': {
+  "1024": {
     slidesPerView: 3,
   },
-  '640': {
+  "640": {
     slidesPerView: 2,
   },
-  '0': {
+  "0": {
     slidesPerView: 1,
   },
 };
 
 export default function BundleComboGrid({
-  className = 'mb-12 md:mb-14 xl:mb-16 2xl:mb-20 3xl:pb-2',
+  className = "mb-12 md:mb-14 xl:mb-16 2xl:mb-20 3xl:pb-2",
   data,
 }: Props) {
   const { width } = useWindowSize();
   return (
-    <div className={cn('heightFull', className)}>
+    <div className={cn("heightFull", className)}>
       <div className="pt-0.5 pb-1.5">
         <SectionHeader
           sectionHeading="text-best-deal-with-money"
@@ -39,7 +39,7 @@ export default function BundleComboGrid({
         {width! < 1280 ? (
           <Carousel
             breakpoints={breakpoints}
-            grid={{ rows: 3, fill: 'row' }}
+            grid={{ rows: 3, fill: "row" }}
             className="-mx-1.5 md:-mx-2"
             prevButtonClassName="ltr:-left-2 rtl:-right-2 lg:ltr:-left-2.5 lg:rtl:-right-2.5"
             nextButtonClassName="ltr:-right-2 rtl:-left-2 lg:ltr:-right-2.5 lg:rtl:-left-2.5"

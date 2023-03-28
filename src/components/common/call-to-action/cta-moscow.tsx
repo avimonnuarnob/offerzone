@@ -1,14 +1,14 @@
-import cn from 'classnames';
-import Link from '@components/ui/link';
-import Image from '@components/ui/image';
-import { useTranslation } from 'next-i18next';
-import ArrowRight from '@components/icons/arrow-right';
+import cn from "classnames";
+import Link from "@components/ui/link";
+import Image from "@components/ui/image";
+import { useTranslation } from "next-i18next";
+import ArrowRight from "@components/icons/arrow-right";
 
 const data = {
-  title: 'app-heading',
-  description: 'app-description',
-  appBG: '/assets/images/app-bg.png',
-  appImage: '/assets/images/delivery-man.png',
+  title: "app-heading",
+  description: "app-description",
+  appBG: "/assets/images/app-bg.png",
+  appImage: "/assets/images/delivery-man.png",
 };
 
 interface Props {
@@ -16,12 +16,12 @@ interface Props {
 }
 
 const CallToActionMoscow: React.FC<Props> = ({
-  className = 'pt-1.5 md:pt-0',
+  className = "pt-1.5 md:pt-0",
 }) => {
   const { title, description, appImage } = data;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
-    <section className={cn('bg-[#FFFAF0] rounded-3xl mt-[100px]', className)}>
+    <section className={cn("bg-[#FFFAF0] rounded-3xl mt-[100px]", className)}>
       <div className="flex justify-between flex-col-reverse md:flex-row items-end relative max-w-[1920px] mx-auto px-4 sm:px-5 md:px-6 lg:px-16 xl:px-28 2xl:px-32 3xl:px-40">
         <div className="shrink-0 mx-auto md:ltr:ml-0 md:rtl:mr-0 lg:flex lg:items-center pb-5 pt-1.5 md:pt-4 max-w-[350px] md:max-w-[340px] lg:max-w-[415px] xl:max-w-[540px] 2xl:max-w-[630px] 3xl:ltr:pl-10 3xl:rtl:pr-10">
           <div className="py-8 mb-1 text-center xl:py-10 2xl:py-16 md:ltr:text-left md:rtl:text-right">
@@ -42,7 +42,7 @@ const CallToActionMoscow: React.FC<Props> = ({
         <figure className="flex -mt-14 md:mt-0 lg:absolute lg:right-0 2xl:right-20 lg:bottom-0 lg:max-w-lg 3xl:max-w-none">
           <Image
             src={appImage}
-            alt={t('text-app-thumbnail')}
+            alt={t("text-app-thumbnail")}
             width={620}
             height={565}
             quality={100}

@@ -1,19 +1,19 @@
-import React, { FC, Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-import cn from 'classnames';
+import React, { FC, Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import cn from "classnames";
 
 type ModalProps = {
   open?: boolean;
   children?: React.ReactNode;
   onClose: () => void;
-  variant?: 'center' | 'bottom';
+  variant?: "center" | "bottom";
 };
 
 const Modal: FC<ModalProps> = ({
   children,
   open,
   onClose,
-  variant = 'center',
+  variant = "center",
 }) => {
   return (
     <Transition appear show={open} as={Fragment}>
@@ -23,8 +23,8 @@ const Modal: FC<ModalProps> = ({
         onClose={onClose}
       >
         <div
-          className={cn('min-h-screen lg:px-4 text-center', {
-            'flex justify-center items-end': variant === 'bottom',
+          className={cn("min-h-screen lg:px-4 text-center", {
+            "flex justify-center items-end": variant === "bottom",
           })}
         >
           <Transition.Child
@@ -42,15 +42,15 @@ const Modal: FC<ModalProps> = ({
           {/* This element is to trick the browser into centering the modal contents. */}
           <span
             className={cn({
-              'h-screen align-middle inline-block': variant === 'center',
-              'h-screen align-bottom': variant === 'bottom',
+              "h-screen align-middle inline-block": variant === "center",
+              "h-screen align-bottom": variant === "bottom",
             })}
             aria-hidden="true"
           >
             &#8203;
           </span>
 
-          {variant === 'bottom' ? (
+          {variant === "bottom" ? (
             <Transition.Child
               as={Fragment}
               enter="transition-top ease-linear duration-500"

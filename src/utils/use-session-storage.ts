@@ -1,1 +1,1 @@
-export { default as useSessionStorage } from 'react-use/lib/useSessionStorage';
+export { default as useSessionStorage } from "react-use/lib/useSessionStorage";

@@ -1,11 +1,11 @@
-import Button from '@components/ui/button';
+import Button from "@components/ui/button";
 import {
   Elements,
   CardElement,
   useStripe,
   useElements,
-} from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+} from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string
@@ -33,7 +33,7 @@ const StripeForm: React.FC<Props> = ({ buttonText, getToken }) => {
     const { token } = await stripe.createToken(cardElement);
     getToken(token);
     if (token) {
-      console.log(token, 'token');
+      console.log(token, "token");
     }
   };
 
@@ -47,7 +47,7 @@ const StripeForm: React.FC<Props> = ({ buttonText, getToken }) => {
         onClick={handleSubmit}
         variant="formButton"
       >
-        {buttonText ? buttonText : 'Pay Now'}
+        {buttonText ? buttonText : "Pay Now"}
       </Button>
     </div>
   );

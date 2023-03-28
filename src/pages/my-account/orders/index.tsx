@@ -1,10 +1,10 @@
-import React from 'react';
-import Layout from '@components/layout/layout';
-import AccountLayout from '@components/my-account/account-layout';
-import OrderTable from '@components/order/order-table';
-import { useOrdersQuery } from '@framework/order/get-all-orders';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@components/seo/seo';
+import React from "react";
+import Layout from "@components/layout/layout";
+import AccountLayout from "@components/my-account/account-layout";
+import OrderTable from "@components/order/order-table";
+import { useOrdersQuery } from "@framework/order/get-all-orders";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Seo from "@components/seo/seo";
 
 // props change to orders.
 
@@ -34,10 +34,10 @@ export const getStaticProps = async ({ locale }: any) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
   };

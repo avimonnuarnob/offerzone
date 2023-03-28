@@ -1,13 +1,13 @@
-import { useState, Fragment } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { FaChevronDown } from 'react-icons/fa';
-import { siteSettings } from '@settings/site-settings';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+import { useState, Fragment } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { FaChevronDown } from "react-icons/fa";
+import { siteSettings } from "@settings/site-settings";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 export default function LanguageSwitcher() {
   const { site_header } = siteSettings;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const options = site_header.languageMenu;
   const router = useRouter();
   const { asPath, locale } = router;
@@ -58,8 +58,8 @@ export default function LanguageSwitcher() {
                   className={({ active }) =>
                     `${
                       active
-                        ? 'text-brand-dark bg-fill-dropdown-hover'
-                        : 'bg-brand-light'
+                        ? "text-brand-dark bg-fill-dropdown-hover"
+                        : "bg-brand-light"
                     }
 												cursor-pointer relative py-2 px-3`
                   }
@@ -70,14 +70,14 @@ export default function LanguageSwitcher() {
                       <span className="w-[22px] h-4">{option.icon}</span>
                       <span
                         className={`${
-                          selected ? 'font-medium ' : 'font-normal'
+                          selected ? "font-medium " : "font-normal"
                         } block truncate ltr:ml-1.5 rtl:mr-1.5 text-sm pb-0.5`}
                       >
                         {t(option.name)}
                       </span>
                       {selected ? (
                         <span
-                          className={`${active && 'text-amber-600'}
+                          className={`${active && "text-amber-600"}
                                  absolute inset-y-0 ltr:left-0 rtl:right-0 flex items-center ltr:pl-3 rtl:pr-3`}
                         />
                       ) : null}

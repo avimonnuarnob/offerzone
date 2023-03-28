@@ -1,32 +1,32 @@
-import { useTranslation } from 'next-i18next';
-import { Attachment } from '@framework/types';
-import useWindowSize from '@utils/use-window-size';
-import Breadcrumb from '@components/ui/breadcrumb';
-import cn from 'classnames';
+import { useTranslation } from "next-i18next";
+import { Attachment } from "@framework/types";
+import useWindowSize from "@utils/use-window-size";
+import Breadcrumb from "@components/ui/breadcrumb";
+import cn from "classnames";
 
 interface HeaderProps {
   backgroundThumbnail?: Attachment | string;
   heroTitle?: string;
   mobileBackgroundThumbnail?: Attachment | string;
-  variant?: 'default' | 'white';
+  variant?: "default" | "white";
   className?: string;
 }
 
 const PageHeroSection: React.FC<HeaderProps> = ({
-  backgroundThumbnail = '/assets/images/page-hero-bg.png',
-  heroTitle = 'text-page-title',
-  mobileBackgroundThumbnail = '/assets/images/page-hero-bg-mobile.png',
-  variant = 'default',
-  className = '',
+  backgroundThumbnail = "/assets/images/page-hero-bg.png",
+  heroTitle = "text-page-title",
+  mobileBackgroundThumbnail = "/assets/images/page-hero-bg-mobile.png",
+  variant = "default",
+  className = "",
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { width } = useWindowSize();
   return (
     <div
       className={cn(
-        'flex justify-center md:min-h-[250px] lg:min-h-[288px] py-20 w-full bg-cover bg-no-repeat bg-center page-header-banner',
+        "flex justify-center md:min-h-[250px] lg:min-h-[288px] py-20 w-full bg-cover bg-no-repeat bg-center page-header-banner",
         {
-          'style-variant-white': variant === 'white',
+          "style-variant-white": variant === "white",
         },
         className
       )}
@@ -39,10 +39,10 @@ const PageHeroSection: React.FC<HeaderProps> = ({
       <div className="relative flex flex-col items-center justify-center w-full">
         <h2
           className={cn(
-            'text-xl md:text-2xl lg:text-3xl 2xl:text-[40px] font-bold text-center',
+            "text-xl md:text-2xl lg:text-3xl 2xl:text-[40px] font-bold text-center",
             {
-              'text-brand-dark': variant === 'default',
-              'text-brand-light': variant === 'white',
+              "text-brand-dark": variant === "default",
+              "text-brand-light": variant === "white",
             }
           )}
         >

@@ -1,10 +1,10 @@
-import CategoryListCardLoader from '@components/ui/loaders/category-list-card-loader';
-import { useCategoriesQuery } from '@framework/category/get-all-categories';
-import Alert from '@components/ui/alert';
-import CategoryListCard from '@components/cards/category-list-card';
-import Scrollbar from '@components/ui/scrollbar';
-import cn from 'classnames';
-import { ROUTES } from '@utils/routes';
+import CategoryListCardLoader from "@components/ui/loaders/category-list-card-loader";
+import { useCategoriesQuery } from "@framework/category/get-all-categories";
+import Alert from "@components/ui/alert";
+import CategoryListCard from "@components/cards/category-list-card";
+import Scrollbar from "@components/ui/scrollbar";
+import cn from "classnames";
+import { ROUTES } from "@utils/routes";
 
 interface CategoriesProps {
   className?: string;
@@ -12,7 +12,7 @@ interface CategoriesProps {
 }
 
 const CategoryGridList: React.FC<CategoriesProps> = ({
-  className = '',
+  className = "",
   limit,
 }) => {
   const { data, isLoading, error } = useCategoriesQuery({
@@ -22,7 +22,7 @@ const CategoryGridList: React.FC<CategoriesProps> = ({
   return (
     <aside
       className={cn(
-        'sticky top-22 h-full hidden xl:block text-brand-light',
+        "sticky top-22 h-full hidden xl:block text-brand-light",
         className
       )}
     >

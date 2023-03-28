@@ -1,26 +1,26 @@
-import Image from '@components/ui/image';
-import cn from 'classnames';
-import Link from '@components/ui/link';
-import { useTranslation } from 'next-i18next';
+import Image from "@components/ui/image";
+import cn from "classnames";
+import Link from "@components/ui/link";
+import { useTranslation } from "next-i18next";
 const data = {
-  title: 'app-heading',
-  description: 'app-description',
-  appBG: '/assets/images/app-bg.png',
-  appImage: '/assets/images/app-thumbnail-2.png',
+  title: "app-heading",
+  description: "app-description",
+  appBG: "/assets/images/app-bg.png",
+  appImage: "/assets/images/app-thumbnail-2.png",
   appButtons: [
     {
       id: 1,
-      slug: '/#',
-      altText: 'button-app-store',
-      appButton: '/assets/images/app-store.png',
+      slug: "/#",
+      altText: "button-app-store",
+      appButton: "/assets/images/app-store.png",
       buttonWidth: 170,
       buttonHeight: 56,
     },
     {
       id: 2,
-      slug: '/#',
-      altText: 'button-play-store',
-      appButton: '/assets/images/play-store.png',
+      slug: "/#",
+      altText: "button-play-store",
+      appButton: "/assets/images/play-store.png",
       buttonWidth: 170,
       buttonHeight: 56,
     },
@@ -29,28 +29,28 @@ const data = {
 
 interface Props {
   className?: string;
-  variant?: 'default' | 'modern';
+  variant?: "default" | "modern";
 }
 
 const DownloadAppsTwo: React.FC<Props> = ({
-  className = 'pt-1.5 md:pt-0',
-  variant = 'default',
+  className = "pt-1.5 md:pt-0",
+  variant = "default",
 }) => {
   const { appButtons, title, description, appImage, appBG } = data;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div
-      className={cn('bg-fill-two overflow-hidden bg-cover bg-top', className)}
+      className={cn("bg-fill-two overflow-hidden bg-cover bg-top", className)}
       style={{
         backgroundImage: `url(${appBG})`,
       }}
     >
       <div
         className={cn(
-          ' md:flex justify-between max-w-[1920px] mx-auto px-4 sm:px-5 md:px-6 lg:px-16 xl:px-28 2xl:px-32',
+          " md:flex justify-between max-w-[1920px] mx-auto px-4 sm:px-5 md:px-6 lg:px-16 xl:px-28 2xl:px-32",
           {
-            ' 3xl:px-40': variant === 'default',
-            '3xl:ltr:pl-14 3xl:rtl:pr-14': variant === 'modern',
+            " 3xl:px-40": variant === "default",
+            "3xl:ltr:pl-14 3xl:rtl:pr-14": variant === "modern",
           }
         )}
       >
@@ -84,7 +84,7 @@ const DownloadAppsTwo: React.FC<Props> = ({
         <div className="hidden md:flex items-end ltr:pl-4 rtl:pr-4 2xl:ltr:pl-0 2xl:rtl:pr-0 md:max-w-[450px] lg:max-w-[660px] xl:max-w-auto ltr:-mr-10 rtl:-ml-10 lg:ltr:-mr-16 lg:rtl:-ml-16 xl:ltr:-mr-10 xl:rtl:-ml-10 3xl:ltr:mr-7 3xl:rtl:ml-7">
           <Image
             src={appImage}
-            alt={t('text-app-thumbnail')}
+            alt={t("text-app-thumbnail")}
             width={660}
             height={465}
             quality={100}

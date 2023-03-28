@@ -1,7 +1,7 @@
-import { ShopsQueryOptionsType, Shop } from '@framework/types';
-import http from '@framework/utils/http';
-import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
-import { useQuery } from 'react-query';
+import { ShopsQueryOptionsType, Shop } from "@framework/types";
+import http from "@framework/utils/http";
+import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
+import { useQuery } from "react-query";
 
 export const fetchShops = async ({ queryKey }: any) => {
   const [_key, _params] = queryKey;

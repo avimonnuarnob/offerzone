@@ -1,8 +1,8 @@
 const StarIcon = ({
-  color = 'currentColor',
-  width = '16px',
-  height = '16px',
-  className = '',
+  color = "currentColor",
+  width = "16px",
+  height = "16px",
+  className = "",
 }) => {
   return (
     <svg

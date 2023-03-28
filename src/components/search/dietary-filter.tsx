@@ -1,21 +1,21 @@
-import React from 'react';
-import { CheckBox } from '@components/ui/form/checkbox';
-import { useDietaryQuery } from '@framework/dietary/get-all-dietary';
-import { useRouter } from 'next/router';
-import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
-import { Disclosure } from '@headlessui/react';
-import { useTranslation } from 'next-i18next';
-import Heading from '@components/ui/heading';
+import React from "react";
+import { CheckBox } from "@components/ui/form/checkbox";
+import { useDietaryQuery } from "@framework/dietary/get-all-dietary";
+import { useRouter } from "next/router";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { Disclosure } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
+import Heading from "@components/ui/heading";
 
 export const DietaryFilter = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const { pathname, query } = router;
   const { data, isLoading, error } = useDietaryQuery({
     limit: 10,
   });
   const selectedDietary = React.useMemo(
-    () => (query?.dietary ? (query.dietary as string).split(',') : []),
+    () => (query?.dietary ? (query.dietary as string).split(",") : []),
     [query?.dietary]
   );
   const [formState, setFormState] = React.useState<string[]>(selectedDietary);
@@ -39,7 +39,7 @@ export const DietaryFilter = () => {
         query: {
           ...restQuery,
           ...(currentFormState.length
-            ? { dietary: currentFormState.join(',') }
+            ? { dietary: currentFormState.join(",") }
             : {}),
         },
       },
@@ -51,7 +51,7 @@ export const DietaryFilter = () => {
 
   return (
     <div className="block">
-      <Heading className="mb-5 -mt-1">{t('text-dietary-needs')}</Heading>
+      <Heading className="mb-5 -mt-1">{t("text-dietary-needs")}</Heading>
       <div className="flex flex-col p-5 border rounded-md border-border-base">
         {items?.slice(0, 3)?.map((item: any) => (
           <CheckBox
@@ -84,14 +84,14 @@ export const DietaryFilter = () => {
                     {open ? (
                       <>
                         <span className="inline-block ltr:pr-1 rtl:pl-1">
-                          {t('text-see-less')}
+                          {t("text-see-less")}
                         </span>
                         <IoIosArrowUp className="text-brand-dark text-opacity-60 text-15px" />
                       </>
                     ) : (
                       <>
                         <span className="inline-block ltr:pr-1 rtl:pl-1">
-                          {t('text-see-more')}
+                          {t("text-see-more")}
                         </span>
                         <IoIosArrowDown className="text-brand-dark text-opacity-60 text-15px" />
                       </>

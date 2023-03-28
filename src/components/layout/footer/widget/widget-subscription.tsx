@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import Input from '@components/ui/form/input';
-import { useTranslation } from 'next-i18next';
-import EmailIcon from '@components/icons/email-icon';
-import SendIcon from '@components/icons/send-icon';
-import Text from '@components/ui/text';
-import Heading from '@components/ui/heading';
-import { useRouter } from 'next/router';
-import { getDirection } from '@utils/get-direction';
-import cn from 'classnames';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import Input from "@components/ui/form/input";
+import { useTranslation } from "next-i18next";
+import EmailIcon from "@components/icons/email-icon";
+import SendIcon from "@components/icons/send-icon";
+import Text from "@components/ui/text";
+import Heading from "@components/ui/heading";
+import { useRouter } from "next/router";
+import { getDirection } from "@utils/get-direction";
+import cn from "classnames";
 interface Props {
   className?: string;
 }
@@ -16,7 +16,7 @@ interface NewsLetterFormValues {
   email: string;
 }
 const defaultValues = {
-  email: '',
+  email: "",
 };
 const WidgetSubscription: React.FC<Props> = ({ className }) => {
   const { t } = useTranslation();
@@ -41,19 +41,19 @@ const WidgetSubscription: React.FC<Props> = ({ className }) => {
 
     // reset form after submit
     e.target.reset();
-    console.log(values, 'News letter');
+    console.log(values, "News letter");
   }
 
   const { locale } = useRouter();
   const dir = getDirection(locale);
   return (
-    <div className={cn('flex flex-col', className)}>
+    <div className={cn("flex flex-col", className)}>
       <Heading variant="mediumHeading" className="mb-4 lg:mb-6 lg:pb-0.5">
-        {t('footer:widget-title-subscribe')}
+        {t("footer:widget-title-subscribe")}
       </Heading>
 
       <Text className="lg:-mt-1 max-w-[400px]">
-        {t('footer:text-subscribe')}
+        {t("footer:text-subscribe")}
       </Text>
       <form
         noValidate
@@ -64,25 +64,25 @@ const WidgetSubscription: React.FC<Props> = ({ className }) => {
           <EmailIcon className="w-4 2xl:w-[18px] h-4 2xl:h-[18px]" />
         </span>
         <Input
-          placeholder={t('forms:placeholder-email-subscribe')}
+          placeholder={t("forms:placeholder-email-subscribe")}
           type="email"
           id="subscription-email"
           variant="solid"
           className="w-full"
           inputClassName="ltr:pl-10 rtl:pr-10 2xl:px-11 h-12 rounded-md"
-          {...register('email', {
-            required: `${t('forms:email-required')}`,
+          {...register("email", {
+            required: `${t("forms:email-required")}`,
             pattern: {
               value:
                 /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: `${t('forms:email-error')}`,
+              message: `${t("forms:email-error")}`,
             },
           })}
           error={errors.email?.message}
         />
         {!errors.email && subscriptionSuccess && (
           <p className="my-2 text-13px text-brand">
-            {t('common:text-subscription-success-msg')}
+            {t("common:text-subscription-success-msg")}
           </p>
         )}
         <button
@@ -91,7 +91,7 @@ const WidgetSubscription: React.FC<Props> = ({ className }) => {
         >
           <SendIcon
             className={`w-[18px] 2xl:w-5 h-[18px] 2xl:h-5 ${
-              dir === 'rtl' && 'transform rotate-180'
+              dir === "rtl" && "transform rotate-180"
             }`}
           />
         </button>

@@ -1,8 +1,8 @@
 const SendIcon = ({
-  color = '#02B290',
-  width = '20',
-  height = '20',
-  className = '',
+  color = "#02B290",
+  width = "20",
+  height = "20",
+  className = "",
 }) => {
   return (
     <svg

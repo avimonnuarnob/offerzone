@@ -1,5 +1,5 @@
-import Header from '@components/layout/header/header-seven';
-import MobileNavigation from '@components/layout/mobile-navigation/mobile-navigation';
+import Header from "@components/layout/header/header-seven";
+import MobileNavigation from "@components/layout/mobile-navigation/mobile-navigation";
 
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
@@ -8,7 +8,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
       <main
         className="relative flex-grow pt-16 lg:pt-20"
         style={{
-          WebkitOverflowScrolling: 'touch',
+          WebkitOverflowScrolling: "touch",
         }}
       >
         {children}

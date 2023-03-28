@@ -1,8 +1,8 @@
 const DeliveryIcon = ({
-  color = 'currentColor',
-  width = '50px',
-  height = '35px',
-  className = '',
+  color = "currentColor",
+  width = "50px",
+  height = "35px",
+  className = "",
 }) => {
   return (
     <svg

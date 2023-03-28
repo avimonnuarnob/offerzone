@@ -1,49 +1,49 @@
-import { useState } from 'react';
-import Button from '@components/ui/button';
-import Heading from '@components/ui/heading';
-import Contact from '@components/contact/contact';
-import Address from './address';
-import DeliveryNotes from './delivery-instruction';
-import DeliverySchedule from './schedule';
-import DeliveryTips from './delivery-tips';
-import StripeCheckoutInlineForm from './stripe-checkout-inline-form';
-import { useTranslation } from 'next-i18next';
+import { useState } from "react";
+import Button from "@components/ui/button";
+import Heading from "@components/ui/heading";
+import Contact from "@components/contact/contact";
+import Address from "./address";
+import DeliveryNotes from "./delivery-instruction";
+import DeliverySchedule from "./schedule";
+import DeliveryTips from "./delivery-tips";
+import StripeCheckoutInlineForm from "./stripe-checkout-inline-form";
+import { useTranslation } from "next-i18next";
 
 const data = [
   {
     id: 1,
-    title: 'text-delivery-address',
+    title: "text-delivery-address",
     component: <Address />,
   },
   {
     id: 2,
-    title: 'text-delivery-schedule',
+    title: "text-delivery-schedule",
     component: <DeliverySchedule />,
   },
   {
     id: 3,
-    title: 'text-contact-number',
+    title: "text-contact-number",
     component: <Contact />,
   },
   {
     id: 4,
-    title: 'text-payment-option',
+    title: "text-payment-option",
     component: <StripeCheckoutInlineForm />,
   },
   {
     id: 5,
-    title: 'text-delivery-instructions',
+    title: "text-delivery-instructions",
     component: <DeliveryNotes />,
   },
   {
     id: 6,
-    title: 'text-delivery-tip',
+    title: "text-delivery-tip",
     component: <DeliveryTips />,
   },
 ];
 
 const CheckoutDetails: React.FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const [bindIndex, setBindIndex] = useState(0);
   const changeItem = (itemIndex: any) => {
     if (itemIndex !== bindIndex) {
@@ -57,8 +57,8 @@ const CheckoutDetails: React.FC = () => {
           <div
             key={index}
             className={`accordion__panel ${
-              !(data?.length - 1 === index) ? 'border-b border-border-base' : ''
-            } ${bindIndex !== index ? 'collapsed' : 'expanded'}
+              !(data?.length - 1 === index) ? "border-b border-border-base" : ""
+            } ${bindIndex !== index ? "collapsed" : "expanded"}
             `}
             onClick={() => changeItem(index)}
           >
@@ -84,7 +84,7 @@ const CheckoutDetails: React.FC = () => {
                     variant="formButton"
                     className="bg-brand text-brand-light rounded font-semibold font-[14px] px-4 py-3"
                   >
-                    {t('button-next-steps')}
+                    {t("button-next-steps")}
                   </Button>
                 </div>
               ) : (

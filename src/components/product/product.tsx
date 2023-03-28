@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import Button from '@components/ui/button';
-import Counter from '@components/ui/counter';
-import { useRouter } from 'next/router';
-import { ROUTES } from '@utils/routes';
-import useWindowSize from '@utils/use-window-size';
-import { useProductQuery } from '@framework/product/get-product';
-import { getVariations } from '@framework/utils/get-variations';
-import usePrice from '@framework/product/use-price';
-import { useCart } from '@contexts/cart/cart.context';
-import { generateCartItem } from '@utils/generate-cart-item';
-import ProductAttributes from '@components/product/product-attributes';
-import isEmpty from 'lodash/isEmpty';
-import { toast } from 'react-toastify';
-import ThumbnailCarousel from '@components/ui/carousel/thumbnail-carousel';
-import { useTranslation } from 'next-i18next';
-import Image from '@components/ui/image';
-import CartIcon from '@components/icons/cart-icon';
-import { IoIosHeart, IoIosHeartEmpty } from 'react-icons/io';
-import TagLabel from '@components/ui/tag-label';
-import LabelIcon from '@components/icons/label-icon';
-import { IoArrowRedoOutline } from 'react-icons/io5';
-import SocialShareBox from '@components/ui/social-share-box';
-import ProductDetailsTab from '@components/product/product-details/product-tab';
-import VariationPrice from './variation-price';
-import isEqual from 'lodash/isEqual';
+import { useState } from "react";
+import Button from "@components/ui/button";
+import Counter from "@components/ui/counter";
+import { useRouter } from "next/router";
+import { ROUTES } from "@utils/routes";
+import useWindowSize from "@utils/use-window-size";
+import { useProductQuery } from "@framework/product/get-product";
+import { getVariations } from "@framework/utils/get-variations";
+import usePrice from "@framework/product/use-price";
+import { useCart } from "@contexts/cart/cart.context";
+import { generateCartItem } from "@utils/generate-cart-item";
+import ProductAttributes from "@components/product/product-attributes";
+import isEmpty from "lodash/isEmpty";
+import { toast } from "react-toastify";
+import ThumbnailCarousel from "@components/ui/carousel/thumbnail-carousel";
+import { useTranslation } from "next-i18next";
+import Image from "@components/ui/image";
+import CartIcon from "@components/icons/cart-icon";
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
+import TagLabel from "@components/ui/tag-label";
+import LabelIcon from "@components/icons/label-icon";
+import { IoArrowRedoOutline } from "react-icons/io5";
+import SocialShareBox from "@components/ui/social-share-box";
+import ProductDetailsTab from "@components/product/product-details/product-tab";
+import VariationPrice from "./variation-price";
+import isEqual from "lodash/isEqual";
 
 const ProductSingleDetails: React.FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const {
     query: { slug },
@@ -47,7 +47,7 @@ const ProductSingleDetails: React.FC = () => {
     data && {
       amount: data.sale_price ? data.sale_price : data.price,
       baseAmount: data.price,
-      currencyCode: 'USD',
+      currencyCode: "USD",
     }
   );
   const handleChange = () => {
@@ -84,9 +84,9 @@ const ProductSingleDetails: React.FC = () => {
 
     const item = generateCartItem(data!, selectedVariation);
     addItemToCart(item, quantity);
-    toast('Added to the bag', {
-      progressClassName: 'fancy-progress-bar',
-      position: width! > 768 ? 'bottom-right' : 'top-right',
+    toast("Added to the bag", {
+      progressClassName: "fancy-progress-bar",
+      position: width! > 768 ? "bottom-right" : "top-right",
       autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
@@ -99,13 +99,13 @@ const ProductSingleDetails: React.FC = () => {
     setAddToWishlistLoader(true);
     setFavorite(!favorite);
     const toastStatus: string =
-      favorite === true ? t('text-remove-favorite') : t('text-added-favorite');
+      favorite === true ? t("text-remove-favorite") : t("text-added-favorite");
     setTimeout(() => {
       setAddToWishlistLoader(false);
     }, 1500);
     toast(toastStatus, {
-      progressClassName: 'fancy-progress-bar',
-      position: width! > 768 ? 'bottom-right' : 'top-right',
+      progressClassName: "fancy-progress-bar",
+      position: width! > 768 ? "bottom-right" : "top-right",
       autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
@@ -127,7 +127,7 @@ const ProductSingleDetails: React.FC = () => {
           ) : (
             <div className="flex items-center justify-center w-auto">
               <Image
-                src={data?.image?.original ?? '/product-placeholder.svg'}
+                src={data?.image?.original ?? "/product-placeholder.svg"}
                 alt={data?.name}
                 width={900}
                 height={680}
@@ -166,7 +166,7 @@ const ProductSingleDetails: React.FC = () => {
                       {basePrice}
                     </del>
                     <span className="inline-block rounded font-bold text-xs md:text-sm bg-brand-tree bg-opacity-20 text-brand-tree uppercase px-2 py-1 ltr:ml-2.5 rtl:mr-2.5">
-                      {discount} {t('text-off')}
+                      {discount} {t("text-off")}
                     </span>
                   </>
                 )}
@@ -191,15 +191,15 @@ const ProductSingleDetails: React.FC = () => {
               <>
                 {Number(quantity) > 0 || !outOfStock ? (
                   <span className="text-sm font-medium text-yellow">
-                    {t('text-only') +
-                      ' ' +
+                    {t("text-only") +
+                      " " +
                       quantity +
-                      ' ' +
-                      t('text-left-item')}
+                      " " +
+                      t("text-left-item")}
                   </span>
                 ) : (
                   <div className="text-base text-red-500 whitespace-nowrap">
-                    {t('text-out-stock')}
+                    {t("text-out-stock")}
                   </div>
                 )}
               </>
@@ -209,13 +209,13 @@ const ProductSingleDetails: React.FC = () => {
               <span className="text-sm font-medium text-yellow">
                 {selectedVariation?.is_disable ||
                 selectedVariation.quantity === 0
-                  ? t('text-out-stock')
+                  ? t("text-out-stock")
                   : `${
-                      t('text-only') +
-                      ' ' +
+                      t("text-only") +
+                      " " +
                       selectedVariation.quantity +
-                      ' ' +
-                      t('text-left-item')
+                      " " +
+                      t("text-left-item")
                     }`}
               </span>
             )}
@@ -243,7 +243,7 @@ const ProductSingleDetails: React.FC = () => {
               loading={addToCartLoader}
             >
               <CartIcon color="#ffffff" className="ltr:mr-3 rtl:ml-3" />
-              {t('text-add-to-cart')}
+              {t("text-add-to-cart")}
             </Button>
             <div className="grid grid-cols-2 gap-2.5">
               <Button
@@ -251,7 +251,7 @@ const ProductSingleDetails: React.FC = () => {
                 onClick={addToWishlist}
                 loading={addToWishlistLoader}
                 className={`group hover:text-brand ${
-                  favorite === true && 'text-brand'
+                  favorite === true && "text-brand"
                 }`}
               >
                 {favorite === true ? (
@@ -260,24 +260,24 @@ const ProductSingleDetails: React.FC = () => {
                   <IoIosHeartEmpty className="text-2xl md:text-[26px] ltr:mr-2 rtl:ml-2 transition-all group-hover:text-brand" />
                 )}
 
-                {t('text-wishlist')}
+                {t("text-wishlist")}
               </Button>
               <div className="relative group">
                 <Button
                   variant="border"
                   className={`w-full hover:text-brand ${
-                    shareButtonStatus === true && 'text-brand'
+                    shareButtonStatus === true && "text-brand"
                   }`}
                   onClick={handleChange}
                 >
                   <IoArrowRedoOutline className="text-2xl md:text-[26px] ltr:mr-2 rtl:ml-2 transition-all group-hover:text-brand" />
-                  {t('text-share')}
+                  {t("text-share")}
                 </Button>
                 <SocialShareBox
                   className={`absolute z-10 ltr:right-0 rtl:left-0 w-[300px] md:min-w-[400px] transition-all duration-300 ${
                     shareButtonStatus === true
-                      ? 'visible opacity-100 top-full'
-                      : 'opacity-0 invisible top-[130%]'
+                      ? "visible opacity-100 top-full"
+                      : "opacity-0 invisible top-[130%]"
                   }`}
                   shareUrl={productUrl}
                 />
@@ -287,7 +287,7 @@ const ProductSingleDetails: React.FC = () => {
           {data?.tag && (
             <ul className="pt-5 xl:pt-6">
               <li className="relative inline-flex items-center justify-center text-sm md:text-15px text-brand-dark text-opacity-80 ltr:mr-2 rtl:ml-2 top-1">
-                <LabelIcon className="ltr:mr-2 rtl:ml-2" /> {t('text-tags')}:
+                <LabelIcon className="ltr:mr-2 rtl:ml-2" /> {t("text-tags")}:
               </li>
               {data?.tag?.map((item: any) => (
                 <li className="inline-block p-[3px]" key={`tag-${item.id}`}>

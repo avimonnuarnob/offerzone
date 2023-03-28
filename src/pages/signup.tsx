@@ -1,9 +1,9 @@
-import Layout from '@components/layout/layout';
-import SignupForm from '@components/auth/sign-up-form';
-import { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@components/seo/seo';
-import Divider from '@components/ui/divider';
+import Layout from "@components/layout/layout";
+import SignupForm from "@components/auth/sign-up-form";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Seo from "@components/seo/seo";
+import Divider from "@components/ui/divider";
 
 export default function SignInPage() {
   return (
@@ -33,10 +33,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
   };

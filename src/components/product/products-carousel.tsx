@@ -1,15 +1,15 @@
-import SectionHeader from '@components/common/section-header';
-import ProductCardAlpine from '@components/product/product-cards/product-card-alpine';
-import { Product } from '@framework/types';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from '@components/ui/carousel/slider';
-import Alert from '@components/ui/alert';
-import SeeAll from '@components/ui/see-all';
-import useWindowSize from '@utils/use-window-size';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import cn from 'classnames';
-import { useRouter } from 'next/router';
-import { getDirection } from '@utils/get-direction';
+import SectionHeader from "@components/common/section-header";
+import ProductCardAlpine from "@components/product/product-cards/product-card-alpine";
+import { Product } from "@framework/types";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "@components/ui/carousel/slider";
+import Alert from "@components/ui/alert";
+import SeeAll from "@components/ui/see-all";
+import useWindowSize from "@utils/use-window-size";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import cn from "classnames";
+import { useRouter } from "next/router";
+import { getDirection } from "@utils/get-direction";
 
 interface ProductsCarouselProps {
   sectionHeading: string;
@@ -24,28 +24,28 @@ interface ProductsCarouselProps {
 }
 
 const breakpoints = {
-  '1921': {
+  "1921": {
     slidesPerView: 7,
   },
-  '1780': {
+  "1780": {
     slidesPerView: 8,
   },
-  '1536': {
+  "1536": {
     slidesPerView: 7,
   },
-  '1280': {
+  "1280": {
     slidesPerView: 6,
   },
-  '1024': {
+  "1024": {
     slidesPerView: 4,
   },
-  '640': {
+  "640": {
     slidesPerView: 3,
   },
-  '360': {
+  "360": {
     slidesPerView: 2,
   },
-  '0': {
+  "0": {
     slidesPerView: 1,
   },
 };
@@ -53,7 +53,7 @@ const breakpoints = {
 const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
   sectionHeading,
   categorySlug,
-  className = 'mb-8 lg:mb-10 xl:mb-12',
+  className = "mb-8 lg:mb-10 xl:mb-12",
   products,
   loading,
   error,
@@ -67,7 +67,7 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
   return (
     <div
       className={cn(
-        'max-w-[1920px] overflow-hidden 4xl:overflow-visible px-4 md:px-6 lg:px-8 2xl:ltr:pl-10 2xl:rtl:pr-10 2xl:ltr:pr-0 2xl:rtl:pl-0 4xl:ltr:pr-10 4xl:rtl:pl-10 mx-auto relative',
+        "max-w-[1920px] overflow-hidden 4xl:overflow-visible px-4 md:px-6 lg:px-8 2xl:ltr:pl-10 2xl:rtl:pr-10 2xl:ltr:pr-0 2xl:rtl:pl-0 4xl:ltr:pr-10 4xl:rtl:pl-10 mx-auto relative",
         className
       )}
     >
@@ -81,9 +81,9 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
       ) : (
         <div
           className={`heightFull relative after-item-opacity  ${
-            dir === 'rtl'
-              ? 'xl:-ml-40 2xl:-ml-28 4xl:ml-0'
-              : 'xl:-mr-40 2xl:-mr-28 4xl:mr-0'
+            dir === "rtl"
+              ? "xl:-ml-40 2xl:-ml-28 4xl:ml-0"
+              : "xl:-mr-40 2xl:-mr-28 4xl:mr-0"
           }`}
         >
           <Carousel

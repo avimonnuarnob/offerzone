@@ -1,14 +1,14 @@
-import dynamic from 'next/dynamic';
-import CategoryCard from '@components/cards/category-card';
-import SectionHeader from '@components/common/section-header';
-import CategoryCardLoader from '@components/ui/loaders/category-card-loader';
-import { useCategoriesQuery } from '@framework/category/get-all-categories';
-import { ROUTES } from '@utils/routes';
-import Alert from '@components/ui/alert';
-import { SwiperSlide } from 'swiper/react';
-import useWindowSize from '@utils/use-window-size';
-import { LIMITS } from '@framework/utils/limits';
-const Carousel = dynamic(() => import('@components/ui/carousel/carousel'), {
+import dynamic from "next/dynamic";
+import CategoryCard from "@components/cards/category-card";
+import SectionHeader from "@components/common/section-header";
+import CategoryCardLoader from "@components/ui/loaders/category-card-loader";
+import { useCategoriesQuery } from "@framework/category/get-all-categories";
+import { ROUTES } from "@utils/routes";
+import Alert from "@components/ui/alert";
+import { SwiperSlide } from "swiper/react";
+import useWindowSize from "@utils/use-window-size";
+import { LIMITS } from "@framework/utils/limits";
+const Carousel = dynamic(() => import("@components/ui/carousel/carousel"), {
   ssr: false,
 });
 
@@ -16,34 +16,34 @@ interface CategoriesProps {
   className?: string;
 }
 const breakpoints = {
-  '1640': {
+  "1640": {
     slidesPerView: 9,
     spaceBetween: 24,
   },
-  '1280': {
+  "1280": {
     slidesPerView: 7,
     spaceBetween: 20,
   },
-  '1024': {
+  "1024": {
     slidesPerView: 6,
     spaceBetween: 20,
   },
-  '768': {
+  "768": {
     slidesPerView: 5,
     spaceBetween: 15,
   },
-  '530': {
+  "530": {
     slidesPerView: 4,
     spaceBetween: 15,
   },
-  '0': {
+  "0": {
     slidesPerView: 3,
     spaceBetween: 15,
   },
 };
 
 const CategoryGridBlock: React.FC<CategoriesProps> = ({
-  className = 'md:pt-3 lg:pt-0 3xl:pb-2 mb-12 sm:mb-14 md:mb-16 xl:mb-24 2xl:mb-16',
+  className = "md:pt-3 lg:pt-0 3xl:pb-2 mb-12 sm:mb-14 md:mb-16 xl:mb-24 2xl:mb-16",
 }) => {
   const { width } = useWindowSize();
 

@@ -1,7 +1,7 @@
-import Heading from '@components/ui/heading';
-import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
-import Text from '@components/ui/text';
+import Heading from "@components/ui/heading";
+import cn from "classnames";
+import { useTranslation } from "next-i18next";
+import Text from "@components/ui/text";
 
 interface ItemProps {
   icon: JSX.Element;
@@ -15,12 +15,12 @@ interface Props {
 }
 
 const FeaturedCard: React.FC<Props> = ({ item, className }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { icon, title, description } = item;
   return (
     <div
       className={cn(
-        'group p-5 md:px-6 xl:px-7 3xl:px-9 flex items-center justify-between bg-[#F4F2EB]',
+        "group p-5 md:px-6 xl:px-7 3xl:px-9 flex items-center justify-between bg-[#F4F2EB]",
         className
       )}
     >

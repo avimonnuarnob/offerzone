@@ -1,5 +1,5 @@
-import { useTranslation } from 'next-i18next';
-import { Attachment } from '@framework/types';
+import { useTranslation } from "next-i18next";
+import { Attachment } from "@framework/types";
 
 interface HeroSectionProps {
   backgroundThumbnail?: Attachment;
@@ -8,11 +8,11 @@ interface HeroSectionProps {
 }
 
 const BundleHeroSection: React.FC<HeroSectionProps> = ({
-  backgroundThumbnail = '/assets/images/bundle/attachment/fruits-juice.png',
-  heroTitle = 'text-fruits-juice-item',
-  heroDescription = 'text-fruits-juice-description',
+  backgroundThumbnail = "/assets/images/bundle/attachment/fruits-juice.png",
+  heroTitle = "text-fruits-juice-item",
+  heroDescription = "text-fruits-juice-description",
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div
       className="flex justify-center xl:min-h-[350px] py-16 md:py-20 w-full bg-cover bg-no-repeat bg-center"

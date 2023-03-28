@@ -1,10 +1,10 @@
-import Link from '@components/ui/link';
-import Image from '@components/ui/image';
-import { IoIosCloseCircle } from 'react-icons/io';
-import { useCart } from '@contexts/cart/cart.context';
-import usePrice from '@framework/product/use-price';
-import { ROUTES } from '@utils/routes';
-import Counter from '@components/ui/counter';
+import Link from "@components/ui/link";
+import Image from "@components/ui/image";
+import { IoIosCloseCircle } from "react-icons/io";
+import { useCart } from "@contexts/cart/cart.context";
+import usePrice from "@framework/product/use-price";
+import { ROUTES } from "@utils/routes";
+import Counter from "@components/ui/counter";
 
 type CartItemProps = {
   item: any;
@@ -15,7 +15,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
     useCart();
   const { price: totalPrice } = usePrice({
     amount: item?.itemTotal,
-    currencyCode: 'USD',
+    currencyCode: "USD",
   });
   const outOfStock = !isInStock(item.id);
   return (
@@ -25,11 +25,11 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
     >
       <div className="relative flex rounded overflow-hidden shrink-0 cursor-pointer w-[90px] md:w-[100px] h-[90px] md:h-[100px]">
         <Image
-          src={item?.image ?? '/assets/placeholder/cart-item.svg'}
+          src={item?.image ?? "/assets/placeholder/cart-item.svg"}
           width={100}
           height={100}
           loading="eager"
-          alt={item.name || 'Product Image'}
+          alt={item.name || "Product Image"}
           className="object-cover bg-fill-thumbnail"
         />
         <div

@@ -1,8 +1,8 @@
-import CartIcon from '@components/icons/cart-icon';
-import { useCart } from '@contexts/cart/cart.context';
-import { useUI } from '@contexts/ui.context';
-import { useTranslation } from 'next-i18next';
-import cn from 'classnames';
+import CartIcon from "@components/icons/cart-icon";
+import { useCart } from "@contexts/cart/cart.context";
+import { useUI } from "@contexts/ui.context";
+import { useTranslation } from "next-i18next";
+import cn from "classnames";
 
 type CartButtonProps = {
   className?: string;
@@ -13,15 +13,15 @@ type CartButtonProps = {
 
 const CartButton: React.FC<CartButtonProps> = ({
   className,
-  iconClassName = 'text-brand-dark text-opacity-40',
+  iconClassName = "text-brand-dark text-opacity-40",
   hideLabel,
   isShowing,
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { openDrawer, setDrawerView } = useUI();
   const { totalItems } = useCart();
   function handleCartOpen() {
-    setDrawerView('CART_SIDEBAR');
+    setDrawerView("CART_SIDEBAR");
     isShowing;
     return openDrawer();
   }
@@ -29,7 +29,7 @@ const CartButton: React.FC<CartButtonProps> = ({
   return (
     <button
       className={cn(
-        'flex items-center justify-center shrink-0 h-auto focus:outline-none transform',
+        "flex items-center justify-center shrink-0 h-auto focus:outline-none transform",
         className
       )}
       onClick={handleCartOpen}
@@ -43,7 +43,7 @@ const CartButton: React.FC<CartButtonProps> = ({
       </div>
       {!hideLabel && (
         <span className="text-sm font-normal lg:text-15px text-brand-dark ltr:ml-2 rtl:mr-2">
-          {t('text-cart')}
+          {t("text-cart")}
         </span>
       )}
     </button>

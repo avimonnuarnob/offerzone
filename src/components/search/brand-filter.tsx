@@ -1,21 +1,21 @@
-import { CheckBox } from '@components/ui/form/checkbox';
-import { useBrandsQuery } from '@framework/brand/get-all-brands';
-import { Disclosure } from '@headlessui/react';
-import { useRouter } from 'next/router';
-import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
-import React from 'react';
-import { useTranslation } from 'next-i18next';
-import Heading from '@components/ui/heading';
+import { CheckBox } from "@components/ui/form/checkbox";
+import { useBrandsQuery } from "@framework/brand/get-all-brands";
+import { Disclosure } from "@headlessui/react";
+import { useRouter } from "next/router";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import React from "react";
+import { useTranslation } from "next-i18next";
+import Heading from "@components/ui/heading";
 
 export const BrandFilter = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const { pathname, query } = router;
   const { data, isLoading, error } = useBrandsQuery({
     limit: 10,
   });
   const selectedBrands = React.useMemo(
-    () => (query?.brand ? (query.brand as string).split(',') : []),
+    () => (query?.brand ? (query.brand as string).split(",") : []),
     [query?.brand]
   );
   const [formState, setFormState] = React.useState<string[]>(selectedBrands);
@@ -39,7 +39,7 @@ export const BrandFilter = () => {
         query: {
           ...restQuery,
           ...(currentFormState.length
-            ? { brand: currentFormState.join(',') }
+            ? { brand: currentFormState.join(",") }
             : {}),
         },
       },
@@ -51,7 +51,7 @@ export const BrandFilter = () => {
 
   return (
     <div className="block">
-      <Heading className="mb-5 -mt-1">{t('text-brands')}</Heading>
+      <Heading className="mb-5 -mt-1">{t("text-brands")}</Heading>
       <div className="flex flex-col p-5 border rounded-md border-border-base">
         {items?.slice(0, 3)?.map((item: any) => (
           <CheckBox
@@ -84,14 +84,14 @@ export const BrandFilter = () => {
                     {open ? (
                       <>
                         <span className="inline-block ltr:pr-1 rtl:pl-1">
-                          {t('text-see-less')}
+                          {t("text-see-less")}
                         </span>
                         <IoIosArrowUp className="text-brand-dark text-opacity-60 text-15px" />
                       </>
                     ) : (
                       <>
                         <span className="inline-block ltr:pr-1 rtl:pl-1">
-                          {t('text-see-more')}
+                          {t("text-see-more")}
                         </span>
                         <IoIosArrowDown className="text-brand-dark text-opacity-60 text-15px" />
                       </>

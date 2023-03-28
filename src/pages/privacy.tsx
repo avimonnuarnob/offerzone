@@ -1,21 +1,21 @@
-import Layout from '@components/layout/layout';
-import Container from '@components/ui/container';
-import Heading from '@components/ui/heading';
-import PageHeroSection from '@components/ui/page-hero-section';
-import { privacyPolicy } from '@settings/privacy-settings';
-import { Link, Element } from 'react-scroll';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import { GetStaticProps } from 'next';
-import DownloadApps from '@components/common/download-apps';
-import Seo from '@components/seo/seo';
+import Layout from "@components/layout/layout";
+import Container from "@components/ui/container";
+import Heading from "@components/ui/heading";
+import PageHeroSection from "@components/ui/page-hero-section";
+import { privacyPolicy } from "@settings/privacy-settings";
+import { Link, Element } from "react-scroll";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { GetStaticProps } from "next";
+import DownloadApps from "@components/common/download-apps";
+import Seo from "@components/seo/seo";
 
 function makeTitleToDOMId(title: string) {
-  return title.toLowerCase().split(' ').join('_');
+  return title.toLowerCase().split(" ").join("_");
 }
 
 export default function PrivacyPage() {
-  const { t } = useTranslation('privacy');
+  const { t } = useTranslation("privacy");
   return (
     <>
       <Seo
@@ -84,11 +84,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'privacy',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "privacy",
+        "footer",
       ])),
     },
   };

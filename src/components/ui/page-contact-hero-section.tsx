@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
-import { Attachment } from '@framework/types';
+import { useTranslation } from "react-i18next";
+import { Attachment } from "@framework/types";
 
 interface HeaderProps {
   heroTitle?: string;
@@ -8,11 +8,11 @@ interface HeaderProps {
 }
 
 const PageContactHeroSection: React.FC<HeaderProps> = ({
-  heroTitle = 'text-contact-page-header',
-  heroDescription = 'text-contact-page-explore',
-  backgroundThumbnail = '/assets/images/contact-page-banner.png',
+  heroTitle = "text-contact-page-header",
+  heroDescription = "text-contact-page-explore",
+  backgroundThumbnail = "/assets/images/contact-page-banner.png",
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div
       className="lg:min-h-[370px] 2xl:min-h-[455px] lg:py-0 h-auto pt-10 md:pt-14 pb-20 md:pb-24 flex lg:items-center bg-cover lg:bg-cover bg-left sm:bg-top lg:bg-center bg-no-repeat border-t border-border-base"

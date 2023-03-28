@@ -1,8 +1,8 @@
 const CouponIcon = ({
-  color = 'currentColor',
-  width = '55px',
-  height = '55px',
-  className = '',
+  color = "currentColor",
+  width = "55px",
+  height = "55px",
+  className = "",
 }) => {
   return (
     <svg

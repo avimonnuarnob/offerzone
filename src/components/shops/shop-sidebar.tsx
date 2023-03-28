@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import Text from '@components/ui/text';
-import { ROUTES } from '@utils/routes';
-import { useRouter } from 'next/router';
+import { useState } from "react";
+import Image from "next/image";
+import Text from "@components/ui/text";
+import { ROUTES } from "@utils/routes";
+import { useRouter } from "next/router";
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -10,14 +10,14 @@ import {
   FacebookIcon,
   LinkedinIcon,
   TwitterIcon,
-} from 'react-share';
-import Heading from '@components/ui/heading';
-import { useTranslation } from 'next-i18next';
+} from "react-share";
+import Heading from "@components/ui/heading";
+import { useTranslation } from "next-i18next";
 import {
   IoLocationOutline,
   IoCallOutline,
   IoGlobeOutline,
-} from 'react-icons/io5';
+} from "react-icons/io5";
 
 interface ShopSidebarProps {
   data: any;
@@ -29,7 +29,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({ data }) => {
   } = useRouter();
   const [descriptionState, setDescriptionState] = useState(Boolean(false));
   const shareUrl = `${process.env.NEXT_PUBLIC_WEBSITE_URL}${ROUTES.SHOPS}/${slug}`;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const descriptionHandel = () => {
     return setDescriptionState(true);
   };
@@ -51,16 +51,16 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({ data }) => {
         <Text variant="small">
           {descriptionState === true ? (
             data?.description
-          ) : data?.description.split(' ').length >= 13 ? (
+          ) : data?.description.split(" ").length >= 13 ? (
             <>
-              {data?.description.split(' ').slice(0, 13).join(' ')}
-              {'..'}
+              {data?.description.split(" ").slice(0, 13).join(" ")}
+              {".."}
               <span
                 role="button"
                 className="text-brand ltr:ml-0.5 rtl:mr-0.5 font-semibold block hover:text-brand-muted"
                 onClick={descriptionHandel}
               >
-                {t('text-read-more')}
+                {t("text-read-more")}
               </span>
             </>
           ) : (
@@ -98,7 +98,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({ data }) => {
           </div>
           <div className="-mt-1">
             <h4 className="mb-1 font-medium text-brand-dark text-15px">
-              {t('text-address')}:
+              {t("text-address")}:
             </h4>
             <Text>{data?.address}</Text>
           </div>
@@ -109,7 +109,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({ data }) => {
           </div>
           <div className="-mt-1">
             <h4 className="mb-1 font-medium text-brand-dark text-15px">
-              {t('text-phone-number')}:
+              {t("text-phone-number")}:
             </h4>
             <Text>{data?.phone}</Text>
           </div>
@@ -120,7 +120,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({ data }) => {
           </div>
           <div className="-mt-1">
             <h4 className="mb-1 font-medium text-brand-dark text-15px">
-              {t('text-website')}:
+              {t("text-website")}:
             </h4>
             <Text>
               <a

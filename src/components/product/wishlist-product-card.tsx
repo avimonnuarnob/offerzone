@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import type { FC } from 'react';
-import Image from '@components/ui/image';
-import usePrice from '@framework/product/use-price';
-import { Product } from '@framework/types';
-import { IoIosHeart, IoIosHeartEmpty } from 'react-icons/io';
-import { useTranslation } from 'next-i18next';
+import { useState } from "react";
+import type { FC } from "react";
+import Image from "@components/ui/image";
+import usePrice from "@framework/product/use-price";
+import { Product } from "@framework/types";
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
+import { useTranslation } from "next-i18next";
 
 interface ProductProps {
   product: Product;
@@ -12,14 +12,14 @@ interface ProductProps {
 }
 
 const WishlistProductCard: FC<ProductProps> = ({ product, className }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { name, image, unit } = product ?? {};
   const placeholderImage = `/assets/placeholder/product.svg`;
   const [favorite, setFavorite] = useState<boolean>(false);
   const { price, basePrice, discount } = usePrice({
     amount: product.sale_price ? product.sale_price : product.price,
     baseAmount: product.price,
-    currencyCode: 'USD',
+    currencyCode: "USD",
   });
 
   return (
@@ -29,7 +29,7 @@ const WishlistProductCard: FC<ProductProps> = ({ product, className }) => {
           <div className="flex overflow-hidden max-w-[80px]  transition duration-200 ease-in-out transform group-hover:scale-105">
             <Image
               src={image?.thumbnail ?? placeholderImage}
-              alt={name || 'Product Image'}
+              alt={name || "Product Image"}
               width={80}
               height={80}
               quality={100}
@@ -66,14 +66,14 @@ const WishlistProductCard: FC<ProductProps> = ({ product, className }) => {
             <IoIosHeartEmpty className="w-5 h-5 mt-0.5" />
 
             <span className=" ltr:ml-3 rtl:mr-3 text-brand-dark font-medium text-15px -mt-0.5 md:mt-0">
-              {t('text-favorite')}
+              {t("text-favorite")}
             </span>
           </>
         ) : (
           <>
             <IoIosHeart className="text-brand w-5 h-5 mt-0.5" />
             <span className="text-brand ltr:ml-3 rtl:mr-3 font-semibold text-15px -mt-0.5 md:mt-0">
-              {t('text-favorited')}
+              {t("text-favorited")}
             </span>
           </>
         )}

@@ -1,5 +1,5 @@
-import { useOrderStatusQuery } from '@framework/order/order-status';
-import ProgressBox from './progress-box';
+import { useOrderStatusQuery } from "@framework/order/order-status";
+import ProgressBox from "./progress-box";
 
 interface Props {
   status: number;

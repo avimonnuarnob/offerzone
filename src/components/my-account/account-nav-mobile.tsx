@@ -1,10 +1,10 @@
-import { Fragment, useState, useEffect } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { FaChevronDown } from 'react-icons/fa';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { useLogoutMutation } from '@framework/auth/use-logout';
-import LogoutIcon from '@components/icons/account-logout';
+import { Fragment, useState, useEffect } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { FaChevronDown } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { useLogoutMutation } from "@framework/auth/use-logout";
+import LogoutIcon from "@components/icons/account-logout";
 type Option = {
   name: string;
   slug: string;
@@ -12,7 +12,7 @@ type Option = {
 };
 
 export default function AccountNavMobile({ options }: { options: Option[] }) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const { pathname } = router;
   const currentSelectedItem = pathname
@@ -62,8 +62,8 @@ export default function AccountNavMobile({ options }: { options: Option[] }) {
                   className={({ active }) =>
                     `cursor-pointer relative py-3 px-4 md:px-5 ${
                       active
-                        ? 'text-brand-dark bg-fill-dropdown-hover'
-                        : 'bg-brand-light'
+                        ? "text-brand-dark bg-fill-dropdown-hover"
+                        : "bg-brand-light"
                     }`
                   }
                   value={option}
@@ -73,14 +73,14 @@ export default function AccountNavMobile({ options }: { options: Option[] }) {
                       {option?.icon}
                       <span
                         className={`block truncate ltr:pl-2.5 rtl:pr-2.5 md:ltr:pl-3 md:rtl:pr-3 ${
-                          selected ? 'font-medium' : 'font-normal'
+                          selected ? "font-medium" : "font-normal"
                         }`}
                       >
                         {t(option?.name)}
                       </span>
                       {selected ? (
                         <span
-                          className={`${active && 'text-amber-600'}
+                          className={`${active && "text-amber-600"}
                                  absolute inset-y-0 ltr:left-0 rtl:right-0 flex items-center ltr:pl-3 rtl:pr-3`}
                         />
                       ) : null}
@@ -96,7 +96,7 @@ export default function AccountNavMobile({ options }: { options: Option[] }) {
                   <LogoutIcon className="w-5 md:w-[22px] h-5 md:h-[22px]" />
                 </span>
                 <span className="block truncate ltr:pl-2.5 rtl:pr-2.5 md:ltr:pl-3 md:rtl:pr-3">
-                  {t('text-logout')}
+                  {t("text-logout")}
                 </span>
               </button>
             </Listbox.Options>

@@ -1,12 +1,12 @@
-import ReferFriendsIcon from '@components/icons/featured/refer-friends-icon';
-import DeliveryIcon from '@components/icons/featured/delivery-icon';
-import ChatIcon from '@components/icons/featured/chat-icon';
-import FeedbackIcon from '@components/icons/featured/feedback-icon';
-import FeaturedCard from '@components/cards/featured-card';
-import useWindowSize from '@utils/use-window-size';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from '@components/ui/carousel/slider';
-import { ROUTES } from '@utils/routes';
+import ReferFriendsIcon from "@components/icons/featured/refer-friends-icon";
+import DeliveryIcon from "@components/icons/featured/delivery-icon";
+import ChatIcon from "@components/icons/featured/chat-icon";
+import FeedbackIcon from "@components/icons/featured/feedback-icon";
+import FeaturedCard from "@components/cards/featured-card";
+import useWindowSize from "@utils/use-window-size";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "@components/ui/carousel/slider";
+import { ROUTES } from "@utils/routes";
 
 const data = [
   {
@@ -17,9 +17,9 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-one',
+    title: "feature-title-one",
     href: ROUTES.SEARCH,
-    bgColor: '#FFEED6',
+    bgColor: "#FFEED6",
   },
   {
     id: 2,
@@ -29,9 +29,9 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-two',
+    title: "feature-title-two",
     href: ROUTES.SEARCH,
-    bgColor: '#CCEDFF',
+    bgColor: "#CCEDFF",
   },
   {
     id: 3,
@@ -41,9 +41,9 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-three',
+    title: "feature-title-three",
     href: ROUTES.SEARCH,
-    bgColor: '#D7F1EC',
+    bgColor: "#D7F1EC",
   },
   {
     id: 4,
@@ -53,9 +53,9 @@ const data = [
         className="transform scale-75 xl:scale-90 3xl:scale-100"
       />
     ),
-    title: 'feature-title-four',
+    title: "feature-title-four",
     href: ROUTES.SEARCH,
-    bgColor: '#FFE1E1',
+    bgColor: "#FFE1E1",
   },
 ];
 
@@ -64,25 +64,25 @@ interface Props {
 }
 
 const breakpoints = {
-  '1024': {
+  "1024": {
     slidesPerView: 3,
     spaceBetween: 16,
   },
-  '768': {
+  "768": {
     slidesPerView: 2,
     spaceBetween: 16,
   },
-  '640 ': {
+  "640 ": {
     slidesPerView: 2,
     spaceBetween: 12,
   },
-  '0': {
+  "0": {
     slidesPerView: 1,
   },
 };
 
 const FeatureGrid: React.FC<Props> = ({
-  className = 'mb-12 md:mb-14 xl:mb-16',
+  className = "mb-12 md:mb-14 xl:mb-16",
 }) => {
   const { width } = useWindowSize();
   return (

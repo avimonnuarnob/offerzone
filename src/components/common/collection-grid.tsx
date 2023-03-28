@@ -1,65 +1,65 @@
-import CollectionCard from '@components/cards/collection-card';
-import SectionHeader from '@components/common/section-header';
-import Container from '@components/ui/container';
-import useWindowSize from '@utils/use-window-size';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from '@components/ui/carousel/slider';
-import { ROUTES } from '@utils/routes';
+import CollectionCard from "@components/cards/collection-card";
+import SectionHeader from "@components/common/section-header";
+import Container from "@components/ui/container";
+import useWindowSize from "@utils/use-window-size";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "@components/ui/carousel/slider";
+import { ROUTES } from "@utils/routes";
 
 const data = [
   {
     id: 1,
-    slug: 'feel-the-thirsty-in-summer-anytime',
-    image: '/assets/images/collection/1.png',
-    title: 'collection-title-one',
-    description: 'collection-description-one',
+    slug: "feel-the-thirsty-in-summer-anytime",
+    image: "/assets/images/collection/1.png",
+    title: "collection-title-one",
+    description: "collection-description-one",
   },
   {
     id: 2,
-    slug: 'most-popular-item-for-Fast-food',
-    image: '/assets/images/collection/2.png',
-    title: 'collection-title-two',
-    description: 'collection-description-two',
+    slug: "most-popular-item-for-Fast-food",
+    image: "/assets/images/collection/2.png",
+    title: "collection-title-two",
+    description: "collection-description-two",
   },
   {
     id: 3,
-    slug: 'authentic-japanese-food-in-real-taste',
-    image: '/assets/images/collection/3.png',
-    title: 'collection-title-three',
-    description: 'collection-description-three',
+    slug: "authentic-japanese-food-in-real-taste",
+    image: "/assets/images/collection/3.png",
+    title: "collection-title-three",
+    description: "collection-description-three",
   },
   {
     id: 4,
-    slug: 'explore-our-family-of-freshest®-foods',
-    image: '/assets/images/collection/4.png',
-    title: 'collection-title-four',
-    description: 'collection-description-four',
+    slug: "explore-our-family-of-freshest®-foods",
+    image: "/assets/images/collection/4.png",
+    title: "collection-title-four",
+    description: "collection-description-four",
   },
 ];
 
 interface Props {
   className?: string;
-  headingPosition?: 'left' | 'center';
+  headingPosition?: "left" | "center";
 }
 
 const breakpoints = {
-  '1024': {
+  "1024": {
     slidesPerView: 3,
   },
-  '768': {
+  "768": {
     slidesPerView: 3,
   },
-  '540': {
+  "540": {
     slidesPerView: 2,
   },
-  '0': {
+  "0": {
     slidesPerView: 1,
   },
 };
 
 const CollectionGrid: React.FC<Props> = ({
-  className = 'mb-12 lg:mb-14 xl:mb-16 2xl:mb-20 pb-1 lg:pb-0 3xl:pb-2.5',
-  headingPosition = 'left',
+  className = "mb-12 lg:mb-14 xl:mb-16 2xl:mb-20 pb-1 lg:pb-0 3xl:pb-2.5",
+  headingPosition = "left",
 }) => {
   const { width } = useWindowSize();
   return (

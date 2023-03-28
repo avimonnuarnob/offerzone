@@ -1,29 +1,29 @@
-import BannerCard from '@components/cards/banner-card';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from 'swiper/react';
+import BannerCard from "@components/cards/banner-card";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "swiper/react";
 
 const breakpoints = {
-  '1536': {
+  "1536": {
     slidesPerView: 3,
     spaceBetween: 20,
   },
-  '1280': {
+  "1280": {
     slidesPerView: 3,
     spaceBetween: 16,
   },
-  '1024': {
+  "1024": {
     slidesPerView: 3,
     spaceBetween: 16,
   },
-  '768': {
+  "768": {
     slidesPerView: 2,
     spaceBetween: 16,
   },
-  '520': {
+  "520": {
     slidesPerView: 2,
     spaceBetween: 12,
   },
-  '0': {
+  "0": {
     slidesPerView: 1,
   },
 };
@@ -31,13 +31,13 @@ const breakpoints = {
 interface BannerProps {
   data: any;
   className?: string;
-  buttonSize?: 'default' | 'small';
+  buttonSize?: "default" | "small";
 }
 
 const BannerAllCarousel: React.FC<BannerProps> = ({
   data,
-  className = 'mb-6',
-  buttonSize = 'default',
+  className = "mb-6",
+  buttonSize = "default",
 }) => {
   return (
     <div className={className}>

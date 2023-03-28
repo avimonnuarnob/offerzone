@@ -1,7 +1,7 @@
-import BannerCard from '@components/cards/banner-card';
-import useWindowSize from '@utils/use-window-size';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from '@components/ui/carousel/slider';
+import BannerCard from "@components/cards/banner-card";
+import useWindowSize from "@utils/use-window-size";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "@components/ui/carousel/slider";
 
 interface BannerProps {
   data: any;
@@ -11,8 +11,8 @@ interface BannerProps {
 
 const BannerHeroGrid: React.FC<BannerProps> = ({
   data,
-  className = 'mb-3 md:mb-4 lg:mb-5 xl:mb-6',
-  girdClassName = '2xl:gap-5',
+  className = "mb-3 md:mb-4 lg:mb-5 xl:mb-6",
+  girdClassName = "2xl:gap-5",
 }) => {
   const { width } = useWindowSize();
   return (
@@ -38,7 +38,7 @@ const BannerHeroGrid: React.FC<BannerProps> = ({
               banner={banner}
               effectActive={true}
               className={`${
-                banner.type === 'small' ? 'col-span-5' : 'col-span-7'
+                banner.type === "small" ? "col-span-5" : "col-span-7"
               }`}
             />
           ))}

@@ -1,10 +1,10 @@
-import Scrollbar from '@components/ui/scrollbar';
-import { useUI } from '@contexts/ui.context';
-import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
-import { getDirection } from '@utils/get-direction';
-import { useRouter } from 'next/router';
-import ShopSidebar from '@components/shops/shop-sidebar';
-import { useTranslation } from 'react-i18next';
+import Scrollbar from "@components/ui/scrollbar";
+import { useUI } from "@contexts/ui.context";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { getDirection } from "@utils/get-direction";
+import { useRouter } from "next/router";
+import ShopSidebar from "@components/shops/shop-sidebar";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   data: any;
@@ -12,7 +12,7 @@ interface Props {
 
 const ShopSidebarDrawer: React.FC<Props> = ({ data }) => {
   const { closeShop } = useUI();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const router = useRouter();
   const dir = getDirection(router.locale);
   return (
@@ -23,14 +23,14 @@ const ShopSidebarDrawer: React.FC<Props> = ({ data }) => {
           onClick={closeShop}
           aria-label="close"
         >
-          {dir === 'rtl' ? (
+          {dir === "rtl" ? (
             <IoArrowForward className="text-black" />
           ) : (
             <IoArrowBack className="text-black" />
           )}
         </button>
         <h2 className="w-full m-0 text-xl font-bold text-center md:text-2xl text-brand-dark ltr:pr-6 rtl:pl-6">
-          {t('text-details')}
+          {t("text-details")}
         </h2>
       </div>
 

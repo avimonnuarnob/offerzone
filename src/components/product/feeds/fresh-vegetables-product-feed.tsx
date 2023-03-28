@@ -1,7 +1,7 @@
-import { useFreshVegetablesProductsQuery } from '@framework/product/get-all-fresh-vegetables-products';
-import ProductsCarousel from '@components/product/products-carousel';
-import { ROUTES } from '@utils/routes';
-import { LIMITS } from '@framework/utils/limits';
+import { useFreshVegetablesProductsQuery } from "@framework/product/get-all-fresh-vegetables-products";
+import ProductsCarousel from "@components/product/products-carousel";
+import { ROUTES } from "@utils/routes";
+import { LIMITS } from "@framework/utils/limits";
 
 export default function FreshVegetablesProductFeed() {
   const { data, isLoading, error } = useFreshVegetablesProductsQuery({

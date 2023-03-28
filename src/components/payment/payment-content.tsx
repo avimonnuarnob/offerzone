@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { IoMdClose } from 'react-icons/io';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { RadioGroup } from '@headlessui/react';
-import { useModalAction } from '@components/common/modal/modal.context';
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import { AiOutlinePlus } from "react-icons/ai";
+import { RadioGroup } from "@headlessui/react";
+import { useModalAction } from "@components/common/modal/modal.context";
 
 const PaymentBox: React.FC<{ items: any }> = ({ items }) => {
   const { openModal } = useModalAction();
 
   function handlePopupView(item: any) {
-    openModal('PAYMENT');
+    openModal("PAYMENT");
   }
 
   const removeItem = (id: any, title: string) => {
@@ -24,11 +24,11 @@ const PaymentBox: React.FC<{ items: any }> = ({ items }) => {
             key={index}
             value={item}
             className={({ active, checked }) =>
-              `${checked ? '' : 'border-border-base'}
+              `${checked ? "" : "border-border-base"}
                   border-2 relative shadow-md focus:outline-none rounded p-5 block cursor-pointer min-h-[112px] h-full group bg-repeat bg-cover address__box`
             }
             style={{
-              backgroundImage: 'url(/assets/images/card.png)',
+              backgroundImage: "url(/assets/images/card.png)",
             }}
           >
             <RadioGroup.Label
@@ -62,7 +62,7 @@ const PaymentBox: React.FC<{ items: any }> = ({ items }) => {
                 className="flex justify-center items-center bg-[#F35C5C] h-5 w-5 rounded-full"
                 onClick={() => removeItem(item?.id, item?.title)}
               >
-                <IoMdClose size={12} fill={'#fff'} />
+                <IoMdClose size={12} fill={"#fff"} />
               </button>
             </div>
           </RadioGroup.Option>

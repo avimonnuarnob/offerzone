@@ -1,12 +1,12 @@
-import cn from 'classnames';
-import Image from '@components/ui/image';
-import usePrice from '@framework/product/use-price';
-import { Product } from '@framework/types';
-import { useModalAction } from '@components/common/modal/modal.context';
-import Countdown, { zeroPad } from 'react-countdown';
-import { productPlaceholder } from '@assets/placeholders';
-import ProgressCard from '@components/ui/progress-card';
-import { useTranslation } from 'react-i18next';
+import cn from "classnames";
+import Image from "@components/ui/image";
+import usePrice from "@framework/product/use-price";
+import { Product } from "@framework/types";
+import { useModalAction } from "@components/common/modal/modal.context";
+import Countdown, { zeroPad } from "react-countdown";
+import { productPlaceholder } from "@assets/placeholders";
+import ProgressCard from "@components/ui/progress-card";
+import { useTranslation } from "react-i18next";
 
 interface ProductProps {
   product: Product;
@@ -67,28 +67,28 @@ const ProductFlashSaleGobies: React.FC<ProductProps> = ({
 }) => {
   const { name, image, quantity, sold, product_type } = product ?? {};
   const { openModal } = useModalAction();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const { price, basePrice } = usePrice({
     amount: product?.sale_price ? product?.sale_price : product?.price,
     baseAmount: product?.price,
-    currencyCode: 'USD',
+    currencyCode: "USD",
   });
   const { price: minPrice } = usePrice({
     amount: product?.min_price ?? 0,
-    currencyCode: 'USD',
+    currencyCode: "USD",
   });
   const { price: maxPrice } = usePrice({
     amount: product?.max_price ?? 0,
-    currencyCode: 'USD',
+    currencyCode: "USD",
   });
 
   function handlePopupView() {
-    openModal('PRODUCT_VIEW', product);
+    openModal("PRODUCT_VIEW", product);
   }
   return (
     <article
       className={cn(
-        'flex flex-col justify-between group cursor-pointer relative px-5 lg:px-7 pt-16 pb-10',
+        "flex flex-col justify-between group cursor-pointer relative px-5 lg:px-7 pt-16 pb-10",
         className
       )}
       onClick={handlePopupView}
@@ -96,13 +96,13 @@ const ProductFlashSaleGobies: React.FC<ProductProps> = ({
     >
       <div className="absolute z-10 top-6 left-6">
         <span className="text-[11px] md:text-xs font-bold text-brand-light uppercase inline-block bg-[#fd5473] rounded-full px-2.5 py-[5px] pb-1 mx-0.5 sm:mx-1">
-          {t('text-most-popular')}
+          {t("text-most-popular")}
         </span>
       </div>
       <figure className="m-0 flex flex-grow items-center justify-center h-48 lg:h-56 3xl:h-64 w-full px-16 mx-auto relative">
         <Image
           src={image?.original ?? productPlaceholder}
-          alt={name || 'Product Image'}
+          alt={name || "Product Image"}
           layout="fill"
           className="object-contain"
         />
@@ -111,7 +111,7 @@ const ProductFlashSaleGobies: React.FC<ProductProps> = ({
       <div className="flex flex-col mt-8 mb-0.5 text-center">
         <div className="mb-2 lg:mb-2.5">
           <span className="inline-block mx-1 text-xl font-semibold xl:text-2xl text-brand-dark">
-            {product_type === 'variable' ? `${minPrice} - ${maxPrice}` : price}
+            {product_type === "variable" ? `${minPrice} - ${maxPrice}` : price}
           </span>
           {basePrice && (
             <del className="mx-1 text-base text-opacity-50 xl:text-lg text-brand-dark">

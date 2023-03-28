@@ -1,6 +1,6 @@
-import Layout from '@components/layout/layout';
-import OrderTable from '@components/order/order-table';
-import { useOrdersQuery } from '@framework/order/get-all-orders';
+import Layout from "@components/layout/layout";
+import OrderTable from "@components/order/order-table";
+import { useOrdersQuery } from "@framework/order/get-all-orders";
 
 export default function OrdersTablePage() {
   const { data, isLoading } = useOrdersQuery({});

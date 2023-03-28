@@ -1,8 +1,8 @@
 const EmailIcon = ({
-  color = '#B3B3B3',
-  width = '18',
-  height = '18',
-  className = '',
+  color = "#B3B3B3",
+  width = "18",
+  height = "18",
+  className = "",
 }) => {
   return (
     <svg

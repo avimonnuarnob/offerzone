@@ -1,23 +1,23 @@
-import Layout from '@components/layout/layout-six';
-import Container from '@components/ui/container';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { homeAntiqueHeroBanner as heroBanner } from '@framework/static/banner';
-import { GetStaticProps } from 'next';
-import CollectionGrid from '@components/common/collection-grid';
-import Seo from '@components/seo/seo';
-import { QueryClient } from 'react-query';
-import { dehydrate } from 'react-query/hydration';
-import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
-import { fetchProducts } from '@framework/product/get-all-products';
-import { fetchCategories } from '@framework/category/get-all-categories';
-import { LIMITS } from '@framework/utils/limits';
-import HeroBannerCard from '@components/hero/hero-banner-card';
-import CategoryGridListBlock from '@components/common/category-grid-list-block';
-import BestSellerGroceryProductFeed from '@components/product/feeds/best-seller-grocery-product-feed';
-import BannerGridTwo from '@components/common/banner-grid-two';
-import BestSellerWithFlashSale from '@components/product/feeds/best-seller-with-flash-sale';
-import CallToActionMoscow from '@components/common/call-to-action/cta-moscow';
-import { elegantBannerGrid as banners } from '@framework/static/banner';
+import Layout from "@components/layout/layout-six";
+import Container from "@components/ui/container";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { homeAntiqueHeroBanner as heroBanner } from "@framework/static/banner";
+import { GetStaticProps } from "next";
+import CollectionGrid from "@components/common/collection-grid";
+import Seo from "@components/seo/seo";
+import { QueryClient } from "react-query";
+import { dehydrate } from "react-query/hydration";
+import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
+import { fetchProducts } from "@framework/product/get-all-products";
+import { fetchCategories } from "@framework/category/get-all-categories";
+import { LIMITS } from "@framework/utils/limits";
+import HeroBannerCard from "@components/hero/hero-banner-card";
+import CategoryGridListBlock from "@components/common/category-grid-list-block";
+import BestSellerGroceryProductFeed from "@components/product/feeds/best-seller-grocery-product-feed";
+import BannerGridTwo from "@components/common/banner-grid-two";
+import BestSellerWithFlashSale from "@components/product/feeds/best-seller-with-flash-sale";
+import CallToActionMoscow from "@components/common/call-to-action/cta-moscow";
+import { elegantBannerGrid as banners } from "@framework/static/banner";
 
 export default function Home() {
   return (
@@ -73,10 +73,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
     revalidate: 60,

@@ -1,6 +1,6 @@
-import { Switch } from '@headlessui/react';
-import { useRouter } from 'next/router';
-import { getDirection } from '@utils/get-direction';
+import { Switch } from "@headlessui/react";
+import { useRouter } from "next/router";
+import { getDirection } from "@utils/get-direction";
 
 interface SwitchProps {
   srText?: string;
@@ -9,7 +9,7 @@ interface SwitchProps {
 }
 
 const SwitchComponent: React.FC<SwitchProps> = ({
-  srText = 'toggle',
+  srText = "toggle",
   checked,
   onChange,
 }) => {
@@ -20,7 +20,7 @@ const SwitchComponent: React.FC<SwitchProps> = ({
       checked={checked}
       onChange={onChange}
       type="button"
-      className={`${checked ? 'bg-brand' : 'bg-fill-four'}
+      className={`${checked ? "bg-brand" : "bg-fill-four"}
           relative inline-flex shrink-0 h-6 lg:h-7 w-10 lg:w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-brand-light focus-visible:ring-opacity-75 focus:border-brand`}
     >
       <span className="sr-only">{srText}</span>
@@ -28,10 +28,10 @@ const SwitchComponent: React.FC<SwitchProps> = ({
         aria-hidden="true"
         className={`${
           checked
-            ? dir === 'rtl'
-              ? '-translate-x-4 lg:-translate-x-5'
-              : 'translate-x-4 lg:translate-x-5'
-            : 'translate-x-0'
+            ? dir === "rtl"
+              ? "-translate-x-4 lg:-translate-x-5"
+              : "translate-x-4 lg:translate-x-5"
+            : "translate-x-0"
         }
             pointer-events-none inline-block h-5 lg:h-6 w-5 lg:w-6 rounded-full bg-brand-light shadow-switch transform ring-0 transition ease-in-out duration-200`}
       />

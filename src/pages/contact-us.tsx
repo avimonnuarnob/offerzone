@@ -1,13 +1,13 @@
-import Container from '@components/ui/container';
-import Layout from '@components/layout/layout';
-import Map from '@components/ui/map';
-import PageContactHeroSection from '@components/ui/page-contact-hero-section';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import DownloadApps from '@components/common/download-apps';
-import ContactForm from '@components/common/form/contact-form';
-import ContactSupport from '@components/contact/contact-support';
-import ContactInformation from '@components/contact/contact-information';
-import Seo from '@components/seo/seo';
+import Container from "@components/ui/container";
+import Layout from "@components/layout/layout";
+import Map from "@components/ui/map";
+import PageContactHeroSection from "@components/ui/page-contact-hero-section";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import DownloadApps from "@components/common/download-apps";
+import ContactForm from "@components/common/form/contact-form";
+import ContactSupport from "@components/contact/contact-support";
+import ContactInformation from "@components/contact/contact-information";
+import Seo from "@components/seo/seo";
 
 export default function ContactUsPage() {
   return (
@@ -35,7 +35,7 @@ export default function ContactUsPage() {
         <Map
           lat={1.295831}
           lng={103.76261}
-          height={'420px'}
+          height={"420px"}
           zoom={15}
           showInfoWindow={true}
         />
@@ -51,10 +51,10 @@ export const getStaticProps = async ({ locale }: any) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
   };

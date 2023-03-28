@@ -1,16 +1,16 @@
-import { ShopFilters } from '@components/search/filters';
-import Scrollbar from '@components/ui/scrollbar';
-import { useUI } from '@contexts/ui.context';
-import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
-import { useTranslation } from 'next-i18next';
-import { getDirection } from '@utils/get-direction';
-import { useRouter } from 'next/router';
-import Heading from '@components/ui/heading';
+import { ShopFilters } from "@components/search/filters";
+import Scrollbar from "@components/ui/scrollbar";
+import { useUI } from "@contexts/ui.context";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { useTranslation } from "next-i18next";
+import { getDirection } from "@utils/get-direction";
+import { useRouter } from "next/router";
+import Heading from "@components/ui/heading";
 
 const FilterSidebar = () => {
   const { closeFilter } = useUI();
   const router = useRouter();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const dir = getDirection(router.locale);
   return (
     <div className="flex flex-col justify-between w-full h-full">
@@ -20,7 +20,7 @@ const FilterSidebar = () => {
           onClick={closeFilter}
           aria-label="close"
         >
-          {dir === 'rtl' ? (
+          {dir === "rtl" ? (
             <IoArrowForward className="text-brand-dark" />
           ) : (
             <IoArrowBack className="text-brand-dark" />
@@ -30,7 +30,7 @@ const FilterSidebar = () => {
           variant="titleMedium"
           className="w-full text-center ltr:pr-6 rtl:pl-6"
         >
-          {t('text-filters')}
+          {t("text-filters")}
         </Heading>
       </div>
 
@@ -41,7 +41,7 @@ const FilterSidebar = () => {
       </Scrollbar>
 
       <div className="flex items-center justify-center leading-4 text-15px md:text-base px-7 shrink-0 h-14 bg-fill-secondary text-brand-dark ">
-        2,683 {t('text-items-found')}
+        2,683 {t("text-items-found")}
       </div>
     </div>
   );

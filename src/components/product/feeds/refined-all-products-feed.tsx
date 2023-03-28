@@ -1,21 +1,21 @@
-import { Fragment } from 'react';
-import ProductCardAlpine from '@components/product/product-cards/product-card-alpine';
-import type { FC } from 'react';
-import { useProductsQuery } from '@framework/product/get-all-products';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import SectionHeader from '@components/common/section-header';
-import { useModalAction } from '@components/common/modal/modal.context';
-import Alert from '@components/ui/alert';
-import cn from 'classnames';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { LIMITS } from '@framework/utils/limits';
-import { Product } from '@framework/types';
+import { Fragment } from "react";
+import ProductCardAlpine from "@components/product/product-cards/product-card-alpine";
+import type { FC } from "react";
+import { useProductsQuery } from "@framework/product/get-all-products";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import SectionHeader from "@components/common/section-header";
+import { useModalAction } from "@components/common/modal/modal.context";
+import Alert from "@components/ui/alert";
+import cn from "classnames";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { LIMITS } from "@framework/utils/limits";
+import { Product } from "@framework/types";
 interface ProductFeedProps {
   className?: string;
 }
-const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = '' }) => {
-  const { t } = useTranslation('common');
+const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = "" }) => {
+  const { t } = useTranslation("common");
 
   const { query } = useRouter();
   const {
@@ -30,7 +30,7 @@ const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = '' }) => {
   const { openModal } = useModalAction();
 
   function handleCategoryPopup() {
-    openModal('CATEGORY_VIEW');
+    openModal("CATEGORY_VIEW");
   }
 
   return (
@@ -42,7 +42,7 @@ const RefinedAllProductFeed: FC<ProductFeedProps> = ({ className = '' }) => {
           role="button"
           onClick={handleCategoryPopup}
         >
-          {t('text-categories')}
+          {t("text-categories")}
         </div>
       </div>
       {error ? (

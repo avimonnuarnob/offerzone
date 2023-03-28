@@ -1,7 +1,7 @@
-import type { FC } from 'react';
-import { usePopularProductsQuery } from '@framework/product/get-all-popular-products';
-import ProductsGridBlock from '@components/product/products-grid-block';
-import { LIMITS } from '@framework/utils/limits';
+import type { FC } from "react";
+import { usePopularProductsQuery } from "@framework/product/get-all-popular-products";
+import ProductsGridBlock from "@components/product/products-grid-block";
+import { LIMITS } from "@framework/utils/limits";
 
 interface ProductFeedProps {
   className?: string;

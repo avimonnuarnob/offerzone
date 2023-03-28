@@ -1,6 +1,6 @@
-import HeroBannerCard from '@components/hero/hero-banner-card';
-import Carousel from '@components/ui/carousel/carousel';
-import { SwiperSlide } from '@components/ui/carousel/slider';
+import HeroBannerCard from "@components/hero/hero-banner-card";
+import Carousel from "@components/ui/carousel/carousel";
+import { SwiperSlide } from "@components/ui/carousel/slider";
 
 interface Props {
   heroBanner?: any;
@@ -10,8 +10,8 @@ interface Props {
 
 const HeroSliderBlock: React.FC<Props> = ({
   heroBanner,
-  className = 'mb-7',
-  contentClassName = 'py-24',
+  className = "mb-7",
+  contentClassName = "py-24",
 }) => {
   return (
     <div className={`${className}`}>

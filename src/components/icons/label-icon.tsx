@@ -1,8 +1,8 @@
 const LabelIcon = ({
-  color = '#999999',
-  width = '20',
-  height = '20',
-  className = '',
+  color = "#999999",
+  width = "20",
+  height = "20",
+  className = "",
 }) => {
   return (
     <svg

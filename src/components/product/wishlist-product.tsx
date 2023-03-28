@@ -1,15 +1,15 @@
-import WishlistProductCard from '@components/product/wishlist-product-card';
-import { useWishlistProductsQuery } from '@framework/product/get-wishlist-product';
-import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import Alert from '@components/ui/alert';
-import cn from 'classnames';
+import WishlistProductCard from "@components/product/wishlist-product-card";
+import { useWishlistProductsQuery } from "@framework/product/get-wishlist-product";
+import ProductCardLoader from "@components/ui/loaders/product-card-loader";
+import Alert from "@components/ui/alert";
+import cn from "classnames";
 
 interface ProductWishlistProps {
   className?: string;
 }
 
 export default function ProductWishlistGrid({
-  className = '',
+  className = "",
 }: ProductWishlistProps) {
   const limit = 35;
   const { data, isLoading, error } = useWishlistProductsQuery({

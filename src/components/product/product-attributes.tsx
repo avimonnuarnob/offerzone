@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import cn from "classnames";
 
 interface Props {
   className?: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ProductAttributes: React.FC<Props> = ({
-  className = 'mb-2 pt-0.5',
+  className = "mb-2 pt-0.5",
   variations,
   attributes,
   setAttributes,
@@ -19,7 +19,7 @@ const ProductAttributes: React.FC<Props> = ({
       {Object.keys(variations).map((variationName, index) => (
         <div className={cn(className)} key={index}>
           <h4 className="mb-3 font-normal capitalize text-15px text-brand-dark text-opacity-70">
-            {variationName.split('-').join(' ')}:
+            {variationName.split("-").join(" ")}:
           </h4>
 
           <ul className="flex flex-wrap ltr:-mr-2 rtl:-ml-2">
@@ -27,9 +27,9 @@ const ProductAttributes: React.FC<Props> = ({
               <li
                 key={attribute.id}
                 className={cn(
-                  'cursor-pointer rounded border h-9 md:h-10 p-1 mb-2 md:mb-3 ltr:mr-2 rtl:ml-2 flex justify-center items-center font-medium text-sm md:text-15px text-brand-dark transition duration-200 ease-in-out hover:text-brand hover:border-brand px-3',
+                  "cursor-pointer rounded border h-9 md:h-10 p-1 mb-2 md:mb-3 ltr:mr-2 rtl:ml-2 flex justify-center items-center font-medium text-sm md:text-15px text-brand-dark transition duration-200 ease-in-out hover:text-brand hover:border-brand px-3",
                   {
-                    'border-brand text-brand':
+                    "border-brand text-brand":
                       attributes[variationName] === attribute.value,
                   }
                 )}

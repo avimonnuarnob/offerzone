@@ -1,8 +1,8 @@
 const PlusIcon = ({
-  color = 'currentColor',
-  width = '22',
-  height = '22',
-  opacity = '0.8',
+  color = "currentColor",
+  width = "22",
+  height = "22",
+  opacity = "0.8",
 }) => {
   return (
     <svg

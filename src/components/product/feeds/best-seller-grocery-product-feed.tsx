@@ -1,7 +1,7 @@
-import type { FC } from 'react';
-import { useBestSellerGroceryProductsQuery } from '@framework/product/get-all-best-seller-grocery-products';
-import ProductsGridBlock from '../products-grid-block';
-import { LIMITS } from '@framework/utils/limits';
+import type { FC } from "react";
+import { useBestSellerGroceryProductsQuery } from "@framework/product/get-all-best-seller-grocery-products";
+import ProductsGridBlock from "../products-grid-block";
+import { LIMITS } from "@framework/utils/limits";
 
 interface ProductFeedProps {
   className?: string;

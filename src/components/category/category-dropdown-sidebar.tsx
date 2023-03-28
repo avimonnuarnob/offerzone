@@ -1,9 +1,9 @@
-import Alert from '@components/ui/alert';
-import Scrollbar from '@components/ui/scrollbar';
-import SidebarMenu from '@components/ui/sidebar-menu';
-import CategoryListCardLoader from '@components/ui/loaders/category-list-card-loader';
-import { useCategoriesQuery } from '@framework/category/get-all-categories';
-import cn from 'classnames';
+import Alert from "@components/ui/alert";
+import Scrollbar from "@components/ui/scrollbar";
+import SidebarMenu from "@components/ui/sidebar-menu";
+import CategoryListCardLoader from "@components/ui/loaders/category-list-card-loader";
+import { useCategoriesQuery } from "@framework/category/get-all-categories";
+import cn from "classnames";
 
 interface CategorySidebarProps {
   className?: string;
@@ -20,7 +20,7 @@ export default function CategoryDropdownSidebar({
     limit: 10,
   });
   return (
-    <aside className={cn('category-mobile-sidebar', className)}>
+    <aside className={cn("category-mobile-sidebar", className)}>
       <div className="max-h-full overflow-hidden border rounded border-border-base">
         {error ? (
           <div className="2xl:ltr:pr-4 2xl:rtl:pl-4">

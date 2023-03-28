@@ -1,21 +1,21 @@
-import { BsX } from 'react-icons/bs';
-import cn from 'classnames';
+import { BsX } from "react-icons/bs";
+import cn from "classnames";
 
 type HighlightedBarProps = {
   onClose?: (e: React.SyntheticEvent) => void;
-  variant?: 'dark' | 'primary' | 'highlighted' | 'highlightedTwo';
+  variant?: "dark" | "primary" | "highlighted" | "highlightedTwo";
   className?: string;
 };
 
 const variantBasedClasses = {
-  dark: 'bg-gray-800',
-  primary: 'bg-brand',
-  highlighted: 'bg-yellow-300',
-  highlightedTwo: 'bg-yellow-200',
+  dark: "bg-gray-800",
+  primary: "bg-brand",
+  highlighted: "bg-yellow-300",
+  highlightedTwo: "bg-yellow-200",
 };
 
 export default function HighlightedBar({
-  variant = 'primary',
+  variant = "primary",
   onClose,
   children,
   className,
@@ -23,7 +23,7 @@ export default function HighlightedBar({
   return (
     <div
       className={cn(
-        'w-full min-h-[40px] py-2 px-4 md:px-6 lg:px-8 flex items-center justify-center relative text-sm text-brand-light',
+        "w-full min-h-[40px] py-2 px-4 md:px-6 lg:px-8 flex items-center justify-center relative text-sm text-brand-light",
         variantBasedClasses[variant],
         className
       )}

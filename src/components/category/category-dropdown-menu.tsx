@@ -1,8 +1,8 @@
-import Alert from '@components/ui/alert';
-import CategoryListCardLoader from '@components/ui/loaders/category-list-card-loader';
-import { useCategoriesQuery } from '@framework/category/get-all-categories';
-import cn from 'classnames';
-import CategoryMenu from '@components/ui/category-menu';
+import Alert from "@components/ui/alert";
+import CategoryListCardLoader from "@components/ui/loaders/category-list-card-loader";
+import { useCategoriesQuery } from "@framework/category/get-all-categories";
+import cn from "classnames";
+import CategoryMenu from "@components/ui/category-menu";
 
 interface CategoryDropdownProps {
   className?: string;
@@ -19,7 +19,7 @@ export default function CategoryDropdownMenu({
     limit: 15,
   });
   return (
-    <div className={cn('absolute z-30', className)}>
+    <div className={cn("absolute z-30", className)}>
       <div className="max-h-full overflow-hidden">
         {error ? (
           <div className="2xl:ltr:pr-4 2xl:rtl:pl-4">

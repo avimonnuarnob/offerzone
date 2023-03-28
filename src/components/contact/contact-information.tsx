@@ -1,42 +1,42 @@
-import { FC } from 'react';
-import { useTranslation } from 'next-i18next';
-import LocationIcon from '@components/icons/contact/location-icon';
-import PhoneIcon from '@components/icons/contact/phone-icon';
-import MailIcon from '@components/icons/contact/mail-icon';
-import Text from '@components/ui/text';
-import Heading from '@components/ui/heading';
+import { FC } from "react";
+import { useTranslation } from "next-i18next";
+import LocationIcon from "@components/icons/contact/location-icon";
+import PhoneIcon from "@components/icons/contact/phone-icon";
+import MailIcon from "@components/icons/contact/mail-icon";
+import Text from "@components/ui/text";
+import Heading from "@components/ui/heading";
 
 const data = [
   {
     id: 1,
-    slug: '/',
+    slug: "/",
     icon: (
       <LocationIcon className="w-12 lg:w-13 xl:w-[60px] h-12 lg:h-13 xl:h-[60px]" />
     ),
-    name: 'text-office-location',
-    description: 'text-office-location-details',
+    name: "text-office-location",
+    description: "text-office-location-details",
   },
   {
     id: 2,
-    slug: '/',
+    slug: "/",
     icon: (
       <PhoneIcon className="w-12 lg:w-13 xl:w-[60px] h-12 lg:h-13 xl:h-[60px]" />
     ),
-    name: 'text-phone',
-    description: 'text-phone-details',
+    name: "text-phone",
+    description: "text-phone-details",
   },
   {
     id: 3,
-    slug: '/',
+    slug: "/",
     icon: (
       <MailIcon className="w-12 lg:w-13 xl:w-[60px] h-12 lg:h-13 xl:h-[60px]" />
     ),
-    name: 'text-email',
-    description: 'text-email-details',
+    name: "text-email",
+    description: "text-email-details",
   },
 ];
 const ContactInformation: FC = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <>
       {data.length > 0 && (

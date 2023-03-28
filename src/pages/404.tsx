@@ -1,8 +1,8 @@
-import Layout from '@components/layout/layout';
-import { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import ErrorInformation from '@components/404/error-information';
-import Seo from '@components/seo/seo';
+import Layout from "@components/layout/layout";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import ErrorInformation from "@components/404/error-information";
+import Seo from "@components/seo/seo";
 
 export default function ErrorPage() {
   return (
@@ -23,10 +23,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
-        'common',
-        'forms',
-        'menu',
-        'footer',
+        "common",
+        "forms",
+        "menu",
+        "footer",
       ])),
     },
   };

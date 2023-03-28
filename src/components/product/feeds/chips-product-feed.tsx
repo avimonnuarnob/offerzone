@@ -1,7 +1,7 @@
-import { useChipsProductsQuery } from '@framework/product/get-all-chips-products';
-import ProductsCarousel from '@components/product/products-carousel';
-import { ROUTES } from '@utils/routes';
-import { LIMITS } from '@framework/utils/limits';
+import { useChipsProductsQuery } from "@framework/product/get-all-chips-products";
+import ProductsCarousel from "@components/product/products-carousel";
+import { ROUTES } from "@utils/routes";
+import { LIMITS } from "@framework/utils/limits";
 
 export default function ChipsProductFeed() {
   const { data, isLoading, error } = useChipsProductsQuery({

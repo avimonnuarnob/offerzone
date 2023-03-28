@@ -1,11 +1,11 @@
-import React from 'react';
-import { useTranslation } from 'next-i18next';
+import React from "react";
+import { useTranslation } from "next-i18next";
 interface RadioBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string | React.ReactElement;
 }
 export const RadioBox = React.forwardRef<HTMLInputElement, RadioBoxProps>(
   ({ label, ...rest }, ref) => {
-    const { t } = useTranslation('forms');
+    const { t } = useTranslation("forms");
     return (
       <label className="flex items-center text-sm cursor-pointer group text-heading">
         <input
@@ -22,4 +22,4 @@ export const RadioBox = React.forwardRef<HTMLInputElement, RadioBoxProps>(
   }
 );
 
-RadioBox.displayName = 'RadioBox';
+RadioBox.displayName = "RadioBox";
