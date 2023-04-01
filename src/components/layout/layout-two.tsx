@@ -1,35 +1,35 @@
-import { useSessionStorage } from "react-use";
-import Image from "@components/ui/image";
-import HighlightedBar from "@components/common/highlighted-bar";
-import Countdown from "@components/common/countdown";
-import Header from "@components/layout/header/header-two";
-import Footer from "@components/layout/footer/footer";
-import MobileNavigation from "@components/layout/mobile-navigation/mobile-navigation";
-import { useTranslation } from "next-i18next";
+import { useSessionStorage } from 'react-use';
+import Image from '@components/ui/image';
+import HighlightedBar from '@components/common/highlighted-bar';
+import Countdown from '@components/common/countdown';
+import Header from '@components/layout/header/header';
+import Footer from '@components/layout/footer/footer';
+import MobileNavigation from '@components/layout/mobile-navigation/mobile-navigation';
+import { useTranslation } from 'next-i18next';
 
 export default function Layout({ children }: React.PropsWithChildren<object>) {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
   const [highlightedBar, setHighlightedBar] = useSessionStorage(
-    "borobazar-highlightedBar",
-    "false"
+    'borobazar-highlightedBar',
+    'false',
   );
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {highlightedBar !== "true" && (
-        <HighlightedBar onClose={() => setHighlightedBar("true")}>
-          <div className="flex items-center">
-            <div className="hidden sm:flex shrink-0 items-center justify-center bg-brand-light w-9 h-9 rounded-full ltr:mr-2.5 rtl:ml-2.5">
+    <div className='flex flex-col min-h-screen'>
+      {highlightedBar !== 'true' && (
+        <HighlightedBar onClose={() => setHighlightedBar('true')}>
+          <div className='flex items-center'>
+            <div className='hidden sm:flex shrink-0 items-center justify-center bg-brand-light w-9 h-9 rounded-full ltr:mr-2.5 rtl:ml-2.5'>
               <Image
                 width={23}
                 height={23}
-                src="/assets/images/delivery-box.svg"
-                alt="Delivery Box"
+                src='/assets/images/delivery-box.svg'
+                alt='Delivery Box'
               />
             </div>
             <p
               dangerouslySetInnerHTML={{
-                __html: t("text-highlighted-bar"),
+                __html: t('text-highlighted-bar'),
               }}
             />
           </div>
@@ -40,9 +40,9 @@ export default function Layout({ children }: React.PropsWithChildren<object>) {
 
       <Header />
       <main
-        className="relative flex-grow"
+        className='relative flex-grow'
         style={{
-          WebkitOverflowScrolling: "touch",
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {children}
