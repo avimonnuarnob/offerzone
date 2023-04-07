@@ -1,4 +1,6 @@
 {
+  "otp-required": "Please provide a valid OTP",
+  "phone-error": "Please provide valid phone number",
   "email-error": "Please provide valid email address",
   "email-required": "You must need to provide your email address",
   "password-required": "You must need to provide your password",
@@ -34,6 +36,7 @@
   "label-city": "City/Town",
   "label-display-name": "Display Name *",
   "label-confirm-password": "Confirm Password",
+  "label-otp": "Give OTP from your message *",
   "label-postcode": "Postcode",
   "label-order-notes": "Order Notes (Optional)",
   "label-remember-me": "Remember me",
