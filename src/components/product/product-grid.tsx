@@ -9,6 +9,7 @@ import cn from 'classnames';
 import { useProductsQuery } from '@framework/product/get-all-products';
 import { LIMITS } from '@framework/utils/limits';
 import { Product } from '@framework/types';
+import ProductCardMaple from './product-cards/product-card-maple';
 
 interface ProductGridProps {
   className?: string;

@@ -1,4 +1,4 @@
-import { QueryKey } from "react-query";
+import { QueryKey } from 'react-query';
 
 export type CollectionsQueryOptionsType = {
   text?: string;
@@ -143,3 +143,50 @@ export type Shop = {
   created_at: string;
   updated_at: string;
 };
+
+export interface Offer {
+  Availed?: number;
+  Category?: string;
+  Liked?: string;
+  MerchantID?: string;
+  Name?: string;
+  OfferDescription?: string;
+  OfferEnds?: string;
+  OfferID?: string;
+  OfferImage1?: string;
+  OfferImage2?: string;
+  OfferImage3?: string;
+  OfferStarts?: string;
+  OfferzoneDiscount?: string;
+  Price: string;
+  RegularDiscount: string;
+  ReqDate?: string;
+  SellEnabled?: string;
+  Status?: string;
+  Type?: string;
+}
+
+export interface Merchant {
+  Address: string;
+  Balance: string;
+  BranchName: string;
+  Category: string;
+  ContactDesignation: string;
+  ContactPerson: string;
+  District: string;
+  Due: string;
+  Email: string;
+  FollowedStores: string;
+  GivenOffers: string;
+  MerchantID: string;
+  Mperson: string;
+  Name: string;
+  Paid: string;
+  Password: string;
+  Phone: string;
+  ProfileImage: string;
+  Reference: string;
+  ReqDate: string;
+  Status: string;
+  Upazila: string;
+}

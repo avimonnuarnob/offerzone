@@ -1,4 +1,5 @@
-import isEmpty from "lodash/isEmpty";
+import { Offer } from '@framework/types';
+import isEmpty from 'lodash/isEmpty';
 interface Item {
   id: string | number;
   name: string;
@@ -44,4 +45,20 @@ export function generateCartItem(item: Item, variation: Variation) {
     stock: quantity,
     price: sale_price ? sale_price : price,
   };
+}
+
+export function generateCartItemCustom(item: Offer) {
+  const { OfferID, Name, Price, OfferzoneDiscount, SellEnabled, Status } = item;
+
+  if (OfferID && Name && Price && OfferzoneDiscount && SellEnabled && Status)
+    return {
+      id: OfferID,
+      name: Name,
+      image: `https://www.offerzonebd.com/testapi/images/${OfferID}o1o.jpg`,
+      price: OfferzoneDiscount
+        ? (Number(Price) * Number(OfferzoneDiscount)) / 100
+        : Number(Price),
+      isInStock: SellEnabled === 'yes' && Status === 'active',
+      quantity: 0,
+    };
 }

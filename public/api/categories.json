@@ -2,64 +2,30 @@
   "data": [
     {
       "id": 1,
-      "name": "Fresh Vegetables",
-      "slug": "fresh-vegetables",
+      "name": "Food",
+      "slug": "Food",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/fresh-vegetables.png",
         "original": "/assets/images/category/fresh-vegetables.png"
       },
-      "icon": "/assets/images/category/icon/fresh-vegetables.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Arugula",
-          "slug": "arugula"
-        },
-        {
-          "id": 2,
-          "name": "Asparagus",
-          "slug": "asparagus"
-        },
-        {
-          "id": 3,
-          "name": "Beets",
-          "slug": "beets"
-        },
-        {
-          "id": 4,
-          "name": "Cabbages",
-          "slug": "cabbages"
-        }
-      ]
+      "icon": "/assets/images/category/icon/fresh-vegetables.svg"
     },
     {
       "id": 2,
-      "name": "Diet Foods",
-      "slug": "diet-foods",
+      "name": "Clothing",
+      "slug": "Clothing",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/diet-foods.png",
         "original": "/assets/images/category/diet-foods.png"
       },
-      "icon": "/assets/images/category/icon/diet-foods.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Whole Eggs",
-          "slug": "whole-eggs"
-        },
-        {
-          "id": 2,
-          "name": "Boiled Potatoes",
-          "slug": "boiled-potatoes"
-        }
-      ]
+      "icon": "/assets/images/category/icon/diet-foods.svg"
     },
     {
       "id": 3,
-      "name": "Diet Nutrition",
-      "slug": "diet-nutrition",
+      "name": "Entertainment",
+      "slug": "Entertainment",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/diet-nutrition.png",
@@ -69,69 +35,30 @@
     },
     {
       "id": 4,
-      "name": "Fast Food Items",
-      "slug": "fast-food-items",
+      "name": "Mobiles",
+      "slug": "Mobiles",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/fast-food.png",
         "original": "/assets/images/category/fast-food.png"
       },
-      "icon": "/assets/images/category/icon/fast-food.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Burger",
-          "slug": "burger"
-        },
-        {
-          "id": 2,
-          "name": "Beef Sandwich",
-          "slug": "beef-sandwich"
-        },
-        {
-          "id": 3,
-          "name": "Burrito Supreme",
-          "slug": "burrito-supreme"
-        }
-      ]
+      "icon": "/assets/images/category/icon/fast-food.svg"
     },
     {
       "id": 5,
-      "name": "Fruits Items",
-      "slug": "fruits-items",
+      "name": "Recharges",
+      "slug": "Recharges",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/fruits-items.png",
         "original": "/assets/images/category/fruits-items.png"
       },
-      "icon": "/assets/images/category/icon/fruits-items.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Apples",
-          "slug": "apples"
-        },
-        {
-          "id": 2,
-          "name": "Melons",
-          "slug": "melons"
-        },
-        {
-          "id": 3,
-          "name": "Berries",
-          "slug": "berries"
-        },
-        {
-          "id": 4,
-          "name": "Citrus",
-          "slug": "citrus"
-        }
-      ]
+      "icon": "/assets/images/category/icon/fruits-items.svg"
     },
     {
       "id": 6,
-      "name": "Healthy Foods",
-      "slug": "healthy-foods",
+      "name": "Electronics",
+      "slug": "Electronics",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/healthy-foods.png",
@@ -141,8 +68,8 @@
     },
     {
       "id": 7,
-      "name": "Grocery Items",
-      "slug": "grocery-items",
+      "name": "Gifts",
+      "slug": "Gifts",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/grocery-items.png",
@@ -152,59 +79,30 @@
     },
     {
       "id": 8,
-      "name": "Quality Milk",
-      "slug": "quality-milk",
+      "name": "Travels",
+      "slug": "Travels",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/quality-milk.png",
         "original": "/assets/images/category/quality-milk.png"
       },
-      "icon": "/assets/images/category/icon/quality-milk.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Boiled Milk",
-          "slug": "boiled-milk"
-        },
-        {
-          "id": 2,
-          "name": "Mixed Milk",
-          "slug": "mixed-milk"
-        }
-      ]
+      "icon": "/assets/images/category/icon/quality-milk.svg"
     },
     {
       "id": 9,
-      "name": "Cold Drinks",
-      "slug": "cold-drinks",
+      "name": "eCommerce",
+      "slug": "eCommerce",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/cold-drinks.png",
         "original": "/assets/images/category/cold-drinks.png"
       },
-      "icon": "/assets/images/category/icon/cold-drinks.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Fruit Juice",
-          "slug": "fruit-juice"
-        },
-        {
-          "id": 2,
-          "name": "Ice Coffee",
-          "slug": "ice-coffee"
-        },
-        {
-          "id": 3,
-          "name": "Punch",
-          "slug": "punch"
-        }
-      ]
+      "icon": "/assets/images/category/icon/cold-drinks.svg"
     },
     {
       "id": 10,
-      "name": "Beaf Steak",
-      "slug": "beaf-steak",
+      "name": "Laptop",
+      "slug": "Laptop",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/beaf-steak.png",
@@ -214,8 +112,8 @@
     },
     {
       "id": 11,
-      "name": "Vitamin Items",
-      "slug": "vitamin-items",
+      "name": "Footware",
+      "slug": "Footware",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/vitamin-items.png",
@@ -225,64 +123,30 @@
     },
     {
       "id": 12,
-      "name": "Raw Chicken",
-      "slug": "raw-chicken",
+      "name": "Transport",
+      "slug": "Transport",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/raw-chicken.png",
         "original": "/assets/images/category/raw-chicken.png"
       },
-      "icon": "/assets/images/category/icon/raw-chicken.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Chicken leg",
-          "slug": "chicken-leg"
-        },
-        {
-          "id": 2,
-          "name": "Chicken wing",
-          "slug": "chicken-wing"
-        },
-        {
-          "id": 3,
-          "name": "Chicken breast",
-          "slug": "chicken-breast"
-        }
-      ]
+      "icon": "/assets/images/category/icon/raw-chicken.svg"
     },
     {
       "id": 13,
-      "name": "Breakfast Item",
-      "slug": "breakfast-item",
+      "name": "Banks",
+      "slug": "Banks",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/breakfast-item.png",
         "original": "/assets/images/category/breakfast-item.png"
       },
-      "icon": "/assets/images/category/icon/breakfast-item.svg",
-      "children": [
-        {
-          "id": 1,
-          "name": "Pancake",
-          "slug": "pancake"
-        },
-        {
-          "id": 2,
-          "name": "Coffee",
-          "slug": "coffee"
-        },
-        {
-          "id": 3,
-          "name": "Sausage",
-          "slug": "sausage"
-        }
-      ]
+      "icon": "/assets/images/category/icon/breakfast-item.svg"
     },
     {
       "id": 14,
-      "name": "Fish Items",
-      "slug": "fish-items",
+      "name": "Pharmacy",
+      "slug": "Pharmacy",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/fish-items.png",
@@ -292,8 +156,8 @@
     },
     {
       "id": 15,
-      "name": "Green Vegetables",
-      "slug": "green-vegetables",
+      "name": "Furniture",
+      "slug": "Furniture",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/green-vegetables.png",
@@ -303,8 +167,8 @@
     },
     {
       "id": 16,
-      "name": "Cookies & Biscuits",
-      "slug": "cookies-biscuits",
+      "name": "Hotels",
+      "slug": "Hotels",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/cookies-biscuits.png",
@@ -314,8 +178,8 @@
     },
     {
       "id": 17,
-      "name": "Frozen Desserts",
-      "slug": "frozen-desserts",
+      "name": "Health",
+      "slug": "Health",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/breakfast-item.png",
@@ -325,8 +189,217 @@
     },
     {
       "id": 18,
-      "name": "Deli Meat",
-      "slug": "deli-meat",
+      "name": "Grocery",
+      "slug": "Grocery",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 19,
+      "name": "Bags",
+      "slug": "Bags",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 20,
+      "name": "Innerwear",
+      "slug": "Innerwear",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 21,
+      "name": "IT",
+      "slug": "IT",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 22,
+      "name": "Jewellery",
+      "slug": "Jewellery",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 23,
+      "name": "Automobiles",
+      "slug": "Automobiles",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 24,
+      "name": "Computer",
+      "slug": "Computer",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 37,
+      "name": "Jewellery",
+      "slug": "Jewellery",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 25,
+      "name": "Books",
+      "slug": "Books",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 26,
+      "name": "Kids",
+      "slug": "Kids",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 27,
+      "name": "Property",
+      "slug": "Property",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 28,
+      "name": "Insurance",
+      "slug": "Insurance",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 29,
+      "name": "Stationary",
+      "slug": "Stationary",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 30,
+      "name": "Education",
+      "slug": "Education",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 31,
+      "name": "Sports",
+      "slug": "Sports",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 32,
+      "name": "Accessories",
+      "slug": "Accessories",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 33,
+      "name": "Beauty",
+      "slug": "Beauty",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 34,
+      "name": "Household",
+      "slug": "Household",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 35,
+      "name": "Agro",
+      "slug": "Agro",
+      "image": {
+        "id": 1,
+        "thumbnail": "/assets/images/category/cookies-biscuits.png",
+        "original": "/assets/images/category/cookies-biscuits.png"
+      },
+      "icon": "/assets/images/category/icon/deli-meat.svg"
+    },
+    {
+      "id": 36,
+      "name": "Home",
+      "slug": "Home",
       "image": {
         "id": 1,
         "thumbnail": "/assets/images/category/cookies-biscuits.png",

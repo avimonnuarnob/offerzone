@@ -153,12 +153,12 @@ export const siteSettings = {
       },
       {
         id: 2,
-        path: '/search/',
+        path: '/offers/',
         label: 'menu-offers',
       },
       {
         id: 3,
-        path: '/search/',
+        path: '/deals/',
         label: 'menu-deals',
       },
       {

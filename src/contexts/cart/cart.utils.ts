@@ -1,27 +1,31 @@
+import cloneDeep from 'lodash/cloneDeep';
+
 export interface Item {
   id: string | number;
+  name: string;
+  image: string;
   price: number;
-  quantity?: number;
-  stock?: number;
-  [key: string]: any;
+  quantity: number;
+  isInStock: boolean;
 }
 
-export type UpdateItemInput = Partial<Omit<Item, "id">>;
+export type UpdateItemInput = Partial<Omit<Item, 'id'>>;
 
 export function addItemWithQuantity(
   items: Item[],
   item: Item,
-  quantity: number
+  quantity: number,
 ) {
   if (quantity <= 0)
     throw new Error("cartQuantity can't be zero or less than zero");
-  const existingItemIndex = items.findIndex(
-    (existingItem) => existingItem.id === item.id
-  );
 
+  const existingItemIndex = items.findIndex(
+    (existingItem) => existingItem.id === item.id,
+  );
   if (existingItemIndex > -1) {
-    const newItems = [...items];
-    newItems[existingItemIndex].quantity! += quantity;
+    const newItems = cloneDeep(items);
+    const newQuantity = newItems[existingItemIndex].quantity + quantity;
+    newItems[existingItemIndex].quantity = newQuantity;
     return newItems;
   }
   return [...items, { ...item, quantity }];
@@ -29,8 +33,8 @@ export function addItemWithQuantity(
 
 export function removeItemOrQuantity(
   items: Item[],
-  id: Item["id"],
-  quantity: number
+  id: Item['id'],
+  quantity: number,
 ) {
   return items.reduce((acc: Item[], item) => {
     if (item.id === id) {
@@ -48,27 +52,27 @@ export function addItem(items: Item[], item: Item) {
   return [...items, item];
 }
 
-export function getItem(items: Item[], id: Item["id"]) {
+export function getItem(items: Item[], id: Item['id']) {
   return items.find((item) => item.id === id);
 }
 
 export function updateItem(
   items: Item[],
-  id: Item["id"],
-  item: UpdateItemInput
+  id: Item['id'],
+  item: UpdateItemInput,
 ) {
   return items.map((existingItem) =>
-    existingItem.id === id ? { ...existingItem, ...item } : existingItem
+    existingItem.id === id ? { ...existingItem, ...item } : existingItem,
   );
 }
 
-export function removeItem(items: Item[], id: Item["id"]) {
+export function removeItem(items: Item[], id: Item['id']) {
   return items.filter((existingItem) => existingItem.id !== id);
 }
 
-export function inStock(items: Item[], id: Item["id"]) {
+export function inStock(items: Item[], id: Item['id']) {
   const item = getItem(items, id);
-  if (item) return item["quantity"]! < item["stock"]!;
+  if (item) return item.isInStock;
   return false;
 }
 
@@ -79,7 +83,7 @@ export const calculateItemTotals = (items: Item[]) =>
   }));
 
 export const calculateTotal = (items: Item[]) =>
-  items.reduce((total, item) => total + item.quantity! * item.price, 0);
+  items.reduce((total, item) => total + item.quantity! * item.price || 0, 0);
 
 export const calculateTotalItems = (items: Item[]) =>
   items.reduce((sum, item) => sum + item.quantity!, 0);
