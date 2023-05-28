@@ -88,7 +88,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
       )}
     >
       {isPopup === true && <CloseButton onClick={closeModal} />}
-      {JSON.stringify(otp)}
       <div className='flex mx-auto overflow-hidden rounded-lg bg-brand-light'>
         <div className='md:w-1/2 lg:w-[55%] xl:w-[60%] registration hidden md:block relative'>
           <Image
