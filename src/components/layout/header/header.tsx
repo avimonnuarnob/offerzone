@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
 import cn from 'classnames';
-import { ROUTES } from '@utils/routes';
 import { useUI } from '@contexts/ui.context';
 import { siteSettings } from '@settings/site-settings';
 import { useActiveScroll } from '@utils/use-active-scroll';
