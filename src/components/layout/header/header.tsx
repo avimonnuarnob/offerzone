@@ -113,8 +113,9 @@ const Header: React.FC = () => {
               <div className='items-center hidden lg:flex shrink-0 mx-2.5 xl:mx-3.5'>
                 <UserIcon className='text-brand-dark text-opacity-40' />
                 <AuthMenu
+                  className='hidden xl:flex'
+                  data={site_header?.authMenu}
                   isAuthorized={isAuthorized}
-                  href={ROUTES.ACCOUNT}
                   btnProps={{
                     children: t('text-sign-in'),
                     onClick: handleLogin,

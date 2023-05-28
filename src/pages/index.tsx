@@ -22,8 +22,40 @@ import HotOffersFeed from '@components/offers/feeds/hot-offers-feed';
 import ClosingSoonFeed from '@components/offers/feeds/closing-soon';
 import OffersOfTheDay from '@components/offers/feeds/offers-of-the-day';
 import StoresOfTheDay from '@components/shops/feeds/stores-of-the-day';
+// import { useEffect } from 'react';
+// import {
+//   child,
+//   equalTo,
+//   get,
+//   getDatabase,
+//   limitToFirst,
+//   orderByChild,
+//   orderByKey,
+//   query,
+//   ref,
+// } from 'firebase/database';
+// import firebase from '@firebase/firebase';
+
+// const database = getDatabase(firebase.app());
 
 export default function Home() {
+  // useEffect(() => {
+  //   const getDatabase = async () => {
+  //     const data = await get(
+  //       query(ref(database, 'offerInfo'), orderByChild('Availed')),
+  //     );
+
+  //     if (data.exists()) {
+  //       console.log('-----');
+
+  //       data.forEach((el) => {
+  //         console.log(el.val());
+  //       });
+  //     }
+  //   };
+
+  //   getDatabase();
+  // }, []);
   return (
     <>
       <Seo

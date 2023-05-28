@@ -190,3 +190,52 @@ export interface Merchant {
   Status: string;
   Upazila: string;
 }
+
+export interface MemberFormValues {
+  membername: string;
+  memberemail: string;
+  memberphone: string;
+  memberphone2: string;
+  memberprofession: string;
+  memberdob: string;
+  memberref: string;
+  memberaddress: string;
+  memberdistrict: string;
+  memberupazilla: string;
+  paymentmethod: string;
+  trxid: string;
+  memberimage: FileList;
+}
+export interface MemberSignUpInputType extends MemberFormValues {
+  memberbalance: string;
+  validTill: string;
+  membership: string;
+  followedStores: string;
+  memberpassword: string;
+  status: string;
+}
+
+export interface AgentFormValues {
+  agentname: string;
+  agentemail: string;
+  agentphone: string;
+  companyname: string;
+  companycategory: string;
+  branchname: string;
+  brancecontactperson: string;
+  contactdesignation: string;
+  agentrefer: string;
+  agentaddress: string;
+  agentdistrict: string;
+  agentupazilla: string;
+  agentimage?: FileList;
+}
+export interface AgentSignUpInputType extends AgentFormValues {
+  agentbalance: string;
+  followedStores: string;
+  agentpassword: string;
+  status: string;
+  givenoffers: string;
+  due: string;
+  paid: string;
+}

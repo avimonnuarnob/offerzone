@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Input from '@components/ui/form/input';
 import Button from '@components/ui/button';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -37,7 +37,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
     mutate: setCookies,
     isLoading: isLoadingTwo,
     isSuccess: isSuccessTwo,
-    error,
   } = useOtpMutation();
 
   const [otp, setOtp] = useState<number | null>(null);
@@ -49,10 +48,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginInputType & OtpInputType>();
-
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
 
   const onSubmit: SubmitHandler<LoginInputType & OtpInputType> = ({
     name,
@@ -93,7 +88,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
       )}
     >
       {isPopup === true && <CloseButton onClick={closeModal} />}
-
+      {JSON.stringify(otp)}
       <div className='flex mx-auto overflow-hidden rounded-lg bg-brand-light'>
         <div className='md:w-1/2 lg:w-[55%] xl:w-[60%] registration hidden md:block relative'>
           <Image
@@ -117,17 +112,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
               {!otp ? (
                 <>
                   <Input
-                    label={t('forms:label-name-star')}
-                    type='text'
-                    variant='solid'
-                    {...register('name', {
-                      required: `${t('forms:name-required')}`,
-                    })}
-                    error={errors.name?.message}
-                  />
-                  <Input
                     label={t('forms:label-phone')}
-                    type='tel'
                     variant='solid'
                     {...register('phone', {
                       required: `${t('forms:phone-required')}`,
@@ -137,6 +122,15 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
                       },
                     })}
                     error={errors.phone?.message}
+                  />
+                  <Input
+                    label={t('forms:label-name-star')}
+                    type='text'
+                    variant='solid'
+                    {...register('name', {
+                      required: `${t('forms:name-required')}`,
+                    })}
+                    error={errors.name?.message}
                   />
                 </>
               ) : (
@@ -152,17 +146,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ isPopup = true, className }) => {
                     })}
                     error={errors.otpInput?.message}
                   />
-                  <div className='flex items-center'>
-                    <label className='relative inline-block cursor-pointer switch'>
-                      <Switch checked={remember} onChange={setRemember} />
-                    </label>
-                    <label
-                      htmlFor='remember'
-                      className='mt-1 text-sm cursor-pointer shrink-0 text-heading ltr:pl-2.5 rtl:pr-2.5'
-                    >
-                      {t('forms:label-remember-me')}
-                    </label>
-                  </div>
+
+                  <Switch
+                    label='Remember me'
+                    checked={remember}
+                    onChange={setRemember}
+                  />
                 </>
               )}
 

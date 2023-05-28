@@ -11,10 +11,11 @@ interface MenuProps {
 
 const HeaderMenu: React.FC<MenuProps> = ({ data, className }) => {
   const { t } = useTranslation('menu');
+
   return (
     <nav
       className={cn(
-        'headerMenu flex w-full relative -mx-3 xl:-mx-4',
+        'headerMenu flex flex-1 relative -mx-3 xl:-mx-4',
         className,
       )}
     >

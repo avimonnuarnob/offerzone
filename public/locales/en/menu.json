@@ -1,4 +1,12 @@
 {
+  "menu-auth": "Account",
+  "menu-member-dashboard": "Member Dashboard",
+  "menu-merchant-dashboard": "Merchant Dashboard",
+  "menu-agent-dashboard": "Agent Dashboard",
+  "menu-join": "Join",
+  "menu-member": "Become Member",
+  "menu-merchant": "Become Merchant",
+  "menu-agent":"Become Agent",
   "menu-demos": "Demos",
   "menu-modern": "Modern",
   "menu-standard": "Standard",
