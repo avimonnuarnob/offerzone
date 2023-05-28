@@ -21,7 +21,7 @@ async function login(input: LoginInputType) {
   formData.append('password', 'EC6WHF72');
   formData.append('number', input.phone);
   formData.append('message', input.message);
-  return axios.post('http://66.45.237.70/api.php', formData);
+  return axios.post('/api/', formData);
 }
 
 async function setCookies(input: LoginInputType) {
