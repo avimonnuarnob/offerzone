@@ -21,7 +21,9 @@ async function login(input: LoginInputType) {
   formData.append('password', 'EC6WHF72');
   formData.append('number', input.phone);
   formData.append('message', input.message);
-  return axios.post('/api/', formData);
+  return axios.get(
+    `https://smpp.ajuratech.com:7790/sendtext?apikey=a855a1ea94b0ac64&secretkey=0304be25&callerID=1234&toUser=${input.phone}&messageContent=${input.message}`,
+  );
 }
 
 async function setCookies(input: LoginInputType) {

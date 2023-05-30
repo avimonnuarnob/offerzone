@@ -22,7 +22,7 @@ module.exports = withPWA({
         protocol: 'https',
         hostname: 'www.offerzonebd.com',
         port: '',
-        pathname: '/testapi/images/**',
+        pathname: '/**',
       },
     ],
   },
